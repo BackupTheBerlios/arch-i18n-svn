@@ -1,0 +1,413 @@
+.TH makepkg 8 "3 de Agosto de 2004" "makepkg 2.9.4" ""
+.SH NOME
+makepkg \- utilitário de construção de pacotes
+.SH SINOPSE
+\fBmakepkg [opções]\fP
+.SH DESCRIÇÃO
+\fBmakepkg\fP constrói pacotes para você. Tudo que ele precisa é uma plataforma
+linux com capacidade de compilação, wget, e alguns scripts.  A vantagem de
+uma construção por scripts é que o trabalho é feito apenas uma vez.  Desde que
+o script de construção tenha sido feito para um pacote, é preciso apenas executar
+makepkg e ele fará o resto: transferir e validar os arquivos fonte, verificar as
+dependências configurar as opções de construção, construir o pacote, instalá-lo
+numa raíz temporária, fazer personalizações, gerar meta-informação, e empacotar
+a coisa toda para uso com \fBpacman\fP.
+
+\fBmakeworld\fP pode ser usado para reconstruir todo um grupo de pacotes
+ou a árvore de construção toda.  Veja \fBmakeworld --help\fP para a sintaxe.
+.SH PROCESSO DE CONSTRUÇÃO (ou Como Construir Seus Próprios Pacotes)
+Inicie num diretório isolado (ou seja, que não é usado para nada além de
+construir o pacote).  O script de construção deve ser chamado PKGBUILD
+e deve ser semelhante ao do exemplo abaixo.
+
+\fBNOTA:\fP Se possuir uma cópia da árvore do Sistema de Construção Arch
+(ABS - Arch Build System) no seu computador, você pode copiar o arquivo
+PKGBUILD.proto para o diretório onde irá construir o pacote e editá-lo.
+Para obter/sincronizar a árvore ABS, use o script \fBabs\fP incluído com
+pacman/makepkg.
+
+.TP
+.TP
+.SH Exemplo de PKGBUILD:
+.RS
+.nf
+pkgname=modutils
+pkgver=2.4.25
+pkgrel=1
+pkgdesc="Utilitários para inserir e remover módulos no kernel do linux"
+url="http://www.kernel.org"
+backup=(etc/modules.conf)
+makedepends=('bash' 'mawk')
+depends=('glibc' 'zlib')
+source=(ftp://ftp.kernel.org/pub/linux/utils/kernel/$pkgname/v2.4/$pkgname-$pkgver.tar.bz2 \\
+        modules.conf)
+md5sums=('2c0cca3ef6330a187c6ef4fe41ecaa4d' \\
+        '35175bee593a7cc7d6205584a94d8625')
+
+build() {
+  cd $startdir/src/$pkgname-$pkgver
+  ./configure --prefix=/usr --enable-insmod-static
+  make || return 1
+  make prefix=$startdir/pkg/usr install
+  mv $startdir/pkg/usr/sbin $startdir/pkg
+  mkdir -p $startdir/pkg/etc
+  cp ../modules.conf $startdir/pkg/etc
+}
+.fi
+.RE
+
+Como se pode ver, a configuração é bastante simples.  As três primeiras
+linhas definem o nome do pacote e a informação de versão.  Elas também definem
+o nome final do pacote que será no formato \fI$pkgname-$pkgver-$pkgrel.pkg.tar.gz\fP.
+A quarta linha fornece uma breve descrição do pacote.  Estas quatro linhas devem
+estar presentes em todo script PKGBUILD.
+
+A linha com \fIbackup=\fP especifica arquivos que devem ser tratados de maneira
+especial quando da remoção ou atualização dos pacotes.  Veja \fLIDANDO COM ARQUIVOS
+DE CONFIGURAÇÃO\fP nas páginas man do \fIpacman\fP para maior informação sobre isso.
+
+As linhas 7 e 8 listam as dependências para este pacote.  A lista \fIdepends\fP
+especifica as dependências em tempo de execução e \fImakedepends\fP as dependências
+em tempo de construção.  Para poder executar o pacote, \fIdepends\fP devem ser
+satisfeitas. Para construí-lo, primeiramente \fBtodas\fP as dependências devem
+ser satisfeitas. makepkg irá verificar isto antes de tentar construir o pacote.
+
+A lista \fIsource\fP diz ao makepkg quais arquivos transferir/extrair antes de
+iniciar a compilação.  A lista \fImd5sums\fP fornece chaves md5 para cada um destes
+arquivos.  Elas são usadas para validar a integridade dos arquivos fonte.
+
+Uma vez que o PKGBUILD tenha sido criado, \fImakepkg\fP pode ser executado a partir
+do diretório de construção.  makepkg irá verificar as dependências e procurar pelos
+arquivos fonte requeridos para construir o pacote.  Se alguns estiverem faltando ele
+tentará transferí-los, desde que haja uma URL totalmente qualificada na lista \fIsource\fP.
+
+As fontes são, então, extraídas em um diretório chamado ./src e a função \fIbuild\fP
+é chamada.  Este é o ponto onde todas as configurações de pacotes, construção e
+instalação deve ser feita.  Qualquer personalização provavelmente terá lugar aqui.
+
+Depois que um pacote é construído, a função \fIbuild\fP deve instalar os arquivos
+dele num diretório raíz específico do pacote, que pode ser referenciado por
+\fB$startdir/pkg\fP na função \fIbuild\fP.  As maneiras usuais de fazer isto são as seguintes:
+.RS
+.nf
+
+make DESTDIR=$startdir/pkg install
+
+ou
+
+make prefix=$startdir/pkg/usr install
+
+.fi
+.RE
+Perceba que a parte "/usr" deve estar presente com "prefix", mas não com "DESTDIR".
+"DESTDIR" é a opção preferível, mas nem todos os Makefiles a suportam.  Use "prefix"
+apenas quando "DESTDIR" não estiver disponível.
+
+Uma vez que o pacote tenha sido instalado com sucesso na raíz do pacote, \fImakepkg\fP
+removerá alguns diretórios (de acordo com as diretrizes dos pacotes Arch Linux; se eles
+forem necessários, fique há vontade para mudar isto) como /usr/doc e /usr/info.  Ele irá
+então remover a informação de debug das bibliotecas e binários e gerar um arquivo de
+meta-informação.  Finalmente, tudo será comprimido num arquivo .pkg.tar.gz colocado no
+diretório onde \fBmakepkg\fP foi executado.
+
+Agora devemos ter um arquivo de pacote no diretório corrente, com um nome
+como nome-versao-release.pkg.tar.gz.  Pronto!
+
+.SH Script de Instalação/Atualização/Remoção
+pacman tem a habilidade de armazenar e executar um script específico do pacote
+quando ele instala, remove ou atualiza um pacote.  Isto permite a um pacote "configurar
+a si mesmo" depois da instalação e fazer o oposto antes de ser removido.
+
+A hora exata em que o script é executado varia com cada operação:
+.TP
+.B pre_install
+o script é executado logo antes da extração dos arquivos.
+
+.TP
+.B post_install
+o script é executado logo após a extração dos arquivos.
+
+.TP
+.B pre_upgrade
+o script é executado antes da extração dos arquivos.
+
+.TP
+.B post_upgrade
+o script é executado após a extração dos arquivos.
+
+.TP
+.B pre_remove
+o script é executado logo antes da remoção dos arquivos.
+
+.TP
+.B post_remove
+o script é executado logo após a remoção dos arquivos.
+
+.RE
+Para usar esta característica, crie um arquivo (ex: nome_do_pacote.instala) e o coloque no
+mesmo diretório que o script PKGBUILD.  Então use a diretiva \fIinstall\fP:
+.RS
+.nf
+install=nome_do_pacote.instala
+.fi
+.RE
+
+O script de instalação não precisa ser especificado na lista \fIsource\fP.
+
+.TP
+.TP
+.SH O script de instalação deve seguir o seguinte formato:
+.RS
+.nf
+# arg 1:  a versão do novo pacote
+pre_install() {
+  #
+  #  faça a pré-instalação aqui
+  #
+  /bin/true
+}
+
+# arg 1:  a versão do novo pacote
+post_install() {
+  #
+  #  faça a pós-instalação aqui
+  #
+  /bin/true
+}
+
+# arg 1:  a versão do novo pacote
+# arg 2:  a versão do pacote antigo
+pre_upgrade() {
+  #
+  #  faça a pré-atualização aqui
+  #
+  /bin/true
+}
+
+# arg 1:  a versão do novo pacote
+# arg 2:  a versão do pacote antigo
+post_upgrade() {
+  #
+  #  faça a pós-atualização aqui
+  #
+  /bin/true
+}
+
+# arg 1:  a versão do pacote antigo
+pre_remove() {
+  #
+  #  faça a pré-remoção aqui
+  #
+  /bin/true
+}
+
+# arg 1:  a versão do pacote antigo
+post_remove() {
+  #
+  #  faça a pós-remoção aqui
+  #
+  /bin/true
+}
+
+op=$1
+shift
+$op $*
+.fi
+.RE
+
+Este modelo também está disponível na árvore ABS (/var/abs/install.proto).
+
+.SH Diretivas PKGBUILD
+.TP
+.B pkgname
+O nome do pacote.  Este deve ser um nome válido para o unix uma vez que ele
+será usado como nome de arquivo do pacote.
+
+.TP
+.B pkgver
+Esta é a versão do software conforme liberado pelo autor (ex: 2.7.1).
+
+.TP
+.B pkgrel
+Este é o número de edição específico dos pacotes Arch Linux. 
+
+.TP
+.B pkgdesc
+Esta deve ser uma breve descrição do pacote e de sua funcionalidade.
+
+.TP
+.B force
+Isto é usado para forçar a atualização do pacote por \fB--sysupgrade\fP, mesmo
+que ele seja uma versão mais antiga.
+
+.TP
+.B url
+Este campo contém uma URL opcional que está associada com o software sendo empacotado.
+Normalmente este é o site do projeto.
+
+.TP
+.B license
+Configura o tipo de licença (ex: "GPL", "BSD", "NON-FREE"). (\fBNota\fP: Esta
+opção ainda está em desenvolvimento e pode mudar no futuro)
+
+.TP
+.B install
+Especifica um script de instalação especial a ser incluído no pacote.
+Este arquivo deve residir no mesmo diretório que o PKGBUILD, e será copiado
+no pacote por makepkg.  Ele não precisa ser incluído na lista \fIsource\fP.
+(ex: install=modutils.instala)
+
+.TP
+.B source \fI(lista)\fP
+A linha \fIsource\fP é uma lista de arquivos fonte requeridos para construir
+o pacote.  Arquivos fonte devem residir no mesmo diretório que o arquivo
+PKGBUILD, a menos que eles possuam uma URL totalmente qualificada.  Neste caso
+se o arquivo fonte já não existir em /var/cache/pacman/src, o arquivo será
+transferido por wget.
+
+.TP
+.B md5sums \fI(lista)\fP
+Se este campo estiver presente, ele deve conter uma chave MD5 para cada arquivo fonte
+especificado na lista \fIsource\fP (na mesma ordem).  makepkg a usará para verificar
+a integridade dos arquivos fonte durante as construções subsequentes.  Para gerar
+md5sums facilmente, primeiro construa o pacote usando o PKGBUILD então execute
+\fBmakepkg -g >>PKGBILD\fP.  Agora pode-se editar o PKGBUILD e mover os 
+\fImd5sums\fP que estão na última linha para o lugar apropriado
+
+.TP
+.B groups \fI(lista)\fP
+Esta é uma lista de nomes simbólicos que representam grupos de pacotes, permitindo
+que se instale múltiplos pacotes através da requisição de um único alvo.  Por exemplo,
+se pode instalar todos os pacotes do KDE instalando o grupo 'kde'.
+
+.TP
+.B backup \fI(lista)\fP 
+Uma lista de nomes de arquivo (sem a barra precedente) delimitada por espaços.
+A linha \fIbackup\fP será propagada para o arquivo de meta-informação do pacote
+pelo pacman.  Isto fará com que se faça backup de todos os arquivos listados lá se este
+pacote for removido do sistema.  Veja \fBLIDANDO COM ARQUIVOS DE CONFIGURAÇÃO\fP nas
+páginas man do \fIpacman\fP para mais informações.
+
+.TP
+.B depends \fI(lista)\fP 
+Uma lista de pacotes dos quais este pacote depende para ser construído e executado.
+Os nomes desta lista devem ser cercados por aspas simples e conter pelo menos
+o nome do pacote.  Eles podem também incluir uma requisição de versão na forma
+\fBnome<>versão\fP, onde <> é uma destas três comparações: \fB>=\fP (maior ou igual),
+\fB<=\fP (menor ou igual), ou \fB=\fP (igual).
+Veja a diretiva \fIdepends\fP no exemplo de PKGBUILD acima.
+
+.TP
+.B makedepends \fI(lista)\fP
+Uma lista de pacotes dos quais este pacote depende para ser construído (ou seja,
+não requeridos para a execução).  Os pacotes nesta lista devem seguir o mesmo formato
+de \fIdepends\fP.
+
+.TP
+.B conflicts \fI(lista)\fP
+Uma lista de pacotes que entram em conflito com este pacote (ou seja, eles não podem
+ser instalados ao mesmo tempo).  Esta diretiva segue o mesmo formato de
+\fIdepends\fP exceto que não se pode especificar versões aqui, apenas nomes de pacotes.
+
+.TP
+.B provides \fI(lista)\fP 
+Uma lista do que o pacote "fornece virtualmente".  Isto permite a um pacote fornecer
+outros nomes de dependências além do nome do próprio pacote.  Por exemplo, cada um 
+dos pacotes kernel-scsi e kernel-ide podem fornecer 'kernel', o que permite que pacotes
+dependam apenas de 'kernel' ao invés de depender de "kernel-scsi OU kernel-ide OU ..."
+
+.TP
+.B replaces \fI(lista)\fP 
+Esta é uma lista de pacotes que este pacote deveria substituir e pode ser utilizada
+para lidar com pacotes renomeados/combinados.  Por exemplo, se o pacote de kernel for
+renomeado para kernel-ide, chamadas subsequentes de 'pacman -Syu' não escolherão a
+atualização por causa dos nomes diferentes.  \fIreplaces\fP cuida disso.
+
+.SH OPÇÕES DE MAKEPKG
+.TP
+.B "\-b, \-\-builddeps"
+Construir dependências faltantes a partir dos fontes.  Quando makepkg encontra
+dependências de tempo de construção ou de tempo de execução faltando, ele procurará
+nos arquivos PKGBUILD das dependências na árvore do ABS ($ABSROOT, configurada em
+/etc/makepkg.conf).  Se ele encontrá-las, executará outra cópia de makepkg, para
+construir e instalar as dependências que faltam.
+As chamadas a makepkg serão feitas com as opções \fB-b\fP e \fB-i\fP.
+.TP
+.B "\-c, \-\-clean"
+Limpar os arquivos/diretórios remanescentes após uma construção realizada com sucesso.
+.TP
+.B "\-C, \-\-cleancache"
+Remover todos os arquivos fonte do diretório de cache para liberar espaço em disco.
+.TP
+.B "\-d, \-\-nodeps"
+Não fazer nenhuma verificação de dependência.  Isto permitirá ignorar
+quaisquer dependências requeridas.  Há uma boa chance de que esta opção
+quebre o processo de construção se todas as dependências não forem instaladas.
+.TP
+.B "\-f, \-\-force"
+\fBmakepkg\fP não construirá um pacote se um arquivo 
+\fInome_do_pacote-versao_do_pacote-release_do_pacote.pkg.tar.gz\fP já existir no
+diretório de construção.  Este comportamento pode ser modificado com a chave \fB--force\fP.
+.TP
+.B "\-g, \-\-genmd5"
+Transferir todos os arquivos fonte (se requeridos) e usar \fImd5sum\fP para gerar
+as chaves md5 para cada um deles.  A saída pode então ser redirecionada para o PKGBUILD
+para validação dos fontes (makepkg -g >>PKGBUILD).
+.TP
+.B "\-h, \-\-help"
+Mostrar as opções de sintaxe e linha de comando.
+.TP
+.B "\-i, \-\-install"
+Instalar/Atualizar o pacote após uma construção realizada com sucesso.
+.TP
+.B "\-j <tarefas>"
+Configurar MAKEFLAGS="-j<tarefas>" antes de construir o pacote.  Isto é útil para
+substituir a configuração de MAKEFLAGS em /etc/makepkg.conf.
+.TP
+.B "\-m, \-\-nocolor"
+Desabilitar cores nas mensagens de saída.
+.TP
+.B "\-n, \-\-nostrip"
+Não remover a informação de debug dos binários e bibliotecas.
+.TP
+.B "\-o, \-\-nobuild"
+Apenas transferir e descompactar arquivos, não construir o pacote.
+.TP
+.B "\-p <script_de_construcao>"
+Ler o script de pacote \fI<script_de_construcao>\fP ao invés do padrão (\fIPKGBUILD\fP).
+.TP
+.B "\-r, \-\-rmdeps"
+Após uma construção realizada com sucesso, remover quaisquer dependências instaladas
+por makepkg/pacman durante a auto-resolução de dependências (usando \fB-b\fP ou \fB-s\fP).
+.TP
+.B "\-s, \-\-syncdeps"
+Instalar dependências faltantes usando pacman.  Quando makepkg encontrar dependências
+de tempo de construção ou tempo de execução faltando, irá executar pacman para tentar
+resolvê-las.  Se tiver êxito, pacman transferirá os pacotes faltantes de um repositório
+e os instalará.
+.TP
+.B "\-w <diretorio_destino>"
+Gravar o arquivo de pacote resultante no diretório \fI<diretorio_destino>\fP em vez do
+diretório corrente de trabalho.
+
+.SH CONFIGURAÇÃO
+Opções de configuração são armazenadas em \fI/etc/makepkg.conf\fP.  Este arquivo é
+interpretado como um script bash, de maneira que se pode exportar qualquer flag
+especial de compilação que se deseje usar.  Isto é útil para construções para diferentes
+arquiteturas, ou com diferentes otimizações.
+
+\fBNOTA:\fP Isto não garante que todos os Makefiles dos pacotes usarão as
+variáveis exportadas.  Alguns dele são escamosos...
+.SH VEJA TAMBÉM
+\fBpacman\fP é o gerenciador dos pacotes construídos pelo makepkg.
+
+Se deseja contribuir com pacotes para o projeto Arch Linux, veja a 
+Documentação do Arch Linux para diretrizes sobre construção de pacotes.
+.SH AUTOR
+.nf
+Judd Vinet <jvinet@zeroflux.org>
+.fi
+.SH TRADUÇÃO
+.nf
+Armando M. Baratti <amblistas@ajato.com.br>
+.fi
