@@ -1,0 +1,1614 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2004 Matthias-Christian Ott <matthias.christian@tiscali.de>
+# This file is distributed under the same license as the PACKAGE package.
+# Matthias-Christian Ott <matthias.christian@tiscali.de>, 2004
+# Gan Lu <rhythm_gan@yahoo.com.cn>, 2004
+
+msgid ""
+msgstr ""
+"Project-Id-Version: pacman 2.9.4\n\n"
+"Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
+"POT-Creation-Date: 2004-12-02 16:08+0100\n"
+"PO-Revision-Date: 2004-12-21 14:48+0100\n"
+"Last-Translator: Gan Lu <rhythm_gan@yahoo.com.cn>\n"
+"Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/convertdb.c:54
+#, c-format
+msgid "converts a pacman 1.x database to a pacman 2.0 format\n"
+msgstr "转换pacman 1.x数据库为pacman 2.0格式\n"
+
+#: src/convertdb.c:55
+#, c-format
+msgid ""
+"usage: %s <target_dir>\n"
+msgstr ""
+"用法: %s <目标_目录>\n"
+"\n"
+
+
+#: src/convertdb.c:56
+#, c-format
+msgid ""
+"convertdb will convert all package data from /var/lib/pacman/pacman.db\n"
+msgstr "convertdb将从/var/lib/pacman/pacman.db转换所有的软件包\n"
+
+
+#: src/convertdb.c:57
+#, c-format
+msgid ""
+"to a 2.0 format and place it in target_dir.\n"
+msgstr ""
+"至2.0格式并放于目标_目录。\n"
+"\n"
+
+
+#: src/convertdb.c:78
+#, c-format
+msgid "converting %s\n"
+msgstr "正在转换 %s\n"
+
+#: src/db.c:281 db.c:406
+#, c-format
+msgid "error: %s: %s\n" 
+msgstr "错误: %s: %s\n"
+
+#: src/db.c:433
+#, c-format
+msgid "db_read: error: %s: %s\n"
+msgstr "数据库_读取: 错误: %s: %s\n"
+
+#: src/db.c:735
+#, c-format
+msgid "%s: exists in \"%s\" (target) and \"%s\" (target)"
+msgstr "%s: 存在\"%s\" (目标) 和 \"%s\" (目标)"
+
+#: src/db.c:796
+#, c-format
+msgid "%s: %s: exists in filesystem"
+msgstr "%s: %s: 文件系统中存在"
+
+#: src/list.c:305
+#, c-format
+msgid "None\n"
+msgstr "不存在\n"
+
+#: src/md5driver.c:45
+#, c-format
+msgid "%s can't be opened\n"
+msgstr "%s 无法打开\n"
+
+#: src/package.c:53 pacman.c:1774
+msgid "could not open package"
+msgstr "无法打开软件包"
+
+#: src/package.c:74
+#, c-format
+msgid "load_pkg: missing package name in %s.\n"
+msgstr "载入_软件包: 缺少软件包名在 %s.\n"
+
+#: src/package.c:79
+#, c-format
+msgid "load_pkg: missing package version in %s.\n"
+msgstr "载入_软件包: 缺少软件包版本信息在 %s.\n"
+
+#: src/package.c:115
+#, c-format
+msgid "warning: could not remove tempfile %s\n"
+msgstr "警告: 无法删除临时文件 %s\n"
+
+#: src/package.c:132
+#, c-format
+msgid "bad package file in %s"
+msgstr "坏的软件包文件在 %s"
+
+#: src/package.c:142
+#, c-format
+msgid "load_pkg: missing package info file in %s\n"
+msgstr "载入_软件包: 缺少软件包信息文件在 %s\n"
+
+#: src/package.c:182 package.c:223
+#, c-format
+msgid "%s: syntax error in description file line %d\n"
+msgstr "%s: 语法错误在描述文件行 %d\n"
+
+#: src/package.c:183 package.c:224
+msgid "error"
+msgstr "错误"
+
+#: src/package.c:332
+#, c-format
+msgid "Name           : %s\n"
+msgstr "名字        : %s\n"
+
+#: src/package.c:333
+#, c-format
+msgid "Version        : %s\n"
+msgstr "版本        : %s\n"
+
+#: src/package.c:335
+msgid "Groups         :"
+msgstr "软件包组         :"
+
+#: src/package.c:337
+#, c-format
+msgid "Packager       : %s\n"
+msgstr "打包者       : %s\n"
+
+#: src/package.c:338
+#, c-format
+msgid "URL            : %s\n"
+msgstr "URL            : %s\n"
+
+#: src/package.c:339
+#, c-format
+msgid "License        : %s\n"
+msgstr "许可证        : %s\n"
+
+#: src/package.c:340
+#, c-format
+msgid "Architecture   : %s\n"
+msgstr "架构   : %s\n"
+
+#: src/package.c:341
+#, c-format
+msgid "Size           : %ld\n"
+msgstr "大小           : %ld\n"
+
+#: src/package.c:342
+#, c-format
+msgid "Build Date     : %s %s\n"
+msgstr "创建日期     : %s %s\n"
+
+#: src/package.c:343
+#, c-format
+msgid "Install Date   : %s %s\n"
+msgstr "安装日期   : %s %s\n"
+
+#: src/package.c:344
+#, c-format
+msgid "Install Script : %s\n"
+msgstr "安装脚本 : %s\n"
+
+#: src/package.c:344
+msgid "Yes"
+msgstr "是"
+
+#: src/package.c:344
+msgid "No"
+msgstr "否"
+
+#: src/package.c:345
+#, c-format
+msgid "Reason:        : "
+msgstr "原因       : "
+
+#: src/package.c:347
+#, c-format
+msgid "explicitly installed\n"
+msgstr "直接安装\n"
+
+#: src/package.c:348
+#, c-format
+msgid "installed as a dependency for another package\n"
+msgstr "i被其他软件包作为依赖关系安装\n"
+
+#: src/package.c:349
+#, c-format
+msgid "unknown\n"
+msgstr "未知的\n"
+
+#: src/package.c:352
+msgid "Provides       :"
+msgstr "提供       :"
+
+#: src/package.c:355
+msgid "Depends On     :"
+msgstr "依赖于     :"
+
+#: src/package.c:358
+msgid "Required By    :"
+msgstr "需要被    :"
+
+#: src/package.c:361
+msgid "Conflicts With :"
+msgstr "冲突和 :"
+
+#: src/package.c:363
+#, c-format
+msgid "Description    : "
+msgstr "描述    : "
+
+#: src/package.c:378
+#, c-format
+msgid "Name              : %s\n"
+msgstr "名字              : %s\n"
+
+#: src/package.c:379
+#, c-format
+msgid "Version           : %s\n"
+msgstr "版本           : %s\n"
+
+#: src/package.c:381
+msgid "Groups            :"
+msgstr "软件包组            :"
+
+#: src/package.c:384
+msgid "Provides          :"
+msgstr "提供          :"
+
+#: src/package.c:387
+msgid "Depends On        :"
+msgstr "依赖于        :"
+
+#: src/package.c:390
+msgid "Conflicts With    :"
+msgstr "冲突和    :"
+
+#: src/package.c:393
+msgid "Replaces          :"
+msgstr "替代          :"
+
+#: src/package.c:395
+#, c-format
+msgid "Size (compressed) : %ld\n"
+msgstr "大小 (压缩后) : %ld\n"
+
+#: src/package.c:396
+#, c-format
+msgid "Description       : "
+msgstr "描述       : "
+
+#: src/package.c:398
+#, c-format
+msgid ""
+"\n"
+"MD5 Sum           : %s\n"
+msgstr ""
+"\n"
+"MD5 Sum校验码           : %s\n"
+
+#: src/pacman.c:166
+#, c-format
+msgid "error: you cannot perform this operation unless you are root.\n"
+msgstr "错误: 你无法执行本操作除非你是root。\n"
+
+#: src/pacman.c:172
+#, c-format
+msgid "error: unable to lock pacman database.\n"
+msgstr "错误: 无法锁定pacman数据库。\n"
+
+#: src/pacman.c:173
+#, c-format
+msgid "       if you're sure pacman is not already running, you\n"
+msgstr "       如果你确定pacman没有运行，你\n"
+
+#: src/pacman.c:174
+#, c-format
+msgid "       can remove %s\n"
+msgstr "       可以删除 %s\n"
+
+#: src/pacman.c:196
+msgid "warning: cannot open logfile"
+msgstr "警告: 无法打开日志文件"
+
+#: src/pacman.c:210
+#, c-format
+msgid "Installation Root: %s\n"
+msgstr "安装根目录: %s\n"
+
+#: src/pacman.c:212
+#, c-format
+msgid "Top-level DB Path: %s%s\n"
+msgstr "最顶端数据库路径: %s%s\n"
+
+#: src/pacman.c:214
+msgid "Targets:"
+msgstr "目标:"
+
+#: src/pacman.c:223
+#, c-format
+msgid "initializing database %s...\n"
+msgstr "初始化数据库 %s...\n"
+
+#: src/pacman.c:227
+#, c-format
+msgid "error: could not create database.\n"
+msgstr "错误: 无法创建数据库。\n"
+
+#: src/pacman.c:231
+#, c-format
+msgid "error: could not open database.\n"
+msgstr "错误: 无法打开数据库。\n"
+
+#: src/pacman.c:248
+#, c-format
+msgid ""
+"error: no operation specified (use -h for help)\n"
+msgstr ""
+"错误: 没有指定的操作 (使用 -h 查看帮助)\n"
+"\n"
+
+#: src/pacman.c:295
+#, c-format
+msgid "conflict: %s\n"
+msgstr "冲突和: %s\n"
+
+#: src/pacman.c:299
+#, c-format
+msgid "requires: %s"
+msgstr "需要: %s"
+
+#: src/pacman.c:337
+#, c-format
+msgid "error: no usable package repositories configured.\n"
+msgstr "错误: 没有配置过的可用软件包库。\n"
+
+#: src/pacman.c:353
+#, c-format
+msgid "removing old packages from cache... "
+msgstr "正在从缓存中删除过期软件包... "
+
+#: src/pacman.c:356
+#, c-format
+msgid "error: could not access cache directory\n"
+msgstr "错误: 无法访问缓存目录\n"
+
+#: src/pacman.c:427
+#, c-format
+msgid "removing all packages from cache... "
+msgstr "正在从缓存中删除所有软件包... "
+
+#: src/pacman.c:429
+#, c-format
+msgid "error: could not remove cache directory: %s\n"
+msgstr "错误: 无法删除缓存目录: %s\n"
+
+#: src/pacman.c:435
+#, c-format
+msgid "error: could not create new cache directory: %s\n"
+msgstr "错误: 无法创建新缓存目录: %s\n"
+
+#: src/pacman.c:440 pacman.c:1283 pacman.c:1564 pacman.c:1700 pacman.c:2002
+#: src/pacman.c:2037 pacman.c:2305
+#, c-format
+msgid "done.\n"
+msgstr "完成。\n"
+
+#: src/pacman.c:446
+#, c-format
+msgid ":: Synchronizing package databases... \n"
+msgstr ":: 正在同步软件包数据库... \n"
+
+#: src/pacman.c:447
+msgid "synchronizing package lists"
+msgstr "正在同步软件包列表"
+
+#: src/pacman.c:459
+#, c-format
+msgid "error: could not open sync database: %s\n"
+msgstr "错误: 无法打开同步数据库: %s\n"
+
+#: src/pacman.c:460
+#, c-format
+msgid "       have you used --refresh yet?\n"
+msgstr "       你已经使用过 --refresh 了吗?\n"
+
+#: src/pacman.c:574 pacman.c:2466 pacman.c:2514 pacman.c:2523
+#, c-format
+msgid "Package \"%s\" was not found.\n"
+msgstr "软件包 \"%s\" 没有找到。\n"
+
+#: src/pacman.c:605
+#, c-format
+msgid "Repository \"%s\" was not found.\n"
+msgstr "软件包库 \"%s\" 没有找到。\n"
+
+#: src/pacman.c:616
+msgid "starting full system upgrade"
+msgstr "正在开始全系统升级"
+
+#: src/pacman.c:628
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr ":: %s-%s: 忽略软件包升级 (由 %s-%s 替换)\n"
+
+#: src/pacman.c:631
+#, c-format
+msgid ":: Replace %s with %s from \"%s\"? [Y/n] "
+msgstr ":: 用 %s 从 \"%s\" 替换 %s? [Y/n] "
+
+#: src/pacman.c:694
+#, c-format
+msgid ":: %s: local version (%s) is newer than repo version (%s)\n"
+msgstr ":: %s-%s: 本地版本较新\n"
+
+#: src/pacman.c:705
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (%s)\n"
+msgstr ":: %s-%s: 忽略软件包升级 (%s)\n"
+
+#: src/pacman.c:729
+#, c-format
+msgid ""
+":: Above packages will be skipped.  To manually upgrade use 'pacman -S "
+"<pkg>'\n"
+msgstr ""
+":: 将跳过以上软件包，使用pacman -S手动升级' "
+"<pkg>'\n"
+
+#: src/pacman.c:739
+#, c-format
+msgid ""
+"\n"
+":: pacman has detected a newer version of the \"pacman\" package.\n"
+msgstr ""
+"\n"
+":: pacman探测到更新的版本 \"pacman\" package.\n"
+
+#: src/pacman.c:740
+#, c-format
+msgid ":: It is recommended that you allow pacman to upgrade itself\n"
+msgstr ":: 推荐你允许pacman首先升级\n"
+
+#: src/pacman.c:741
+#, c-format
+msgid ":: first, then you can re-run the operation with the newer version.\n"
+msgstr ":: 自身, 然后再使用新版本重新运行本操作。\n"
+
+#: src/pacman.c:743
+msgid ":: Upgrade pacman first? [Y/n] "
+msgstr ":: 首先升级pacman? [Y/n] "
+
+#: src/pacman.c:812 pacman.c:2098
+#, c-format
+msgid ":: group %s:\n"
+msgstr ":: 软件包组 %s:\n"
+
+#: src/pacman.c:814
+msgid "    Install whole content? [Y/n] "
+msgstr "    安装全部内容? [Y/n] "
+
+#: src/pacman.c:820
+#, c-format
+msgid ":: Install %s from group %s? [Y/n] "
+msgstr ":: 从软件包组 %s 安装 %s ? [Y/n] "
+
+#: src/pacman.c:827
+#, c-format
+msgid "%s: not found in sync db\n"
+msgstr "%s: 同步数据库中没有找到 \n"
+
+#: src/pacman.c:831
+#, c-format
+msgid "%s: not present in \"%s\" repository\n"
+msgstr "%s: 在 \"%s\" 软件包库中不存在\n"
+
+#: src/pacman.c:844
+#, c-format
+msgid ":: %s-%s: local version is newer.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: 本地版本较新。仍然要升级? [Y/n] "
+
+#: src/pacman.c:853
+#, c-format
+msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: 是最新的。仍然要升级? [Y/n] "
+
+#: src/pacman.c:896
+#, c-format
+msgid "error: unresolvable dependencies:\n"
+msgstr "错误: 没有解决的依赖关系:\n"
+
+#: src/pacman.c:899 pacman.c:1586
+#, c-format
+msgid "  %s: requires %s"
+msgstr "  %s: 需要 %s"
+
+#: src/pacman.c:906
+#, c-format
+msgid " but it is not in the sync db\n"
+msgstr " 但是它不在同步数据库中\n"
+
+#: src/pacman.c:1001 pacman.c:1608
+#, c-format
+msgid ":: %s conflicts with %s. Remove %s? [Y/n] "
+msgstr ":: %s 和 %s 冲突。删除 %s? [Y/n] "
+
+#: src/pacman.c:1007 pacman.c:1614
+#, c-format
+msgid ""
+"\n"
+"error: package conflicts detected\n"
+msgstr ""
+"\n"
+"错误: 探测到软件包冲突\n"
+
+#: src/pacman.c:1012 pacman.c:1619
+#, c-format
+msgid ""
+"\n"
+"error: %s conflicts with %s\n"
+msgstr ""
+"\n"
+"错误: %s 和 %s 冲突\n"
+
+#: src/pacman.c:1082
+#, c-format
+msgid ""
+"\n"
+"Remove:  "
+msgstr ""
+"\n"
+"删除:  "
+
+#: src/pacman.c:1104
+#, c-format
+msgid ""
+"\n"
+"Targets: "
+msgstr ""
+"\n"
+"目标: "
+
+#: src/pacman.c:1107
+#, c-format
+msgid """\n"
+"\n"
+"Total Package Size:   %.1f MB\n"
+msgstr ""
+"\n"
+"\n"
+"所有软件包大小:   %.1f MB\n"
+
+#: src/pacman.c:1117
+#, c-format
+msgid ""
+"\n"
+"Beginning download...\n"
+msgstr ""
+"\n"
+"开始下载...\n"
+
+#: src/pacman.c:1120
+msgid ""
+"\n"
+"Proceed with download? [Y/n] "
+msgstr ""
+"\n"
+"进行下载? [Y/n] "
+
+#: src/pacm"删除:  "an.c:1128
+#, c-format
+msgid ""
+"\n"
+"Beginning upgrade process...\n"
+msgstr ""
+"\n"
+"开始升级过程...\n"
+
+#: src/pacman.c:1131
+msgid ""
+"\n"
+"Proceed with upgrade? [Y/n] \n"
+msgstr ""
+"\n"
+"进行升级? [Y/n] \n"
+
+#: src/pacman.c:1178
+#, c-format
+msgid " %s-%s%s is already in the cache\n"
+msgstr " %s-%s.pkg.tar.gz 已经存在缓存中\n"
+
+#: src/pacman.c:1200
+#, c-format
+msgid ""
+"\n"
+":: Retrieving packages from %s...\n"
+msgstr ""
+"\n"
+":: 从 %s取回软件包...\n"
+
+#: src/pacman.c:1206
+#, c-format
+msgid "warning: no %s cache exists.  creating..."
+msgstr "警告:  %s 缓存不存在。正在创建..."
+
+#: src/pacman.c:1212
+msgid "warning: couldn't create package cache, using /tmp instead"
+msgstr "警告: 无法创建软件包缓存，使用 /tmp 代替"
+
+#: src/pacman.c:1219
+#, c-format
+msgid "error: failed to retrieve some files from %s\n"
+msgstr "错误: 一些文件无法从 %s 取回\n"
+
+#: src/pacman.c:1241
+#, c-format
+msgid "checking package integrity... "
+msgstr "检开始升级过程...\n查软件包完整性... "
+
+#: src/pacman.c:1257
+#, c-format
+msgid "error: can't get md5 checksum for package %s\n"
+msgstr "错误: 无法得到软件包 %s 的md5校验和 \n"
+
+#: src/pacman.c:1267
+#, c-format
+msgid "error: can't get md5 checksum for archive %s\n"
+msgstr "错误: 无法得到 %s 压缩文件的md5校验和\n"
+
+#: src/pacman.c:1276
+#, c-format
+msgid "error: archive %s is corrupted\n"
+msgstr "错误: 压缩文件 %s 已经损坏\n"
+
+#: src/pacman.c:1300
+msgid "checking dependencies of packages designated for removal...\n"
+msgstr "正在检查待删除软件包的依赖关系...\n"
+
+#: src/pacman.c:1307 pacman.c:2152
+#, c-format
+msgid "error: this will break the following dependencies:\n"
+msgstr "错误: 这将破坏下列依赖关系:\n"
+
+#: src/pacman.c:1310 pacman.c:2155
+#, c-format
+msgid "  %s: is required by %s\n"
+msgstr "  %s: 被 %s 需要\n"
+
+#: src/pacman.c:1329 pacman.c:1747
+#, c-format
+msgid ""
+"\n"
+"upgrade aborted.\n"
+msgstr ""
+"\n"
+"放弃升级。\n"
+
+#: src/pacman.c:1361
+#, c-format
+msgid "package removal failed.  aborting...\n"
+msgstr "软件包删除失败。正在放弃...\n"
+
+#: src/pacman.c:1504
+#, c-format
+msgid "error: failed to download %s\n"
+msgstr "错误: 无法下载 %s\n"
+
+#: src/pacman.c:1520
+#, c-format
+msgid "loading package data... "
+msgstr "正在载入软件包数据... "
+
+#: src/pacman.c:1524
+#, c-format
+msgid "reading %s... "
+msgstr "正在读取 %s... "
+
+#: src/pacman.c:1531
+#, c-format
+msgid ""
+"\n"
+"error: package \"%s\" has more than one hyphen in its version (%s)\n"
+msgstr ""
+"\n"
+"错误: 软件包 \"%s\" 版本 (%s) 具有一个以上的连字符号\n"
+
+#: src/pacman.c:1539
+msgid "not installed or lesser version\n"
+msgstr "没有安装或者次要版本\n"
+
+#: src/pacman.c:1552
+msgid "replacing older version in target list. "
+msgstr "正在替换目标列表中的过期版本。 "
+
+#: src/pacman.c:1560
+msgid "done\n"
+msgstr "完成\n"
+
+#: src/pacman.c:1575 pacman.c:2136
+msgid "checking dependencies...\n"
+msgstr "正在检查依赖关系...\n"
+
+#: src/pacman.c:1583
+#, c-format
+msgid "error: unsatisfied dependencies:\n"
+"%s 放弃。\n"msgstr "错误: 无法满足依赖关系:\n"
+
+#: src/pacman.c:1655
+#, c-format
+msgid ""
+"\n"
+"%s aborted.\n"
+msgstr ""
+"\n"
+"%s 放弃。\n"
+
+#: src/pacman.c:1655 pacman.c:3346
+msgid "upgrade"
+msgstr "升级"
+
+#: src/pacman.c:1655
+msgid "install"
+msgstr "安装"
+
+#: src/pacman.c:1672
+msgid "sorting by dependencies\n"
+msgstr "按依赖关系排序\n"
+
+#: src/pacman.c:1687
+#, c-format
+msgid "checking for file conflicts... "
+msgstr "正在检查文件冲突... "
+
+#: src/pacman.c:1691
+#, c-format
+msgid ""
+"\n"
+"error: the following file conflicts were found:\n"
+msgstr ""
+"\n"
+"错误: 发现以下文件冲突:\n"
+
+#: src/pacman.c:1697
+#, c-format
+msgid ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+msgstr ""
+"\n"
+"发生错误，没有升级软件包。\n"
+
+#: src/pacman.c:1719
+#, c-format
+msgid "error: %s is already installed. (try --upgrade)\n"
+msgstr "错误: %s 已经安装。(尝试 --upgrade)\n"
+
+#: src/pacman.c:1728
+#, c-format
+msgid "upgrading %s... "
+msgstr "正在升级 %s... "
+
+#: src/pacman.c:1743
+msgid "removing old package first...\n"
+msgstr "正在首先删除过期软件包...\n"
+
+#: src/pacman.c:1763
+#, c-format
+msgid "installing %s... "
+msgstr "正在安装 %s... "
+
+#: src/pacman.c:1777
+msgid "extracting files...\n"
+msgstr "正在解压文件...\n"
+
+#: src/pacman.c:1825 pacman.c:1933
+#, c-format
+msgid "could not extract %s: %s"
+msgstr "无法解压 %s: %s"
+
+#: src/pacman.c:1846
+#, c-format
+msgid "checking md5 hashes for %s\n"
+msgstr "正在检查 %s 的md5 hashes值\n"
+
+#: src/pacman.c:1847
+#, c-format
+msgid "  current:  %s\n"
+msgstr "  当前的:  %s\n"
+
+#: src/pacman.c:1848
+#, c-format
+msgid "  new:      %s\n"
+msgstr "  新的:      %s\n"
+
+#: src/pacman.c:1850
+#, c-format
+msgid "  original: %s\n"
+msgstr "  最初的: %s\n"
+
+#: src/pacman.c:1862 pacman.c:1895
+#, c-format
+msgid "error: could not rename %s: %s"
+msgstr "错误: 无法重命名 %s: %s"
+
+#: src/pacman.c:1865
+#, c-format
+msgid "error: could not copy %s to %s: %s"
+msgstr "错误: 无法复制 %s 到 %s: %s"
+
+#: src/pacman.c:1868 pacman.c:1897 pacman.c:2224
+#, c-format
+msgid "warning: %s saved as %s"
+msgstr "警告: %s 另存为 %s"
+
+#: src/pacman.c:1878 pacman.c:1881 pacman.c:1887
+msgid "  action: installing new file\n"
+msgstr "  动作: 正在安装新文件\n"
+
+#: src/pacman.c:1885
+msgid "  action: leaving existing file in place\n"
+msgstr "  动作: 正在原处保留现存文件\n"
+
+#: src/pacman.c:1891
+msgid "  action: saving current file and installing new one\n"
+msgstr "  动作: 正在保存当前文件并安装新文件\n"
+
+#: src/pacman.c:1904
+#, c-format
+msgid "error: could not copy %s to %s: %s\n"
+msgstr "错误: 无法复制 %s 到 %s: %s\n"
+
+#: src/pacman.c:1919
+#, c-format
+msgid "%s is in NoUpgrade - skipping\n"
+msgstr "%s 在NoUpgrade中 - 正在跳过\n"
+
+#: src/pacman.c:1921
+#, c-format
+msgid "warning: extracting %s%s as %s"
+msgstr "警告: 正在解压 %s%s 为 %s"
+
+#: src/pacman.c:1957
+#, c-format
+msgid "errors occurred while %s %s"
+msgstr "当 %s %s 发生错误"
+
+#: src/pacman.c:1958
+msgid "upgrading"
+msgstr "正在升级"
+
+#: src/pacman.c:1958
+msgid "installing"
+msgstr "正在安装"
+
+#: src/pacman.c:1988
+msgid "Updating database..."
+msgstr "正在升级数据库..."
+
+#: src/pacman.c:1999
+#, c-format
+msgid "error updating database for %s!"
+msgstr " 为 %s 升级数据库时出错!"
+
+#: src/pacman.c:2004
+#, c-format
+msgid "upgraded %s (%s -> %s)"
+msgstr "已经升级 %s (%s -> %s)"
+
+#: src/pacman.c:2007
+#, c-format
+msgid "installed %s (%s)"
+msgstr "已经安装 %s (%s)"
+
+#: src/pacman.c:2065 pacman.c:2319
+#, c-format
+msgid "running \"%s\"\n"
+msgstr "正在运行 \"%s\"\n"
+
+#: src/pacman.c:2100
+msgid "    Remove whole content? [Y/n] "
+msgstr "    删除全部内容? [Y/n] "
+
+#: src/pacman.c:2107
+#, c-format
+msgid ":: Remove %s from group %s? [Y/n] "
+msgstr ":: 从软件包组 %s 删除 %s ? [Y/n] "
+
+#: src/pacman.c:2118
+#, c-format
+msgid "error: could not find %s in database\n"
+msgstr "错误: 无法在数据库中找到 %s \n"
+
+#: src/pacman.c:2126
+#, c-format
+msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
+msgstr ":: %s 为指定的HoldPkg。仍然要删除? [Y/n] "
+
+#: src/pacman.c:2164
+msgid "finding removable dependencies...\n"
+msgstr "正在寻找可删除的依赖关系...\n"
+
+#: src/pacman.c:2170
+msgid ""
+"\n"
+"Targets:"
+msgstr ""
+"\n"
+"目标:"
+
+#: src/pacman.c:2172
+msgid ""
+"\n"
+"Do you want to remove these packages? [Y/n] "
+msgstr ""
+"\n"
+"你打算删除这些软件包吗? [Y/n] "
+
+#: src/pacman.c:2183
+#, c-format
+msgid "removing %s... "
+msgstr "正在删除 %s... "
+
+#: src/pacman.c:2206
+#, c-format
+msgid "file %s does not exist\n"
+msgstr "文件 %s 不存在\n"
+
+#: src/pacman.c:2228 pacman.c:2235
+msgid "cannot remove file"
+msgstr "无法删除文件"
+
+#: src/pacman.c:2306
+#, c-format
+msgid "removed %s (%s)"
+msgstr "已经删除 %s (%s)"
+
+#: src/pacman.c:2364
+#, c-format
+msgid "Group \"%s\" was not found.\n"
+msgstr "软件包组 \"%s\" 没有找到。\n"
+
+#: src/pacman.c:2381
+#, c-format
+msgid "error: no package file was specified for --file\n"
+msgstr "错误:  没有--file 指定的软件包文件\n"
+
+#: src/pacman.c:2386
+#, c-format
+msgid "error: %s is not a package\n"
+msgstr "错误: %s 不是一个软件包\n"
+
+#: src/pacman.c:2409
+#, c-format
+msgid "error: no file was specified for --owns\n"
+msgstr "错误: 没有--owns 指定的文件 \n"
+
+#: src/pacman.c:2419
+#, c-format
+msgid "%s is owned by %s %s\n"
+msgstr "%s 为 %s %s 拥有\n"
+
+#: src/pacman.c:2426
+#, c-format
+msgid "No package owns %s\n"
+msgstr "没有软件包拥有 %s\n"
+
+#: src/pacman.c:2430
+#, c-format
+msgid "error: %s is not a file.\n"
+msgstr "错误: %s 不是一个文件。\n"
+
+#: src/pacman.c:2490
+#, c-format
+msgid "error calculating md5sum for %s\n"
+msgstr " 计算 %s\n 的md5sum时出错\n"
+
+#: src/pacman.c:2494
+#, c-format
+msgid "MODIFIED\t%s\n"
+msgstr "修改过的\t%s\n"
+
+#: src/pacman.c:2496
+#, c-format
+msgid "NOT MODIFIED\t%s\n"
+msgstr "没有修改过的\t%s\n"
+
+#: src/pacman.c:2499
+#, c-format
+msgid "MISSING\t\t%s\n"
+msgstr "缺少\t\t%s\n"
+
+#: src/pacman.c:2570
+msgid "warning: possible dependency cycle detected\n"
+msgstr "警告: 探测到可能的依赖关系循环\n"
+
+#: src/pacman.c:2646
+#, c-format
+msgid "warning: cannot find package \"%s\" or anything that provides it!\n"
+msgstr "警告: 无法找到软件包 \"%s\" 或提供它的任何东西!\n"
+
+#: src/pacman.c:2651
+#, c-format
+msgid "dep is NULL!\n"
+msgstr "dep为空值!\n"
+
+#: src/pacman.c:2661
+#, c-format
+msgid "excluding %s -- explicitly installed\n"
+msgstr "不包括 %s -- 直接安装\n"
+
+#: src/pacman.c:2747
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\":\n"
+msgstr "错误: 无法为 \"%s\" 解决以来依赖关系:\n"
+
+#: src/pacman.c:2748
+#, c-format
+msgid "       \"%s\" is not in the package set\n"
+msgstr "       \"%s\" 没有在软件包集合里\n"
+
+#: src/pacman.c:2764
+#, c-format
+msgid "resolving %s\n"
+msgstr "正在分析 %s\n"
+
+#: src/pacman.c:2789
+#, c-format
+msgid "%s requires %s, but it is in IgnorePkg.  Install anyway? [Y/n] "
+msgstr "%s 需要 %s, 但是它位于 IgnorePkg.  仍然安装? [Y/n] "
+
+#: src/pacman.c:2797
+#, c-format
+msgid "adding %s-%s\n"
+msgstr "正在添加 %s-%s\n"
+
+#: src/pacman.c:2800
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\"\n"
+msgstr "错误: 无法解决\"%s\"的依赖关系 \n"
+
+#: src/pacman.c:2805
+#, c-format
+msgid "dependency cycle detected: %s\n"
+msgstr "探测到依赖关系循环: %s\n"
+
+#: src/pacman.c:3055
+#, c-format
+msgid "warning: invalid dependency in %s"
+msgstr "警告: 无效的依赖关系在 %s 中"
+
+#: src/pacman.c:3122
+#, c-format
+msgid "data error: %s supposedly provides %s, but it was not found in db\n"
+msgstr "数据错误: %s 应当提供 %s, 但是没有在数据库中发现它。\n"
+
+#: src/pacman.c:3282
+msgid "error creating temp directory"
+msgstr "创建临时目录时出错"
+
+#: src/pacman.c:3298 pacman.c:3320
+#, c-format
+msgid "warning: could not remove tmpdir %s\n"
+msgstr "警告: 无法删除临时目录 %s\n"
+
+#: src/pacman.c:3308
+#, c-format
+msgid "Executing %s script...\n"
+msgstr "正在执行 %s 脚本...\n"
+
+#: src/pacman.c:3310
+#, c-format
+msgid "echo \"umask 0022; source %s %s %s %s\" | chroot %s /bin/sh"
+msgstr "echo \"umask 0022; source %s %s %s %s\" | chroot %s /bin/sh"
+
+#: src/pacman.c:3313
+#, c-format
+msgid "echo \"umask 0022; source %s %s %s\" | chroot %s /bin/sh"
+msgstr "echo \"umask 0022; source %s %s %s\" | chroot %s /bin/sh"
+
+#: src/pacman.c:3410
+msgid "bad root path"
+msgstr "坏的根路径"
+
+#: src/pacman.c:3424
+#, c-format
+msgid ""
+"error: only one operation may be used at a time\n"
+"\n"
+msgstr ""
+"错误: 一次只能执行一个操作\n"
+"\n"
+
+#: src/pacman.c:3474
+#, c-format
+msgid "config: new section '%s'\n"
+msgstr "配置: 新区 '%s'\n"
+
+#: src/pacman.c:3476
+#, c-format
+msgid "config: line %d: bad section name\n"
+msgstr "配置: 行 %d: 坏的区名字\n"
+
+#: src/pacman.c:3480
+#, c-format
+msgid ""
+"config: line %d: '%s' is reserved and cannot be used as a package tree\n"
+msgstr ""
+"配置: 行 %d: '%s' 为保留部分，不能作为一个软件包目录树使用\n"
+
+#: src/pacman.c:3506 pacman.c:3525 pacman.c:3609 pacman.c:3668
+#, c-format
+msgid "config: line %d: syntax error\n"
+msgstr "配置: 行 %d: 语法错误\n"
+
+#: src/pacman.c:3512
+#, c-format
+msgid "config: line %d: all directives must belong to a section\n"
+msgstr "配置: 行 %d: 所有指令必须属于同一个区\n"
+
+#: src/pacman.c:3518
+msgid "config: nopassiveftp\n"
+msgstr "配置: 非主动ftp\n"
+
+#: src/pacman.c:3521
+msgid "config: usesyslog\n"
+msgstr "配置: 使用系统日志\n"
+
+#: src/pacman.c:3533
+#, c-format
+msgid "config: including %s\n"
+msgstr "配置: 包括 %s\n"
+
+#: src/pacman.c:3542 pacman.c:3547
+#, c-format
+msgid "config: noupgrade: %s\n"
+msgstr "配置: 不升级: %s\n"
+
+#: src/pacman.c:3554 pacman.c:3559
+#, c-format
+msgid "config: ignorepkg: %s\n"
+msgstr "配置: 忽略软件包: %s\n"
+
+#: src/pacman.c:3566 pacman.c:3571
+#, c-format
+msgid "config: holdpkg: %s\n"
+msgstr "配置: 保留软件包: %s\n"
+
+#: src/pacman.c:3578
+#, c-format
+msgid "config: dbpath: %s\n"
+msgstr "配置: 数据库路径: %s\n"
+
+#: src/pacman.c:3584
+#, c-format
+msgid "config: log file: %s\n"
+msgstr "配置: 日志文件: %s\n"
+
+#: src/pacman.c:3588
+#, c-format
+msgid "config: xfercommand: %s\n"
+msgstr "配置: xfercommand: %s\n"
+
+#: src/pacman.c:3598 pacman.c:3624 pacman.c:3630
+#, c-format
+msgid "config: line %d: bad server location\n"
+msgstr "配置: 行 %d: 坏的服务器位置\n"
+
+#: src/pacman.c:3604
+#, c-format
+msgid "config: proxyserver: %s\n"
+msgstr "配置: 代理服务器: %s\n"
+
+#: src/pacman.c:3607
+#, c-format
+msgid "config: proxyport: %u\n"
+msgstr "配置: 代理端口: %u\n"
+
+#: src/pacman.c:3661
+#, c-format
+msgid "config: line %d: protocol %s is not supported\n"
+msgstr "配置: 行 %d: 不支持协议 %s \n"
+
+#: src/pacman.c:3665
+#, c-format
+msgid "config: %s: server: %s %s %s\n"
+msgstr "配置: %s: 服务器: %s %s %s\n"
+
+#: src/pacman.c:3688
+#, c-format
+msgid "usage:  %s {-h --help}\n"
+msgstr "用法:  %s {-h --help}\n"
+
+#: src/pacman.c:3689
+#, c-format
+msgid "        %s {-V --version}\n"
+msgstr "        %s {-V --version}\n"
+
+#: src/pacman.c:3690
+#, c-format
+msgid "        %s {-A --add}     [options] <file>\n"
+msgstr "        %s {-A --add}     [选项] <文件>\n"
+
+#: src/pacman.c:3691
+#, c-format
+msgid "        %s {-R --remove}  [options] <package>\n"
+msgstr "        %s {-R --remove}  [选项] <软件包>\n"
+
+#: src/pacman.c:3692
+#, c-format
+msgid "        %s {-U --upgrade} [options] <file>\n"
+msgstr "        %s {-U --upgrade} [选项] <文件>\n"
+
+#: src/pacman.c:3693
+#, c-format
+msgid "        %s {-F --freshen} [options] <file>\n"
+msgstr "        %s {-F --freshen} [选项] <文件>\n"
+
+#: src/pacman.c:3694
+#, c-format
+msgid "        %s {-Q --query}   [options] [package]\n"
+msgstr "        %s {-Q --query}   [选项] [软件包]\n"
+
+#: src/pacman.c:3695
+#, c-format
+msgid "        %s {-S --sync}    [options] [package]\n"
+msgstr "        %s {-S --sync}    [选项] [软件包]\n"
+
+#: src/pacman.c:3696
+#, c-format
+msgid ""
+"\n"
+"use '%s --help' with other options for more syntax\n"
+"\n"
+msgstr ""
+"\n"
+"使用 '%s --help' 和其他选项组成更多语法\n"
+"\n"
+
+#: src/pacman.c:3699
+#, c-format
+msgid "usage:  %s {-A --add} [options] <file>\n"
+msgstr "用法:  %s {-A --add} [选项] <file>\n"
+
+#: src/pacman.c:3700 pacman.c:3705 pacman.c:3717 pacman.c:3722 pacman.c:3734
+#, c-format
+msgid "options:\n"
+msgstr "选项:\n"
+
+#: src/pacman.c:3701 pacman.c:3707 pacman.c:3718 pacman.c:3736
+#, c-format
+msgid "  -d, --nodeps        skip dependency checks\n"
+msgstr "  -d, --nodeps        跳过依赖关系检查\n"
+
+#: src/pacman.c:3702 pacman.c:3719 pacman.c:3737
+#, c-format
+msgid "  -f, --force         force install, overwrite conflicting files\n"
+msgstr "  -f, --force         强制安装, 覆盖存在冲突的文件\n"
+
+#: src/pacman.c:3704
+#, c-format
+msgid "usage:  %s {-R --remove} [options] <package>\n"
+msgstr "用法:  %s {-R --remove} [选项] <软件包>\n"
+
+#: src/pacman.c:3706
+#, c-format
+msgid ""
+"  -c, --cascade       remove packages and all packages that depend on them\n"
+msgstr ""
+"  -c, --cascade       删除软件包及所有依赖于它们的软件包\n"
+
+#: src/pacman.c:3708
+#, c-format
+msgid "  -k, --dbonly        only remove database entry, do not remove files\n"
+msgstr "  -k, --dbonly        仅仅删除数据库条目, 不删除文件s\n"
+
+#: src/pacman.c:3709
+#, c-format
+msgid "  -n, --nosave        remove configuration files as well\n"
+msgstr "  -n, --nosave        同时删除配置文件\n"
+
+#: src/pacman.c:3710
+#, c-format
+msgid ""
+"  -s, --recursive     remove dependencies also (that won't break packages)\n"
+msgstr ""
+"  -s, --recursive     同时删除依赖关系 (不会破坏软件包)\n"
+
+#: src/pacman.c:3713
+#, c-format
+msgid "usage:  %s {-F --freshen} [options] <file>\n"
+msgstr "usage:  %s {-F --freshen} [选项] <文件>\n"
+
+#: src/pacman.c:3715
+#, c-format
+msgid "usage:  %s {-U --upgrade} [options] <file>\n"
+msgstr "usage:  %s {-U --upgrade} [选项] <文件>\n"
+
+#: src/pacman.c:3721
+#, c-format
+msgid "usage:  %s {-Q --query} [options] [package]\n"
+msgstr "usage:  %s {-Q --query} [选项] [软件包]\n"
+
+#: src/pacman.c:3723
+#, c-format
+msgid ""
+"  -e, --orphans       list all packages that were explicitly installed\n"
+msgstr ""
+"  -e, --orphans       列出所有直接安装的软件包\n"
+
+#: src/pacman.c:3724
+#, c-format
+msgid "                      and are not required by any other packages\n"
+msgstr "                      和不被其他软件包要求的软件包\n"
+
+#: src/pacman.c:3725 pacman.c:3738
+#, c-format
+msgid "  -g, --groups        view all members of a package group\n"
+msgstr "  -g, --groups        查看某个软件包组的所有成员\n"
+
+#: src/pacman.c:3726
+#, c-format
+msgid "  -i, --info          view package information (use -ii for more)\n"
+msgstr "  -i, --info          查看软件包信息 (更多信息使用 -ii )\n"
+
+#: src/pacman.c:3727
+#, c-format
+msgid "  -l, --list          list the contents of the queried package\n"
+msgstr "  -l, --list          列出被查询软件包的所有内容\n"
+
+#: src/pacman.c:3728
+#, c-format
+msgid "  -o, --owns <file>   query the package that owns <file>\n"
+msgstr "  -o, --owns <文件>   查询<文件>属于哪个软件包\n"
+
+#: src/pacman.c:3729
+#, c-format
+msgid ""
+"  -p, --file          pacman will query the package file [package] instead "
+"of\n"
+msgstr ""
+"  -p, --file          pacman将查询软件包文件[软件包]  \n"
+
+#: src/pacman.c:3730
+#, c-format
+msgid "                      looking in the database\n"
+msgstr "                      在数据库中查找\n"
+
+#: src/pacman.c:3731
+#, c-format
+msgid ""
+"  -s, --search        search locally-installed packages for matching "
+"strings\n"
+msgstr ""
+"  -s, --search        搜索本地安装的软件包，根据匹配 \n"
+
+#: src/pacman.c:3733
+#, c-format
+msgid "usage:  %s {-S --sync} [options] [package]\n"
+msgstr "usage:  %s {-S --sync} [选项] [软件包]\n"
+
+#: src/pacman.c:3735
+#, c-format
+msgid ""
+"  -c, --clean         remove old packages from cache directory (use -cc for "
+"all)\n"
+msgstr ""
+"  -c, --clean         从缓存目录中删除过期软件包 ( -cc 可删除 "
+"all)\n"
+
+#: src/pacman.c:3739
+#, c-format
+msgid "  -i, --info          view package information\n"
+msgstr "  -i, --info          查看软件包信息\n"
+
+#: src/pacman.c:3740
+#, c-format
+msgid ""
+"  -l, --list          list all packages belonging to the specified "
+"repository\n"
+msgstr ""
+"  -l, --list          列出所有软件包，其属于指定 \n"
+
+#: src/pacman.c:3741
+#, c-format
+msgid ""
+"  -p, --print-uris    print out download URIs for each package to be "
+"installed\n"
+msgstr ""
+"  -p, --print-uris    打印输出将被安装的每个软件包的URI \n"
+
+#: src/pacman.c:3742
+#, c-format
+msgid "  -s, --search        search remote repositories for matching strings\n"
+msgstr "  -s, --search        搜索远端软件包库，根据匹配字符串\n"
+
+#: src/pacman.c:3743
+#, c-format
+msgid "  -u, --sysupgrade    upgrade all packages that are out of date\n"
+msgstr "  -u, --sysupgrade    升级所有过期软件包\n"
+
+#: src/pacman.c:3744
+#, c-format
+msgid ""
+"  -w, --downloadonly  download packages but do not install/upgrade anything\n"
+msgstr ""
+"  -w, --downloadonly  下载软件包但并不进行安装/升级\n"
+
+#: src/pacman.c:3745
+#, c-format
+msgid ""
+"  -y, --refresh       download fresh package databases from the server\n"
+msgstr ""
+"  -y, --refresh       从服务器下载更新的软件包数据库\n"
+
+#: src/pacman.c:3746
+#, c-format
+msgid ""
+"      --ignore <pkg>  ignore a package upgrade (can be used more than once)\n"
+msgstr ""
+"      --ignore <软件包>  忽略某个软件包的升级 (可以使用不止一次)\n"
+
+#: src/pacman.c:3748
+#, c-format
+msgid "      --config <path> set an alternate configuration file\n"
+msgstr "      --config <路径> 指定另选的配置文件\n"
+
+#: src/pacman.c:3749
+#, c-format
+msgid "      --noconfirm     do not ask for any confirmation\n"
+msgstr "      --noconfirm     不询问任何确认\n"
+
+#: src/pacman.c:3750
+#, c-format
+msgid "  -v, --verbose       be verbose\n"
+msgstr "  -v, --verbose       详细信息\n"
+
+#: src/pacman.c:3751
+#, c-format
+msgid "  -r, --root <path>   set an alternate installation root\n"
+msgstr "  -r, --root <路径>   指定另选的安装根目录\n"
+
+#: src/pacman.c:3752
+#, c-format
+msgid "  -b, --dbpath <path> set an alternate database location\n"
+msgstr "  -b, --dbpath <路径> 指定另选的数据库位置\n"
+
+#: src/pacman.c:3838
+msgid "Y"
+msgstr "Y"
+
+#: src/pacman.c:3838
+msgid "YES"
+msgstr "是"
+
+#: src/pacman.c:3869
+#, c-format
+msgid "warning: could not remove lock file %s"
+msgstr "警告: 无法删除锁定文件 %s"
+
+#: src/pacsync.c:84
+#, c-format
+msgid "failed to get lastupdate time for %s (no big deal)\n"
+msgstr "无法得到 %s 的最后升级时间(不是大问题)\n"
+
+#: src/pacsync.c:95
+#, c-format
+msgid "pacsync: new mtime for %s: %s\n"
+msgstr "pacsync:  %s: %s 具有新的mtime\n"
+
+#: src/pacsync.c:98
+#, c-format
+msgid "failed to synchronize %s\n"
+msgstr "无法同步 %s\n"
+
+#: src/pacsync.c:101
+#, c-format
+msgid ":: %s is up to date\n"
+msgstr ":: %s 是最新的\n"
+
+#: src/pacsync.c:108
+#, c-format
+msgid "removing %s (if it exists)\n"
+msgstr "正在删除 %s (如果存在)\n"
+
+#: src/pacsync.c:117
+#, c-format
+msgid "unpacking %s...\n"
+msgstr "正在解包 %s...\n"
+
+#: src/pacsync.c:183
+#, c-format
+msgid "connecting to %s:21\n"
+msgstr "正在连接到 %s:21\n"
+
+#: src/pacsync.c:185 pacsync.c:216 pacsync.c:386
+#, c-format
+msgid "error: cannot connect to %s\n"
+msgstr "错误: 无法连接到 %s\n"
+
+#: src/pacsync.c:189
+#, c-format
+msgid "error: anonymous login failed\n"
+msgstr "错误: 匿名登陆失败\n"
+
+#: src/pacsync.c:194
+#, c-format
+msgid "error: could not cwd to %s: %s\n"
+msgstr "错误: 无法 cwd 到 %s: %s\n"
+
+#: src/pacsync.c:200
+#, c-format
+msgid "warning: failed to set passive mode\n"
+msgstr "警告: 无法设置主动模式\n"
+
+#: src/pacsync.c:203
+msgid "FTP passive mode not set\n"
+msgstr "FTP 主动模式没有设置\n"
+
+#: src/pacsync.c:211 pacsync.c:381
+#, c-format
+msgid "connecting to %s\n"
+msgstr "正在连接到  %s\n"
+
+#: src/pacsync.c:213 pacsync.c:383
+#, c-format
+msgid "connecting to %s:%u\n"
+msgstr "正在连接到 %s:%u\n"
+
+#: src/pacsync.c:275
+#, c-format
+msgid "error: could not chdir to %s\n"
+msgstr "错误: 无法改变目录到 %s\n"
+
+#: src/pacsync.c:279
+#, c-format
+msgid "running command: %s\n"
+msgstr "正在运行命令: %s\n"
+
+#: src/pacsync.c:282
+#, c-format
+msgid "error running XferCommand: fork failed!\n"
+msgstr "错误 运行 XferCommand: 分支命令失败!\n"
+
+#: src/pacsync.c:286
+#, c-format
+msgid "XferCommand command returned non-zero status code (%d)\n"
+msgstr "XferCommand 命令返回非零状态码 (%d)\n"
+
+#: src/pacsync.c:331
+#, c-format
+msgid "warning: failed to get filesize for %s\n"
+msgstr "警告: 无法得到文件 %s 大小\n"
+
+#: src/pacsync.c:337
+#, c-format
+msgid "warning: failed to get mtime for %s\n"
+msgstr "警告: 无法得到 %s 的mtime\n"
+
+#: src/pacsync.c:342
+#, c-format
+msgid "mtimes are identical, skipping %s\n"
+msgstr "mtimes一致, 正在跳过 %s\n"
+
+#: src/pacsync.c:356
+#, c-format
+msgid "warning: failed to resume download -- restarting\n"
+msgstr "警告: 无法续传 -- 正在重新开始\n"
+
+#: src/pacsync.c:363 pacsync.c:407
+#, c-format
+msgid ""
+"\n"
+"failed downloading %s from %s: %s\n"
+msgstr ""
+"\n"
+"无法从 %s: %s下载 %s \n"
+
+#: src/pacsync.c:416
+#, c-format
+msgid "copying %s to %s/%s\n"
+msgstr "正在复制 %s 到 %s/%s\n"
+
+#: src/pacsync.c:419
+#, c-format
+msgid "failed copying %s\n"
+msgstr "无法复制 %s\n"
+
+#: src/util.c:105
+#, c-format
+msgid "bad tar archive: %s"
+msgstr "损坏的tar压缩包: %s"
+
+#: src/util.c:113
+#, c-format
+msgid "could not extract %s: %s\n"
+msgstr "无法解压 %s: %s\n"
+
+#: src/util.h:26
+#, c-format
+msgid "malloc failure: could not allocate %d bytes\n"
+msgstr "malloc 失败: 无法定位 %d bytes\n"
