@@ -2,7 +2,7 @@
 # Copyright (C) 2004 Matthias-Christian Ott <matthias.christian@tiscali.de>
 # This file is distributed under the same license as the PACKAGE package.
 # Matthias-Christian Ott <matthias.christian@tiscali.de>, 2004
-# Yonathan Dossow <kronin.d@gmail.com>, 2004
+#
 
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
 "POT-Creation-Date: 2004-12-02 16:08+0100\n"
 "PO-Revision-Date: 2004-12-21 14:48+0100\n"
-"Last-Translator: Yonathan Dossow <kronin.d@gmail.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-15\n"
@@ -377,7 +377,7 @@ msgstr "error: no se pudo crear el directorio para caché: %s\n"
 #: src/pacman.c:2037 pacman.c:2305
 #, c-format
 msgid "done.\n"
-msgstr "Finalizado.\n"
+msgstr "finalizado.\n"
 
 #: src/pacman.c:446
 #, c-format
@@ -457,7 +457,7 @@ msgstr ""
 #: src/pacman.c:740
 #, c-format
 msgid ":: It is recommended that you allow pacman to upgrade itself\n"
-msgstr ":: Es recomendable que deje a pacman ctualizarse\n"
+msgstr ":: Es recomendable que deje a pacman actualizarse\n"
 
 #: src/pacman.c:741
 #, c-format
@@ -500,7 +500,7 @@ msgstr ":: %s-%s: la versión local es más reciente.  Actualizar de todos modos? 
 #: src/pacman.c:853
 #, c-format
 msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
-msgstr ":: %s-%s: está ya actualizado.  Actualizar de todos modos? [S/n] "
+msgstr ":: %s-%s: ya está actualizado.  Actualizar de todos modos? [S/n] "
 
 #: src/pacman.c:896
 #, c-format
@@ -567,7 +567,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Tamaño total del(de los) paquete(s):   %.1f MB\n"
+"Tamaño total de los paquetes:   %.1f MB\n"
 
 #: src/pacman.c:1117
 #, c-format
@@ -634,7 +634,7 @@ msgstr "error: no se pudo obtener algunos archivos de %s\n"
 #: src/pacman.c:1241
 #, c-format
 msgid "checking package integrity... "
-msgstr "checando la integridad del paquete... "
+msgstr "comprobando la integridad del paquete... "
 
 #: src/pacman.c:1257
 #, c-format
@@ -653,7 +653,7 @@ msgstr "error: el archivo %s está corrupto\n"
 
 #: src/pacman.c:1300
 msgid "checking dependencies of packages designated for removal...\n"
-msgstr "checando las dependenicas de los paquetes a elminarse...\n"
+msgstr "comprobando las dependenicas de los paquetes a elminarse...\n"
 
 #: src/pacman.c:1307 pacman.c:2152
 #, c-format
@@ -713,7 +713,7 @@ msgstr "Reemplazando una version vieja en la lista especificada"
 
 #: src/pacman.c:1560
 msgid "done\n"
-msgstr "Finalizado\n"
+msgstr "finalizado\n"
 
 #: src/pacman.c:1575 pacman.c:2136
 msgid "checking dependencies...\n"
@@ -748,7 +748,7 @@ msgstr "ordenando por dependencias\n"
 #: src/pacman.c:1687
 #, c-format
 msgid "checking for file conflicts... "
-msgstr "buscando si existen conflictos... "
+msgstr "buscando si existen conflictos de archivos... "
 
 #: src/pacman.c:1691
 #, c-format
@@ -757,7 +757,7 @@ msgid ""
 "error: the following file conflicts were found:\n"
 msgstr ""
 "\n"
-"error: se encontraron los siguientes conflictos:\n"
+"error: se encontraron los siguientes conflictos de archivos:\n"
 
 #: src/pacman.c:1693
 #, c-format
@@ -834,7 +834,7 @@ msgstr "error: no se pudo copiar %s en %s: %s"
 #: src/pacman.c:1868 pacman.c:1897 pacman.c:2224
 #, c-format
 msgid "warning: %s saved as %s"
-msgstr "advertencia: %s fue salvado como %s"
+msgstr "advertencia: %s fue guardado como %s"
 
 #: src/pacman.c:1878 pacman.c:1881 pacman.c:1887
 msgid "  action: installing new file\n"
@@ -856,7 +856,7 @@ msgstr "error: no se pudo copiar %s en %s\n"
 #: src/pacman.c:1919
 #, c-format
 msgid "%s is in NoUpgrade - skipping\n"
-msgstr "%s esta marcado como 'No Actualizar'(NoUpgrade) - omitiendo paquete\n"
+msgstr "%s esta marcado como NoUpgrade - omitiendo paquete\n"
 
 #: src/pacman.c:1921
 #, c-format
@@ -917,7 +917,7 @@ msgstr "error: no se pudo encontrar %s en la base de datos\n"
 #: src/pacman.c:2126
 #, c-format
 msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
-msgstr ":: %s esta marcado como 'GuardarPaquete'(HoldPkg).  Remover de todas formas? [S/n] "
+msgstr ":: %s esta marcado como HoldPkg.  Remover de todas formas? [S/n] "
 
 #: src/pacman.c:2164
 msgid "finding removable dependencies...\n"
@@ -986,7 +986,7 @@ msgstr "%s es propiedad de %s %s\n"
 #: src/pacman.c:2426
 #, c-format
 msgid "No package owns %s\n"
-msgstr "Ningun paquete tiene %s\n"
+msgstr "Ningun paquete es dueño de %s\n"
 
 #: src/pacman.c:2430
 #, c-format
@@ -1075,7 +1075,7 @@ msgstr "advertencia: dependencia invalida en  %s"
 #: src/pacman.c:3122
 #, c-format
 msgid "data error: %s supposedly provides %s, but it was not found in db\n"
-msgstr "error de data: %s deberia proveer %s, peor no fue encontrado en la base de datos\n"
+msgstr "error: %s deberia proveer %s, peor no fue encontrado en la base de datos\n"
 
 #: src/pacman.c:3282
 msgid "error creating temp directory"
@@ -1362,8 +1362,8 @@ msgid ""
 "  -p, --file          pacman will query the package file [package] instead "
 "of\n"
 msgstr ""
-"  -p, --file          usar el [paquete] (el paquete local, no de la base de datos)\n"
-
+"  -p, --file          pacman dejara el paquete en una lista de espera, en lugar"
+"de\n"
 #: src/pacman.c:3730
 #, c-format
 msgid "                      looking in the database\n"
