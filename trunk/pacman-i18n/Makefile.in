@@ -106,7 +106,7 @@ dist: distclean
 libftp.a:
 	(cd libftp; make libftp.a)
 
-install: pacman vercmp convertdb man installi18n
+install: pacman vercmp convertdb man
 	$(INSTALL) -D -m0755 pacman $(DESTDIR)$(BINDIR)/pacman
 	$(INSTALL) -D -m0755 pacman.static $(DESTDIR)$(BINDIR)/pacman.static
 	$(INSTALL) -D -m0755 vercmp $(DESTDIR)$(BINDIR)/vercmp
