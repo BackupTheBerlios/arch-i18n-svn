@@ -866,15 +866,15 @@ msgstr "advertencia: extrayendo %s%s como %s"
 #: src/pacman.c:1957
 #, c-format
 msgid "errors occurred while %s %s"
-msgstr "ocurrieron errores mientras %s %s"
+msgstr "ocurrieron errores mientras se %s %s"
 
 #: src/pacman.c:1958
 msgid "upgrading"
-msgstr "actualizando"
+msgstr "actualizaba"
 
 #: src/pacman.c:1958
 msgid "installing"
-msgstr "installando"
+msgstr "instalaba"
 
 #: src/pacman.c:1988
 msgid "Updating database..."
