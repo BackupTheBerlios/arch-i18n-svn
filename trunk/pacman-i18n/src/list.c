@@ -29,10 +29,9 @@
 
 /* Check PMList sanity
  *
- * 1: List seems to be OK
+ * 1: List seems to be OK.
  * 0: We're in deep ...
  */
-
 int CheckList(PMList* list)
 {
 	PMList* it = NULL;
@@ -378,7 +377,7 @@ PMList* list_add_sorted(PMList *list, void *data, cmp_fn sortfunc)
 			add->last = list->last;
 			list->last = NULL;
 		}
-		list = add;						/*  Start or empty, new list head.  */													/*  Start or empty, new list head.  */
+		list = add;						/*  Start or empty, new list head.  */												/*  Start or empty, new list head.  */
 	}
 
 	return(list);

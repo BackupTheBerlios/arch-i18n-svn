@@ -1,7 +1,7 @@
 /*
  *  pacman.c
  * 
- *  Copyright (c) 2002-2004 by Judd Vinet <jvinet@zeroflux.org>
+ *  Copyright (c) 2002-2005 by Judd Vinet <jvinet@zeroflux.org>
  * 
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -77,13 +77,13 @@ unsigned short pmo_r_cascade    = 0;
 unsigned short pmo_r_dbonly     = 0;
 unsigned short pmo_r_recurse    = 0;
 unsigned short pmo_s_clean      = 0;
-+unsigned short pmo_s_downloadonly = 0;
+unsigned short pmo_s_downloadonly = 0;
 PMList        *pmo_s_ignore     = NULL;
 unsigned short pmo_s_info       = 0;
 unsigned short pmo_s_printuris  = 0;
 unsigned short pmo_s_search     = 0;
 unsigned short pmo_s_sync       = 0;
-unsigned short pmo_s_upgrade    = 0
+unsigned short pmo_s_upgrade    = 0;
 unsigned short pmo_group        = 0;
 /* configuration file options */
 char          *pmo_dbpath       = NULL;
@@ -1465,7 +1465,6 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 	struct stat buf;
 	PMList *targ, *lp, *j, *k;
 	PMList *alltargs = NULL;
-	PMList *filenames = NULL;
 	unsigned short real_pmo_upgrade;
 	tartype_t gztype = {
 		(openfunc_t) gzopen_frontend,
@@ -2579,7 +2578,7 @@ int pacman_upgrade(pacdb_t *db, PMList *targets, PMList *dependonly)
  * This function returns the new PMList* target list.
  *
  */ 
-+PMList* sortbydeps(PMList *targets, int mode)
+PMList* sortbydeps(PMList *targets, int mode)
 {
 	PMList *newtargs = NULL;
 	PMList *i, *j, *k;
@@ -3437,7 +3436,7 @@ int parseargs(int op, int argc, char **argv)
 			case 'e': pmo_q_orphans = 1; break;
 			case 'f': pmo_force = 1; break;
 			case 'g': pmo_group = 1; break;
-			case 'i': pmo_q_info++; break;
+			case 'i': pmo_q_info++; pmo_s_info++; break
 			case 'k': pmo_r_dbonly = 1; break;
 			case 'l': pmo_q_list = 1; break;
 			case 'n': pmo_nosave = 1; break;

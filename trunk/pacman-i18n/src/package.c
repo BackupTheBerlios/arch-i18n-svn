@@ -1,7 +1,7 @@
 /*
  *  package.c
  * 
- *  Copyright (c) 2002-2004 by Judd Vinet <jvinet@zeroflux.org>
+ *  Copyright (c) 2002-2005 by Judd Vinet <jvinet@zeroflux.org>
  * 
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -334,7 +334,6 @@ void dump_pkg_full(pkginfo_t *info)
 		return;
 	}
 	
-	printf(_("Repository        : %s\n"), treename);
 	printf(_("Name           : %s\n"), info->name);
 	printf(_("Version        : %s\n"), info->version);
 	pm = list_sort(info->groups);
@@ -384,6 +383,7 @@ void dump_pkg_sync(pkginfo_t *info, char *treename)
 		return;
 	}
 
+	printf(_("Repository        : %s\n"), treename);
 	printf(_("Name              : %s\n"), info->name);
 	printf(_("Version           : %s\n"), info->version);
 	pm = list_sort(info->groups);
