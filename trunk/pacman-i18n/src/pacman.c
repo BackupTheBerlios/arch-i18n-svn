@@ -3852,7 +3852,7 @@ int yesno(char *fmt, ...)
 	fflush(stdout);
 	if(fgets(response, 32, stdin)) {
 		trim(response);
-		if(!strcasecmp(response, "Y") || !strcasecmp(response, "YES") || !strlen(response)) {
+		if(!strcasecmp(response, _("Y")) || !strcasecmp(response, _("YES")) || !strlen(response)) {
 			return(1);
 		}
 	}

@@ -1,2 +1,7 @@
+Matthias-Christian Ott <matthias.christian@tiscali.de> @ Mi Dez 29 15:15:53 CET 2004
+	[BUGFIX]: pacman.c:3855
+
+	- Fixed the Yes/No Bug (https://lists.berlios.de/pipermail/arch-i18n-common/2004-December/000043.html)
+
 Matthias-Christian Ott <matthias.christian@tiscali.de> @ Mo Dez 27 20:19:04 CET 2004
 	[RELEASE]: 0.1
