@@ -1005,7 +1005,7 @@ msgstr "erro: nenhum ficheiro foi especificado para para --owns\n"
 #: src/pacman.c:2419
 #, c-format
 msgid "%s is owned by %s %s\n"
-msgstr "%s é possuido por %s %s\n"
+msgstr "%s pertence a %s %s\n"
 
 #: src/pacman.c:2426
 #, c-format
@@ -1285,7 +1285,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"use '%s --help' com outras opções para mais informações\n"
+"utilize '%s --help' com outras opções para mais informações\n"
 "\n"
 
 #: src/pacman.c:3699
@@ -1638,4 +1638,3 @@ msgstr "impossível extrair %s: %s\n"
 #, c-format
 msgid "malloc failure: could not allocate %d bytes\n"
 msgstr "falha de alocação de memória: impossível alocar %d bytes\n"
-
