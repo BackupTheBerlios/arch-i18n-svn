@@ -32,7 +32,7 @@
  * 1: List seems to be OK.
  * 0: We're in deep ...
  */
-int CheckList(PMList* list)
+int check_list(PMList* list)
 {
 	PMList* it = NULL;
 	

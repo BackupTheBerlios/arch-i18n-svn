@@ -1,4 +1,4 @@
-5/*
+/*
  *  rpmvercmp.c
  * 
  *  Copyright (c) 2002-200 by Judd Vinet <jvinet@zeroflux.org>

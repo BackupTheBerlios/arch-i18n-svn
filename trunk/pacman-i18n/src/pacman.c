@@ -3436,7 +3436,7 @@ int parseargs(int op, int argc, char **argv)
 			case 'e': pmo_q_orphans = 1; break;
 			case 'f': pmo_force = 1; break;
 			case 'g': pmo_group = 1; break;
-			case 'i': pmo_q_info++; pmo_s_info++; break
+			case 'i': pmo_q_info++; pmo_s_info++; break;
 			case 'k': pmo_r_dbonly = 1; break;
 			case 'l': pmo_q_list = 1; break;
 			case 'n': pmo_nosave = 1; break;
