@@ -3,14 +3,13 @@
 # Matthias-Christian Ott <matthias.christian@tiscali.de>, 2004
 # Armando M. Baratti <amblistas@ajato.com.br>, 2004
 # Joao Estevao <trankas@gmail.com>, 2004
-
 msgid ""
 msgstr ""
 "Project-Id-Version: pacman 2.9.2\n"
 "Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
 "POT-Creation-Date: 2004-12-02 20:46+0000\n"
-"PO-Revision-Date: 2004-12-22 23:41-0300\n"
-"Last-Translator: Joao Estevao <trankas@gmail.com>\n"
+"PO-Revision-Date: 2004-12-25 20:52+0100\n"
+"Last-Translator: João Estêvão <trankas@gmail.com>\n"
 "Language-Team: Arch Linux Translation Team <arch@archlinux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -152,7 +151,7 @@ msgstr "Licença        : %s\n"
 #: src/package.c:340
 #, c-format
 msgid "Architecture   : %s\n"
-msgstr "Arquitetura   : %s\n"
+msgstr "Arquitectura   : %s\n"
 
 #: src/package.c:341
 #, c-format
@@ -292,8 +291,6 @@ msgstr "       se está certo que o pacman não está em execução, você\n"
 msgid "       can remove %s\n"
 msgstr "       pode remover %s\n"
 
-# msgstr "       wenn Sie sich sicher sind, dass pacman nicht gestartet ist,\n"
-# msgstr "       kÿ¿ÿ¿ÿ¿ÿ¶nnen Sie %s entfernen.\n"
 #: src/pacman.c:196
 msgid "warning: cannot open logfile"
 msgstr "aviso: impossível abrir ficheiro de registo."
@@ -359,7 +356,7 @@ msgstr "apagando pacotes antigos do cache... "
 #: src/pacman.c:356
 #, c-format
 msgid "error: could not access cache directory\n"
-msgstr "erro: impossível aceder à directoria da cache\n"
+msgstr "erro: impossível aceder á directoria da cache\n"
 
 #: src/pacman.c:427
 #, c-format
@@ -466,7 +463,7 @@ msgstr ""
 #: src/pacman.c:740
 #, c-format
 msgid ":: It is recommended that you allow pacman to upgrade itself\n"
-msgstr ":: é recomendado permitir que o pacman se actualize\n"
+msgstr ":: É recomendado permitir que o pacman se actualize\n"
 
 #: src/pacman.c:741
 #, c-format
@@ -634,7 +631,7 @@ msgstr ""
 #: src/pacman.c:1206
 #, c-format
 msgid "warning: no %s cache exists.  creating..."
-msgstr "aviso: não existe a directoria %s da cache. criando..."
+msgstr "aviso: não existe a directoria %s da cache. a criar..."
 
 #: src/pacman.c:1212
 msgid "warning: couldn't create package cache, using /tmp instead"
@@ -1018,7 +1015,7 @@ msgstr "Nenhum pacote possui %s\n"
 #: src/pacman.c:2430
 #, c-format
 msgid "error: %s is not a file.\n"
-msgstr "erro: %s não é um arquivo.\n"
+msgstr "erro: %s não é um ficheiro.\n"
 
 #: src/pacman.c:2490
 #, c-format
@@ -1120,16 +1117,13 @@ msgid "Executing %s script...\n"
 msgstr "Executando o script %s...\n"
 
 ##: src/pacman.c:3310
-#, c-format
 #msgid "echo \"umask 0022; source %s %s %s %s\" | chroot %s /bin/sh"
 #msgstr "echo \"umask 0022; source %s %s %s %s\" | chroot %s /bin/sh"
-
 ##: src/pacman.c:3313
-#, c-format
 #msgid "echo \"umask 0022; source %s %s %s\" | chroot %s /bin/sh"
 #msgstr "echo \"umask 0022; source %s %s %s\" | chroot %s /bin/sh"
-
 #: src/pacman.c:3410
+#, c-format
 msgid "bad root path"
 msgstr "directoria de raiz inválida"
 
@@ -1139,7 +1133,7 @@ msgid ""
 "error: only one operation may be used at a time\n"
 "\n"
 msgstr ""
-"erro: apenas uma operação de cada vez pode ser efetuada\n"
+"erro: apenas uma operação de cada vez pode ser efectuada\n"
 "\n"
 
 #: src/pacman.c:3474
@@ -1168,7 +1162,7 @@ msgstr "configuração: linha %d: erro de sintaxe\n"
 #: src/pacman.c:3512
 #, c-format
 msgid "config: line %d: all directives must belong to a section\n"
-msgstr "configuração: linha %d: todas as diredtivas devem pertencer a uma única secção\n"
+msgstr "configuração: linha %d: todas as directivas devem pertencer a uma única secção\n"
 
 #: src/pacman.c:3518
 msgid "config: nopassiveftp\n"
@@ -1500,7 +1494,7 @@ msgstr "aviso: impossível remover ficheiro de bloqueio %s"
 #: src/pacsync.c:84
 #, c-format
 msgid "failed to get lastupdate time for %s (no big deal)\n"
-msgstr "falha ao obter hora da última actualização para %s (sem muita importância)\n"
+msgstr "falha ao obter hora da última actualização para %s (sem muita importÃ¢ncia)\n"
 
 #: src/pacsync.c:95
 #, c-format
