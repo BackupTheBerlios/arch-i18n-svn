@@ -3,6 +3,16 @@ Yonathan Dossow <kronin.d@gmail.com> @ We Dez 29 13:39:07 CET 2004
 
 	- [S/n] now work ... restoring
 
+Joao Estevao <trankas@gmail.com> @ Mi Dez 29 22:20:37 CET 2004
+	[PORTUGUESE]: Bug Fix in "pt_PT"
+	
+	- Fixed some Expressions
+
+Matthias-Christian Ott <matthias.christian@tiscali.de> @ Mi Dez 29 22:25:46 CET 2004
+	[SPANISH]: Y/n to S/n Fix
+	
+	- Restored Version 1.4 of es.po, because S/n is working now (Yonathan was faster with updating)
+
 Yonathan Dossow <kronin.d@gmail.com> @ We Dez 29 00:51:07 CET 2004
 	[SPANISH]: Translation
 
