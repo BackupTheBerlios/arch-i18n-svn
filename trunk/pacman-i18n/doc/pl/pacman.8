@@ -1,0 +1,313 @@
+.TH pacman 8 "17 wrze¶nia 2004" "pacman #VERSION#" ""
+.SH NAME
+pacman \- mened¿er pakietów
+.SH SYNOPSIS
+\fBpacman  <operacja> [opcje] <pakiet> [pakiet] ...\fP
+.SH DESCRIPTION
+\fBpacman\fP s³u¿y do \fIzarz±dzania pakietami\fP w systemie Linux. Posiada
+prost± obs³ugê zale¿no¶ci, a tak¿e mo¿liwo¶æ ³±czenia siê z serwerami FTP
+oraz automatycznej aktualizacji pakietów w lokalnym systemie. pacman obs³uguje
+pakiety w formacie \fIarchiwum TAR, skompresowanego metod± GZIP\fP.
+.SH OPERACJE
+.TP
+.B "\-A, \-\-add"
+Dodaje pakiet do systemu. Pakiet zostanie zdekompresowany w drzewie instalacji,
+a baza danych o pakietach zostanie uaktualniona.
+.TP
+.B "\-F, \-\-freshen"
+Dzia³a podobnie do --upgrade, lecz aktualizuje tylko te pakiety, które ju¿ s±
+zainstalowane w systemie.
+.TP
+.B "\-Q, \-\-query"
+Odpytuje bazê danych o pakietach. Funkcja ta pozwala przegl±daæ zainstalowane
+pakiety oraz pliki, które do nich nale¿±, jak równie¿ wy¶wietlaæ informacje 
+o poszczególnych pakietach (zale¿no¶ci, konflikty, data instalacji, data
+budowy, rozmiar). Operacja mo¿e zostaæ wykonana na lokalnej bazie pakietów
+lub na poszczególnych pakietach. Wiêcej informacji w sekcji
+\fBOPCJE ZAPYTAÑ\fP.
+.TP
+.B "\-R, \-\-remove"
+Usuwa pakiet z systemu. Pliki nale¿±ce do pakietu zostan± usuniête, a baza
+danych zostanie uaktualniona. Wiêkszo¶æ plików konfiguracyjnych zostanie
+zachowana z rozszerzeniem \fI.pacsave\fP, chyba ¿e zostanie u¿ywa opcja
+\fB--nosave\fP.
+.TP
+.B "\-S, \-\-sync"
+Synchronizuje pakiety. Za pomoc± tej funkcji mo¿na instalowaæ pakiety
+bezpo¶rednio z serwerów FTP, z uwzglêdnieniem wszystkich wymaganych zale¿no¶ci.
+Przyk³adowo, \fBpacman -S qt\fP pobierze i zainstaluje zarówno pakiet qt, jak i
+wszystkie pakiety, od których on zale¿y. Mo¿na te¿ wykonaæ \fBpacman -Su\fP,
+aby uaktualniæ wszystkie pakiety, których istniej± nowsze wersje (patrz ni¿ej).
+.TP
+.B "\-U, \-\-upgrade"
+Aktualizuje pakiet. Dok³adnie jest to operacja "usuñ-i-dodaj". Zobacz sekcjê
+\fBHANDLING CONFIG FILES\fP, aby dowiedzieæ siê wiêcej na temat sposobu, w jaki
+pacman traktuje pliki konfiguracyjnie.
+.TP
+.B "\-V, \-\-version"
+Pokazuje wersjê i zakoñcz pracê.
+.TP
+.B "\-h, \-\-help"
+Pokazuje sk³adniê danej fukncji. Je¿eli ¿adna funkcja nie zostanie okre¶lona,
+wy¶wietli siê sk³adnia ogólna.
+.SH OPCJE
+.TP
+.B "\-d, \-\-nodeps"
+Pomija sprawdzanie zale¿no¶ci. Standardowo, pacman zawsze sprawdza zale¿no¶ci
+pakietów, aby upewniæ siê, ¿e wszystkie wymagane pakiety s± zainstalowane oraz
+nie istniej± w systemie ¿adne konflikty. Niniejsza opcja wy³±cza t±
+funkcjonalno¶æ.
+.TP
+.B "\-f, \-\-force"
+Pomija sprawdzanie konfliktów, nadpisuj±c koliduj±ce pliki. Je¿eli instalowany
+pakiet zawiera pliki, które ju¿ istniej± w systemie, opcja ta spowoduje
+nadpisanie tych plików. Opcja powinna byæ u¿ywana bardzo ostro¿nie,
+a najlepiej w ogóle.
+.TP
+.B "\-r, \-\-root <¶cie¿ka>"
+Okre¶la alternatywne drzewo instalacji (domy¶lnie jest to "/"). Opcja ta
+\fInie\fP powinna byæ u¿yta do instalacji oprogramowania przyk³adowo w katalogu
+/usr/local, zamiast /usr. Opcja s³u¿y do instalacji pakietów na tymczasowo
+zamontowanej partycji, na której znajduje siê inny system. Za pomoc± tej opcji
+okre¶la siê nie tylko, gdzie pakiety maj± byæ instalowane, ale te¿ która
+bazê danych o pakietach powinna byæ u¿yta.
+.TP
+.B "\-v, \-\-verbose"
+Pokazuje wiêcej informacji o dzia³aniu i b³êdach.
+.TP
+.B "\-\-config <¶cie¿ka>"
+Okre¶la alternatywny plik konfiguracyjny.
+.TP
+.B "\-\-noconfirm"
+Pomija pytania typu "czy jeste¶ pewny". O ile pacman nie jest uruchamiany z
+poziomu skryptu, najlepiej nie u¿ywaæ tej opcji.
+.SH OPCJE SYNCHRONIZACJI
+.TP
+.B "\-c, \-\-clean"
+Usuwa stare pakiety z pamiêci podrêcznej. Kiedy pacman pobiera pakiet, zapisuje
+go w katalogu \fI/var/cache/pacman/pkg\fP. Je¿eli istnieje potrzeba zwolnienia
+miejsca na dysku, mo¿na usun±æ niepotrzebne pakiety za pomoc± niniejszej opcji.
+U¿ywaj±c pojedynczej opcji --clean (lub -c), tylko \fIstare\fP pakiety zostan±
+usuniête. Podwójne u¿ycie opcji spowoduje usuniêcie wszystkich pakietów.
+.TP
+.B "\-g, \-\-groups"
+Pokazuje pakiety nale¿±ce do okre¶lonej grupy pakietów. Je¿eli grupa nie
+zostanie podana, zostan± wy¶wietlone wszystkie grupy.
+.TP
+.B "\-i, \-\-info"
+Pokazuje informacje o zale¿no¶ciach danego pakietu. Spowoduje to przeszukanie
+wszystkich repozytoriów pod k±tem pasuj±cych pakietów orz wy¶wietlenie ich
+zale¿no¶ci, konfliktów, itd.
+.TP
+.B "\-l, \-\-list"
+Pokazuje wszystkie pliki w danym repozytorium. Mo¿na te¿ podaæ kilka
+repozytoriów.
+.TP
+.B "\-p, \-\-print-uris"
+Pokazuje adresy URI danych pakietów oraz ich zale¿no¶ci. Pakiety mo¿na pó¼niej
+pobraæ, przekazuj±c adresy innej apliacji, takiej jak wget.
+.TP
+.B "\-s, \-\-search <³añcuch>"
+Przeszukuje listê pakietów pod k±tem wystêpowania danego ³añcucha w nazwie
+lub opisie pakietu.
+.TP
+.B "\-u, \-\-sysupgrade"
+Aktualizuje wszystkie pakiety. pacman sprawdzi ka¿dy zainstalowany w systemie
+pakiet oraz uaktualni go, je¿eli istnieje nowsza wersja. Zanim to zrobi,
+wy¶wietli listê wszystkich pakietów, które maj± byæ uaktualnione, a nastêpnie
+poprosi o pozwolenie na wykonanie operacji. Zale¿no¶ci s± rozwi±zywane
+automatycznie.
+.TP
+.B "\-w, \-\-downloadonly"
+Pobiera wymanage pakiety z serwera, ale niczego instaluje.
+.TP
+.B "\-y, \-\-refresh"
+Pobiera najnowsz± wercjê listy pakietów znajduj±cych siêna serwerach FTP,
+zdefiniowanych w pliku \fI/etc/pacman.conf\fP. Operacja powinna byæ
+przeprowadzana przed ka¿dym u¿yciem opcji \fB--sysupgrade\fP.
+.SH OPCJE USUWANIA
+.TP
+.B "\-c, \-\-cascade"
+Usuwa zadane pakiety oraz wszystkie pakiety, które od nich zale¿±. Operacja ta
+jest rekursywna.
+.TP
+.B "\-k, \-\-keep"
+Usuwa tylko wpisy z bazy danych. Pliki pozostaj± na swoim miejscu.
+.TP
+.B "\-n, \-\-nosave"
+Powoduje, ¿e pacman nie zachowa plików konfiguracyjnych. Standardowo, kiedy
+plik ma byæ \fIusuniêty\fP z systemu, pacman sprawdza czy powinien zachowaæ
+jego kopiê w pliku z rozszerzeniem .pacsave. Je¿eli zostanie u¿yta opcja
+\fB--nosave\fP, postêpowanie to zostanie pominiête i plik zostanie po prostu
+usuniêty.
+.TP
+.B "\-s, \-\-recursive"
+Usuwa zadane pakiety oraz ich zale¿no¶ci, pod warunkiem, ¿e (A) nie s±
+wymagane przez ¿adne inne pakiety oraz (B) zosta³y zainstalowane na wyra¼ne
+polecenie u¿ytkownika, a nie jako zlae¿no¶æ dla innego pakietu. Operacja jest
+odwrotno¶ci± funkcji --sync.
+.SH OPCJE ZAPYTAÑ
+.TP
+.B "\-e, \-\-orphans"
+Pokazuje wszystkie pakiety, które zosta³y zainstalowane na wyra¼ne polecenie
+u¿ytkownika (tzn. nie jako zale¿no¶æ dla innego pakietu) i nie s± wymagane
+przez ¿aden inny pakiet.
+.TP
+.B "\-g, \-\-groups"
+Pokazuje wszystkie grupy, do których nale¿y dany pakiet. Je¿eli pakiet nie jest
+podany, wy¶wietla wszystkie grupy i nale¿±ce do nich pakiety.
+.TP
+.B "\-i, \-\-info"
+Pokazuje informacje o danym pakiecie. Je¿eli u¿yta jest równie¿ opcja \fB-p\fP,
+to zostanie wy¶wietlona zawarto¶æ pliku .PKGINFO.
+.TP
+.B "\-l, \-\-list"
+Pokazuje wszystkie pliki, które zawiera dany pakiet. Mo¿na te¿ podaæ kilka
+pakietów.
+.TP
+.B "\-o, \-\-owns <plik>"
+Pokazuje, który pakiet zawiera dany plik.
+.TP
+.B "\-p, \-\-file"
+Informuje pacmana, ¿e dany pakiet jest plikiem, a nie wpisem w bazie danych.
+pacman zdekompresuje plik i wykona na nim zadan± operacjê. Opcja ta jest
+u¿yteczna przy funkcjach \fB--info\fP oraz \fB--list\fP.
+.TP
+.B "\-s, \-\-search <³añcuch>"
+Przeszukuje zainstalowane pakiety pod k±tem wystêpowania ³añcucha w ich nazwie
+lub opisie.
+.SH OBS£UGA PLIKÓW KONFIGURACYJNYCH
+pacman postêpuje tak samo jak rpm, je¿eli chodzi o decyzjê w sprawie plików,
+dla których powinna zostaæ zrobiona kopia zapastowa. Podczas aktualizacji
+dla ka¿dego pliku konfiguracyjnego pacman u¿ywa trzech sygnatur MD5:
+oryginalnie zainstalowanego pliku, nowego pliku, który ma byæ zainstalowany,
+oraz obecnie istniej±cej wersji pliku. W zale¿no¶ci od wyniku porównania,
+mo¿liwy jest jeden z nastêpuj±cych scenariuszy:
+.TP
+oryginalny=\fBX\fP, obecny=\fBX\fP, nowy=\fBX\fP
+Wszystkie trzy pliki s± jednakowe, wiêc bez ró¿nicy co siê stanie. pacman
+instaluje nowy plik.
+.TP
+oryginalny=\fBX\fP, obecny=\fBX\fP, nowy=\fBY\fP
+Obecny plik jest taki sam jak oryginalny, ale nowy plik jest inny. Poniewa¿
+u¿ytkownik nigdy nie modyfikowa³ pliku, a nowa wersja mo¿e zawieraæ ulepszenia
+lub poprawki b³êdów, pacman instaluje nowy plik.
+.TP
+oryginalny=\fBX\fP, obecny=\fBY\fP, nowy=\fBX\fP
+Nowy plik jest taki sam jak oryginalny, ale obecny plik jest inny. pacman
+zostawia obecny plik w spokoju.
+.TP
+oryginalny=\fBX\fP, obecny=\fBY\fP, nowy=\fBY\fP
+Nowy plik jest taki sam jak obecny. pacman instaluje nowy plik.
+.TP
+oryginalny=\fBX\fP, obecny=\fBY\fP, nowy=\fBZ\fP
+Wszystkie trzy pliki s± ró¿ne. pacman instaluje nowy plik, ale zachowuje stary
+w pliku z rozszerzeniem .pacsave. W ten sposób u¿ytkownik mo¿e przywróciæ stary
+plik, je¿eli zajdzie taka potrzeba.
+.SH KONFIGURACJA
+pacman próbuje odczytaæ plik \fI/etc/pacman.conf\fP za ka¿dym razem, kiedy jest
+uruchamiany. Plik ten jest podzielony na sekcje, czy te¿ \fIrepozytoria\fP.
+Ka¿da sekcja definiuje reporzytorium, które pacman mo¿e u¿yæ przy poszukiwaniu
+pakietów funkcj± --sync. Wyj±tkiem jest sekcja \fIoptions\fP, która definiuje
+opcje globalne.
+.TP
+.SH Przyk³ad:
+.RS
+.nf
+[options]
+NoUpgrade = etc/passwd etc/group etc/shadow
+NoUpgrade = etc/fstab
+
+Include = /etc/pacman.d/current
+
+[custom]
+Server = file:///home/pkgs
+
+.fi
+.RE
+.SH KONFIGURACJA: OPCJE
+.TP
+.B "DBPath = ¶cie¿ka/do/katalogu/bazy/danych"
+Nadpisuje domy¶lne po³o¿enie katalogu g³ównego bazy danych. Domy¶lnie
+\fIvar/lib/pacman\fP.
+.TP
+.B "HoldPkg = <pakiet> [pakiet] ..."
+Je¿eli u¿ytkownik próbuje usun±æ pakiet (funkcja \fB--remove\fP), który jest
+wymieniony w zmiennej HoldPkg, pacman zapyta wcze¶niej o potwierdzenie.
+.TP
+.B "IgnorePkg = <pakiet> [pakiet] ..."
+Nakazuje pacmanowi ignorowaæ aktualizacje wymienionych pakietów, kiedy
+wykonuje siê funkcja \fB--sysupgrade\fP.
+.TP
+.B "Include = <¶cie¿ka>"
+Do³±cz inny plik konfiguracyjny. Plik ten mo¿e dodawaæ nowe repozytoria lub
+ogólne opcje konfiguracyjne.
+.TP
+.B "ProxyServer = <host|ip>[:port]"
+Je¿eli ustawione, pacman u¿yje podanego serwera proxy do wszystkich transferów
+FTP i HTTP.
+.TP
+.B "XferCommand = /¶cie¿ka/do/polecenia %u"
+Je¿eli ustawione, pacman u¿yje zewnêtrznego programu do pobierania wszystkich
+zdalnych plików. Wszystkie wystêpienia \fB%u\fP zostan± zast±pione przez adresy
+URL, które maj± byæ pobrane. Wszystkie wyst±pienia \fB%o\fP zostan± zast±pione
+przez docelowe nazwy plików wraz z rozszerzeniem ".part", co pozwoli programom
+takim jak wget poprawnie wznawiaæ transfery.
+
+Niniejsza opcja jest u¿yteczna dla u¿ytkowników, którzy maj± problemy z
+wbudowan± w pacmana obs³ug± transferów FTP i HTTP, lub potrzebuj± bardziej
+zaawansowanej obs³ugi serwerów proxy, jak tej, któr± posiada wget.
+.TP
+.B "NoPassiveFtp"
+Nie u¿ywa trybu pasywnego podczas po³±czeñ FTP (inaczej tryb aktywny).
+.TP
+.B "NoUpgrade = <plik> [plik] ..."
+¯aden plik wymieniony w tej zmiennej nigdy nie zostanie ruszony przy
+instalacji lub aktualizacji. \fIUwaga:\fP na pocz±tku ¶cie¿ki do pliku nie
+nale¿y umieszczaæ znaku slash.
+.TP
+.B "UseSyslog"
+Loguje komunikaty z u¿yciem funkcji syslog(). Komunikaty bêd± pojawiaæ siê w
+pliku /var/log/messages lub jego odpowiedniku.
+.TP
+.B "LogFile = /¶cie¿ka/do/pliku"
+Loguje komunikaty bezpo¶rednio do pliku, zazwyczaj do /var/log/pacman.log.
+
+.SH KONFIGURACJA: REPOZYTORIA
+Ka¿da definicja repozytorium sk³ada siê z nazwy sekcji i przynajmniej jednej
+lokalizacji pakietów. Nazwa sekcji to ³añcuch znaków zawarty w nawiasach
+kwadratowych (np. [current] lub [custom]). Lokalizacje s± okre¶lone za pomoc±
+dyrektywy \fIServers\fP i maj± postaæ zgodn± z konwencj± URL. Obecnie
+obs³ugiwany jest tylko protokó³ FTP. Aby u¿yæ lokalnego katalogu, nale¿y podaæ
+pe³n± ¶cie¿kê poprzedzon± ³añcuchem 'file://', jak w przyk³adzie wy¿ej.
+.SH U¯YCIE W£ASNEGO REPOZYTORIUM
+Za³ó¿my, ¿e w katalogu \fI/home/pkgs\fP znajduj± siê pakiety, a odpowiadaj±ce
+im pliki PKGBUILD po³o¿one s± w katalogu \fI/var/abs/local\fP. Wystarczy
+wygenerowaæ skompresowany indeks tych pakietów i zachowaæ go w katalogu
+\fI/home/pkgs\fP, aby pacman móg³ go znale¶æ w trakcie operacji --refresh.
+
+.RS
+.nf
+# gensync /var/abs/local /home/pkgs/custom.db.tar.gz
+.fi
+.RE
+
+Powy¿sze polecnie odczyta wszystkie pliki PKGBUILD znajduj±ce siê w katalogu
+/var/abs/local i wygeneruje ich spis jako plik /home/pkgs/custom.db.tar.gz.
+Nale¿y zauwa¿yæ, ¿e nazwa tego pliku mysi mieæ postaæ
+\fI{nazwadrzewa}.db.tar.gz\fP, gdzie {nazwadrzewa} jest nazw± sekcji
+zdefiniowanej w pliku konfiguracyjnym, w tym przypadku \fIcustom\fP, jak w
+przyk³adzie wy¿ej. Odt±d pacman bêdzie u¿ywa³ lokalne repozytorium pakietów.
+Po dodaniu nowych pakietów do repozytorium nie nale¿y zapomnieæ o ponownym
+wygenerowaniu indeksu oraz uruchomienia pacmana z opcj± --refresh.
+.SH ZOBACZ TAK¯E
+\fBmakepkg\fP jest narzêdziem s³u¿±cym do budowania pakietów i jest do³±czone
+do pacmana.
+.SH AUTOR
+.nf
+Judd Vinet <jvinet@zeroflux.org>
+.fi
+.SH T£UMACZENIE
+.nf
+Jaros³aw ¦wierczyñski <swiergot@juvepoland.com>
+.fi

@@ -1,0 +1,420 @@
+.TH makepkg 8 "3 sierpnia 2004" "makepkg #VERSION#" ""
+.SH NAME
+makepkg \- narzêdzie buduj±ce pakiety
+.SH SYNOPSIS
+\fBmakepkg [opcje]\fP
+.SH DESCRIPTION
+\fBmakepkg\fP s³u¿y do budowania pakietów. Potrzebny jest tylko odpowiednio
+wyposa¿ony system, wget oraz skrypty buduj±ce. Przewag± budowy pakietów opartej
+o skrypty jest to, ¿e tak naprawdê pracê wykonuje siê tylko raz. Kiedy jest ju¿
+gotowy skrypt buduj±cy dla pakietu, wystarczy wykonaæ makepkg i reszta zrobi
+siê sama: zostan± pobrane i zweryfikowane ¼ród³a, sprawdzone zale¿no¶ci,
+skonfigurowane ustawienia, skompilowane pliki ¼ród³owe, pliki wynikowe
+zainstalowane do katalug tymczasowego, dokonane poprawki, wygenerowane
+informacje o pakiecie i w koñcu ca³o¶æ zostanie spakowana do archiwum, z
+którego u¿ytek bêdzie potrafi³ zrobiæ \fBpacman\fP.
+
+\fBmakeworld\fP mo¿e byæ u¿yty do przebudowania ca³ych grup pakietów lub te¿
+ca³ego drzewa ¼róde³. Wiêcej informacji po wydaniu polecenia \fBmakeworld
+--help\fP.
+.SH PROCES BUDOWY (czy te¿ Jak Zbudowaæ W³asny Pakiet)
+Zaczynamy od osobnego katalogu (tzn. nie jest on u¿ywany do niczego ninnego jak
+tylko do budowania tego pakietu). Skrypt buduj±cy powinien nosiæ nazwê PKGBUILD
+i przypominaæ przyk³ad znajduj±cy siê ni¿ej.
+
+\fBUWAGA:\fP Je¿eli w systemie istnieje lokalna kopia ABS (Arch Build System),
+mo¿na przekopiowaæ plik PKGBUILD.proto do nowego katalogu i zacz±æ go edytowaæ.
+Aby pobraæ drzewo ABS, nale¿y pos³u¿yæ siê skryptem \fBabs\fP, do³±czonym
+do pacmana/makepkg.
+
+.TP
+.TP
+.SH Przyk³adowy PKGBUILD:
+.RS
+.nf
+pkgname=modutils
+pkgver=2.4.25
+pkgrel=1
+pkgdesc="Utilities for inserting and removing modules from the linux kernel"
+url="http://www.kernel.org"
+backup=(etc/modules.conf)
+makedepends=('bash' 'mawk')
+depends=('glibc' 'zlib')
+source=(ftp://ftp.kernel.org/pub/linux/utils/kernel/$pkgname/v2.4/$pkgname-$pkgver.tar.bz2 \\
+        modules.conf)
+md5sums=('2c0cca3ef6330a187c6ef4fe41ecaa4d' \\
+        '35175bee593a7cc7d6205584a94d8625')
+
+build() {
+  cd $startdir/src/$pkgname-$pkgver
+  ./configure --prefix=/usr --enable-insmod-static
+  make || return 1
+  make prefix=$startdir/pkg/usr install
+  mv $startdir/pkg/usr/sbin $startdir/pkg
+  mkdir -p $startdir/pkg/etc
+  cp ../modules.conf $startdir/pkg/etc
+}
+.fi
+.RE
+
+Jak widaæ, skrypt jest stosunkowo prosty. Pierwsze trzy linie definiuj± nazwê
+i wersjê pakietu. Na ich podstawie okre¶lana jest te¿ docelowa nazwa pakietu,
+która ma postaæ \fI$pkgname-$pkgver-$pkgrel.pkg.tar.gz\fP. Czwarta linia to
+krótki opis pakietu. Te cztery linie powinny byæ obecne w ka¿dym skrypcie
+PKGBUILD.
+
+Linia \fIbackup=\fP definiuje pliki, które powinny byæ traktowane w specjalny
+sposób przy usuwaniu lub aktualizacji pakietu. Wiêcej szczegó³ów w sekcji
+\fBOBS£UGA PLIKÓW KONFIGURACYJNYCH\fP na stronie manuala \fIpacmana\fP.
+
+Linie siódma i ósma okre¶laj± zale¿no¶ci pakietu. Tablica \fIdepends\fP
+zawiera zale¿no¶ci czasu uruchamiania, za¶ \fImakedepends\fP - czasu budowania.
+Aby uruchomiæ pakiet, spe³nione musz± byæ zale¿no¶ci z \fIdepends\fP. Aby
+zbudowaæ pakiet, \fBwszystkie\fP zale¿no¶ci musz± byæ spe³nione. makepkg
+sprawdzi je przed budowaniem pakietu.
+
+Tablica \fIsource\fP mówi, które pliki powinny byæ pobrane/rozpakowane przed
+rozpoczêciem kompilacji. Tablica \fImd5sums\fP dostarcza sumy kontrolne dla
+ka¿dego z tych plików. U¿wane s± one do sprawdzenia poprawno¶ci plików
+¼ród³owych.
+
+Kiedy ju¿ PKGBUILD bêdzie gotowy, mo¿na uruchomiæ \fImakepkg\fP z katalogu,
+w którym znajduje siê skrypt. makepkg sprawdzi zale¿no¶ci i poszuka wymaganych
+plików ¼ród³owych. Je¿eli jakiego¶ bêdzie brakowaæ, spróbuje go pobraæ, pod
+warunkiem, ¿e w tablicy \fIsource\fP znajduje siê dok³adnu adres URL.
+
+¬ród³a s± wtedy rozpakowywane do katalogu ./src i wywo³ywana jest funkcja
+\fIbuild\fP. Tam powinny odbyæ siê konfiguracja, kompilacja i instalacja
+pakietu, jak równie¿ wszelkie dostrajanie.
+
+Po kompilacji funkcja \fIbuild\fP musi zainstalowaæ pliki w specjalnym
+katalogu, do którego mo¿na siê odnie¶æ przez \fB$startdir\pkg\fP. Najczê¶ciej
+osi±ga siê to jednym z dwóch sposobów:
+.RS
+.nf
+
+make DESTDIR=$startdir/pkg install
+
+lub
+
+make prefix=$startdir/pkg/usr install
+
+.fi
+.RE
+Nale¿y zauwa¿yæ, ¿e czê¶æ "/usr" powinna wyst±piæ przy u¿yciu zmiennej
+"prefix", ale nie przy zmiennej "DESTDIR". Zaleca siê u¿ywaæ wariantu ze
+zmienn± "DESTDIR", lecz nie wszystkie pliki Makefile j± obs³uguj±. Zmiennej
+"prefix" nale¿y u¿ywaæ tylko wtedy, gdy nie mo¿na u¿yæ zmiennej "DESTDIR".
+
+Kiedy ju¿ pliki zostan± zainstalowane we wspomnianym katalogu, \fImakepkg\fP
+usunie niektóre katalogi (zgodnie z wytycznymi pakietowania w Arch Linux;
+je¿eli makepkg jest u¿ywany w innym systemie, mo¿na to zmieniæ), jak /usr/doc
+i /usr/info. Zostan± zrzucone symbole debugowania z bibliotek i binariów oraz
+wygenerowana informacja o pakiecie. W koñcu wszystko zostanie skompresowane
+do pliku .pkg.tar.gz i zapisane w katalogu, w którym zosta³ uruchomiony
+\fBmakepkg\fP.
+
+W tym momencie w bie¿±cym katalogu powinien znajdowaæ siê pakiet, w postaci
+pliku o nazwie w stylu nazwa-wersja-wydanie.pkg.tar.gz. Gotowe!
+.SH Skrypty instalacji/aktualizacji/usuwania
+pacman ma mo¿liwo¶æ przechowywania i wykonywania skryptów specyficznych
+dla pakietu, kiedy wykonuje instalacjê, usuwanie lub aktualizacjê. Pozwala
+to na automatyczn± konfiguracjê pakietu po instalacji oraz dokonanie
+czynno¶ci odwrotnej przed jego usuniêciem.
+
+Moment wykonania skryptu ró¿ni siê w zale¿no¶ci od instalacji:
+.TP
+.B pre_install
+skrypt jest wykonywany tu¿ przed rozpakowaniem plików.
+
+.TP
+.B post_install
+skrypt jest wykonywany tu¿ po rozpakowaniu plików.
+
+.TP
+.B pre_upgrade
+skrypt jest wykonywany tu¿ przed rozpakowanie plików.
+
+.TP
+.B post_upgrade
+skrypt jest wykonywany tu¿ po rozpakowaniu plików.
+
+.TP
+.B pre_remove
+skrypt jest wykonywany tu¿ przed usuniêciem plików.
+
+.TP
+.B post_remove
+skrypt jest wykonywany tu¿ po usuniêciu plików.
+
+.RE
+Aby skorzystaæ z tej funkcjonalno¶ci, wystarczy utworzyæ plik (np.
+pkgname.install) i umie¶ciæ go w tym samym katalogu co skrypt PKGBUILD.
+Nastêpnie nale¿y u¿yæ dyrektywy \fIinstall\fP:
+.RS
+.nf
+install=pkgname.install
+.fi
+.RE
+
+Plik ze skryptami nie musi byæ wymieniony z tablicy \fIsource\fP.
+
+.TP
+.TP
+.SH Pliki ze skryptami musz± byæ zgodne z nastêpuj±cym formatem:
+.RS
+.nf
+# arg 1:  the new package version
+pre_install() {
+  #
+  #  do pre-install stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+post_install() {
+  #
+  #  do post-install stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+pre_upgrade() {
+  #
+  #  do pre-upgrade stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+  #
+  #  do post-upgrade stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the old package version
+pre_remove() {
+  #
+  #  do pre-remove stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the old package version
+post_remove() {
+  #
+  #  do post-remove stuff here
+  #
+  /bin/true
+}
+
+op=$1
+shift
+$op $*
+.fi
+.RE
+
+Powy¿szy szablon jest tak¿e dostêpny w drzewie ABS (/var/abs/install.proto).
+
+.SH Dyrektywy skryptu PKGBUILD
+.TP
+.B pkgname
+Nazwa pakietu, powinna byæ zgodna z konwencj± nazewnictwa w systemach Unix,
+gdy¿ zostanie u¿yta w nazwie pliku.
+
+.TP
+.B pkgver
+Wersja programu, dok³adnie taka, jak± okre¶li³ autor (np. 2.7.1).
+
+.TP
+.B pkgrel
+Numer wydania, specyficzny dla pakietów Arch Linux.
+
+.TP
+.B pkgdesc
+Krótki opis pakietu i jego funkcjonalno¶ci.
+
+.TP
+.B force
+U¿ywane w celu wymuszenia aktualizacji pakietu przez opcjê \fB--sysupgrade\fP,
+nawet je¶li jest to starsza wersja.
+
+.TP
+.B url
+Opcjonalny URL zwi±zany z pakietowanym programem. Zazwyczaj jest to strona
+domowa projektu.
+
+.TP
+.B license
+Okre¶la rodzaj licencji (np. "GPL", "BSD", "NON-FREE"). (\fBUwaga:\fP ta
+dyrektywa wci±¿ jest w fazie rozwojowej i mo¿e ulec zmianie w przysz³o¶ci.)
+
+.TP
+.B install
+Okre¶la specjalny skrypt instalacyjny, który bêdzie do³±czony do pakietu.
+Plik ten powinien znajdowaæ siê w tym samym katalogu, co skrypt PKGBUILD.
+Zostanie automatycznie skopiowany do pakietu przez makepkg. Nie musi byæ
+uwzglêdniony w tablicy \fIsource\fP. Przyk³ad: install=modutils.install
+
+.TP
+.B source \fI(tablica)\fP
+Dyrektywa \fIsource\fP jest tablic± plików ¼ród³owych wymaganych do zbudowania
+pakietu. Pliki musz± znajdowaæ siê w tym samym katalogu, co skrypt PKGBUILD,
+chyba ¿e podano ich adresy URL. Wtedy, je¿eli plik nie istnieje te¿ w katalogu
+/var/cache/pacman/src, jest pobierany przy u¿yciu programu wget.
+
+.TP
+.B md5sums \fI(tablica)\fP
+Je¿eli ta dyrektywa jest obecna, powinna zawieraæ sumy kontrolne MD5 dla
+ka¿dego pliku ¼ród³owego, wymienionego w tablicy \fIsource\fP (w odpowiadaj±cej
+kolejno¶ci). makepkg u¿yje tych informacji, aby zweryfikowaæ poprawno¶æ
+plików ¼ród³owych. W celu ³atwego wygenerowania sum kontrolnych, mo¿na u¿yæ
+polecenia \fBmakepkg -g >> PKGBUILD\fP oraz wyedytowaæ skrypt PKGBUILD i
+przenie¶æ sumê w odpowiednie miejsce.
+
+.TP
+.B groups \fI(tablica)\fP
+Jest to tablica symbolicznych nazw reprezentuj±cych grupy pakietów,
+pozwalaj±cych na instalacjê wielu pakietów za pomoc± jednego celu. Na przyk³ad,
+mo¿na zainstalowaæ wszystkie pakiety wchodz±ce w sk³ad KDE, instaluj±c tylko
+grupê 'kde'.
+
+.TP
+.B backup \fI(tablica)\fP 
+Tablica nazw plików (bez rozpoczynaj±cego znaku slash), których kopie zapasowe
+maj± byæ utworzone przy usuwaniu pakietu z systemu. Wiêcej informacji w sekcji
+\fBOBS£UGA PLIKÓW KONFIGURACYJNYCH\fP na stronie manuala \fIpacmana\fP.
+
+.TP
+.B depends \fI(tablica)\fP 
+Tablica pakietów, od których zale¿y budowanie i uruchamianie tego pakietu.
+Pakiety z tej listy powinny byæ otoczone apostrofami i zawieraæ przynajmniej
+nazwê pakietu. Mo¿na te¿ podaæ wymagan± wersje w postaci \fBnazwa<>wersja\fP,
+gdzie <> jest jednym z nastêpuj±cych operatorów porównania: \fB>=\fP (wiêksza lub
+równa), \fB<=\fP (mniejsza lub równa) lub \fB=\fP (równa). Przyk³ady u¿ycia
+dyrektywy \fIdepends\fP mo¿na znale¼æ w powy¿szym przyk³adowym pliku PKGBUILD.
+
+.TP
+.B makedepends \fI(tablica)\fP
+Tablica pakietów, od których zale¿y budowanie pakietu (tj. nie s± wymagane
+do uruchomienia). Lista ma taki sam format jak lista \fIdepends\fP.
+
+.TP
+.B conflicts \fI(tablica)\fP 
+Tablica pakietów, które pozostaj± w konflikcie z tym pakietem (tzn. nie mog±
+jednocze¶nie byæ zainstalowane w systemie). Lista ma taki sam format jak lista
+\fIdepends\fP z tym, ¿e nie mo¿na podawaæ wersji, tylko nazwy pakietów.
+
+.TP
+.B provides \fI(tablica)\fP 
+Tablica "wirtualnych funkcjonalno¶ci", które ten pakiet dostarcza. Dyrektywa ta
+pozwala definiowaæ pakiet jako zale¿no¶æ u¿ywaj±c innej nazwy, ni¿ nazwa
+pakietu. Na przyk³ad, pakiety kernel-scsi i kernel-ide dostarczaj±
+funkcjonalno¶æ 'kernel', co pozwala na okre¶lenie zale¿no¶ci jako 'kernel',
+zamiast "kernel-scsi OR kernel-ide OR ...".
+
+.TP
+.B replaces \fI(tablica)\fP 
+Jest to tablica pakietów, które ten pakiet powinien zast±piæ. Mo¿e byæ to u¿yte
+do obs³ugi przemianowanych/po³±czonych pakietów. Na przyk³ad, je¿eli pakiet
+kernel zostanie przemianowany na kernel-ide, wtedy polecenie 'pacman -Syu' nie
+wybierze nowego pakietu jako aktualizacji, poniewa¿ nazwy s± inne. Dyrektywa
+\fIreplaces\fP pozwala to obej¶æ.
+
+.SH OPCJE MAKEPKG
+.TP
+.B "\-b, \-\-builddeps"
+Powoduje budowanie brakuj±cych zale¿no¶ci ze ¼róde³. Kiedy makepkg wykryje
+niespe³nion± zale¿no¶æ czasu budowania lub czasu uruchamiania, poszuka dla niej
+pliku PKGBUILD w drzewie $ABSROOT (definiowanym w pliku /etc/makepkg.conf).
+Je¿eli znajdzie, uruchomi kolejn± instancjê makepkg, aby zbudowaæ i
+zainstalowaæ brakuj±c± zale¿no¶æ. Potomna instancja makepkg zostanie wywo³ana
+z opcjami \fB-b\fP oraz \fB-i\fP.
+.TP
+.B "\-c, \-\-clean"
+Usuwa zbêdne pliki/katalogi po udanym budowaniu.
+.TP
+.B "\-C, \-\-cleancache"
+Usuwa wszystkie pliki ¼ród³owe z pamiêci podrêcznej, aby zwolniæ miejsce na
+dysku.
+.TP
+.B "\-d, \-\-nodeps"
+Nie sprawdza zale¿no¶ci, pozwala na pominiêcie/zignorowanie wszelkich
+wymaganych zale¿no¶ci. Istnieje du¿a szansa, ¿e opcja ta popsuje proces
+budowania, je¿eli ¿adna z zale¿no¶ci nie bêdzie spe³niona.
+.TP
+.B "\-f, \-\-force"
+\fBmakepkg\fP nie zbuduje pakietu, je¿eli plik
+\fIpkgname-pkgver-pkgrel.pkg.tar.gz\fP istnieje ju¿ w katalogu. Opcja
+\fB--force\fP zmienia to zachowanie.
+.TP
+.B "\-g, \-\-genmd5"
+Pobiera wszystkie pliki ¼ród³owe (je¿eli jest to konieczne) i u¿ywa narzêdzia
+\fImd5sum\fP, aby wygenerowaæ sumy kontrolne dla ka¿dego z nich. Mo¿na
+przekierowaæ wyj¶cie do pliku PKGBUILD, aby zweryfikowaæ ¼ród³a (makepkg -g >>
+PKGBUILD).
+.TP
+.B "\-h, \-\-help"
+Wy¶wietla sk³adniê i opcje linii poleceñ.
+.TP
+.B "\-i, \-\-install"
+Instaluje/uaktualnia pakiet po udanym zbudowaniu.
+.TP
+.B "\-j <jobs>"
+Ustawia zmienn± MAKEFLAGS="-j<jobs>" przed rozpoczêciem budowy. Mo¿na dziêki
+temu nadpisaæ ustawienie MAKEFLAGS z pliku /etc/makepkg.conf.
+.TP
+.B "\-m, \-\-nocolor"
+Wy³±cza kolorowanie komunikatów.
+.TP
+.B "\-n, \-\-nostrip"
+Zapobiega zrzucaniu symboli debugowania z binariów i bibliotek.
+.TP
+.B "\-o, \-\-nobuild"
+Jedynie pobiera i rozpakowuje pliki, nie buduje pakietu.
+.TP
+.B "\-p <buildscript>"
+Korzysta z pliku \fI<buildscript>\fP zamiast z domy¶lnego (\fI(PKGBUILD\fP).
+.TP
+.B "\-r, \-\-rmdeps"
+Po udanym zbudowaniu pakietu, usuwa wszystkie zale¿no¶ci zainstalowane przez
+makepkg automatycznie (kiedy zosta³a u¿yta opcja \fB-b\fP lub \fB-s\fP).
+.TP
+.B "\-s, \-\-syncdeps"
+Instaluje brakuj±ce zale¿no¶ci u¿ywaj±c pacmana. Kiedy makepkg wykryje
+niespe³nione zale¿no¶ci czasu budowania lub czasu uruchamiania, uruchomi
+pacmana, aby ten spróbowa³ je rozwi±zaæ. Je¿eli mu siê uda, pobierze i
+zainstaluje brakuj±ce pakiety.
+.TP
+.B "\-w <destdir>"
+Zapisuje wynikowe pakiety w katalogu \fI<destdir>\fP zamiast w katalogu
+bie¿±cym.
+
+.SH KONFIGURACJA
+Opcje konfiguracyjne przechowywane s± w pliku \fI/etc/makepkg.conf\fP. Plik
+ten jest traktowany jako skrypt Basha, wiêc mo¿na w nim eksportowaæ dowolne
+specjalne flagi kompilatora. Jest to pomocne przy budowaniu dla ró¿nych
+architektur, czy te¿ z ró¿nymi ustawieniami optymailizacji.
+
+\fBUWAGA:\fP Nie ma gwarancji, ¿e wszystkie pliki Makefile bêd± u¿ywaæ
+eksportowanych zmiennych. Niektóre z tych plików s± u³omne...
+.SH ZOBACZ TAK¯E
+\fBpacman\fP jest mened¿erem pakietów, który u¿ywa pakietów zbudowanych przy
+u¿yciu makepkg.
+
+Je¿eli chcesz tworzyæ pakiety dla projektu Arch Linux, przejrzyj dokumenacjê
+Arch Linux i zapoznaj siê z wytycznymi pakietowania.
+.SH AUTOR
+.nf
+Judd Vinet <jvinet@zeroflux.org>
+.fi
+.SH T£UMACZENIE
+.nf
+Jaros³aw ¦wierczyñski <swiergot@juvepoland.com>
+.fi
