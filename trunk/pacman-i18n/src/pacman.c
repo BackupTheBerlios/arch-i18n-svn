@@ -125,21 +125,21 @@ int main(int argc, char *argv[])
 	if(cenv) {
 		maxcols = atoi(cenv);
 	}
-	
+
 	char *lang = NULL;
 	
 	lang = getenv ("LC_ALL");
-  	
+
 	if (lang == NULL || lang[0] == '\0')
-    	{
-     	lang = getenv ("LC_MESSAGES");
-	}
-	
-      	if (lang == NULL || lang[0] == '\0')
 	{
-	lang = getenv ("LANG");
-    	}
-	
+		lang = getenv ("LC_MESSAGES");
+	}
+
+	if (lang == NULL || lang[0] == '\0')
+	{
+		lang = getenv ("LANG");
+	}
+
 	i18ninit (lang);
 
 	if(argc < 2) {
@@ -1578,7 +1578,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 		alltargs = list_add(alltargs, info);
 		filenames = list_add(filenames, strdup(targ->data));
 	}
-	printf("done.\n");
+	printf(_("done.\n"));
 
 	/*
 	 * Check dependencies
