@@ -2,15 +2,15 @@
 # Copyright (C) 2004 Matthias-Christian Ott <matthias.christian@tiscali.de>
 # This file is distributed under the same license as the PACKAGE package.
 # Matthias-Christian Ott <matthias.christian@tiscali.de>, 2004
-#
+# Yonathan Dossow <kronin.d@gmail.com>, 2004
 
 msgid ""
 msgstr ""
 "Project-Id-Version: pacman 2.9.4\n\n"
 "Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
 "POT-Creation-Date: 2004-12-02 16:08+0100\n"
-"PO-Revision-Date: 2004-12-21 14:48+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2004-12-27 21:02-0400\n"
+"Last-Translator: Yonathan Dossow <kronin.d@gmail.com>\n\n"
 "Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-15\n"
@@ -27,7 +27,7 @@ msgid ""
 "usage: %s <target_dir>\n"
 "\n"
 msgstr ""
-"Uso: %s <directorio>\n\n"
+"Uso: %s <directorio>\n"
 "\n"
 
 #: src/convertdb.c:56
@@ -1070,7 +1070,7 @@ msgstr "ciclo de dependencias detectado: %s\n"
 #: src/pacman.c:3055
 #, c-format
 msgid "warning: invalid dependency in %s"
-msgstr "advertencia: dependencia invalida en  %s"
+msgstr "advertencia: dependencia invalida en %s"
 
 #: src/pacman.c:3122
 #, c-format
