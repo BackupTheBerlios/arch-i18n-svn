@@ -424,7 +424,7 @@ msgstr ":: %s-%s: ignorando la actualización del paquete (para ser reemplazado c
 #: src/pacman.c:631
 #, c-format
 msgid ":: Replace %s with %s from \"%s\"? [Y/n] "
-msgstr ":: Reemplaza %s con %s de \"%s\"? [Y/n] "
+msgstr ":: Reemplaza %s con %s de \"%s\"? [S/n] "
 
 #: src/pacman.c:694
 #, c-format
@@ -466,7 +466,7 @@ msgstr ":: primero, luego puede correr de nuevo la operación con la versión nuev
 
 #: src/pacman.c:743
 msgid ":: Upgrade pacman first? [Y/n] "
-msgstr ":: Actualizar pacman primero? [Y/n] "
+msgstr ":: Actualizar pacman primero? [S/n] "
 
 #: src/pacman.c:812 pacman.c:2098
 #, c-format
@@ -475,12 +475,12 @@ msgstr ":: grupo %s:\n"
 
 #: src/pacman.c:814
 msgid "    Install whole content? [Y/n] "
-msgstr "    Instalar todo los paquetes? [Y/n] "
+msgstr "    Instalar todo los paquetes? [S/n] "
 
 #: src/pacman.c:820
 #, c-format
 msgid ":: Install %s from group %s? [Y/n] "
-msgstr ":: Instalar %s del grupo %s? [Y/n] "
+msgstr ":: Instalar %s del grupo %s? [S/n] "
 
 #: src/pacman.c:827
 #, c-format
@@ -495,12 +495,12 @@ msgstr "%s: no encontrado en el repositorio \"%s\"\n"
 #: src/pacman.c:844
 #, c-format
 msgid ":: %s-%s: local version is newer.  Upgrade anyway? [Y/n] "
-msgstr ":: %s-%s: la versión local es más reciente.  Actualizar de todos modos? [Y/n] "
+msgstr ":: %s-%s: la versión local es más reciente.  Actualizar de todos modos? [S/n] "
 
 #: src/pacman.c:853
 #, c-format
 msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
-msgstr ":: %s-%s: ya está actualizado.  Actualizar de todos modos? [Y/n] "
+msgstr ":: %s-%s: ya está actualizado.  Actualizar de todos modos? [S/n] "
 
 #: src/pacman.c:896
 #, c-format
@@ -520,7 +520,7 @@ msgstr " pero no está en la base de datos de sincronización\n"
 #: src/pacman.c:1001 pacman.c:1608
 #, c-format
 msgid ":: %s conflicts with %s. Remove %s? [Y/n] "
-msgstr ":: %s tiene conflictos con %s. Remover %s? [Y/n]"
+msgstr ":: %s tiene conflictos con %s. Remover %s? [S/n]"
 
 #: src/pacman.c:1007 pacman.c:1614
 #, c-format
@@ -584,7 +584,7 @@ msgid ""
 "Proceed with download? [Y/n] "
 msgstr ""
 "\n"
-"Proceder con la descarga? [J/n] "
+"Proceder con la descarga? [S/n] "
 
 #: src/pacman.c:1128
 #, c-format
@@ -601,7 +601,7 @@ msgid ""
 "Proceed with upgrade? [Y/n] "
 msgstr ""
 "\n"
-"Proceder con la actualización? [Y/n] "
+"Proceder con la actualización? [S/n] "
 
 #: src/pacman.c:1178
 #, c-format
@@ -902,12 +902,12 @@ msgstr "corriendo \"%s\"\n"
 
 #: src/pacman.c:2100
 msgid "    Remove whole content? [Y/n] "
-msgstr "    Remover todo el contenido? [Y/n] "
+msgstr "    Remover todo el contenido? [S/n] "
 
 #: src/pacman.c:2107
 #, c-format
 msgid ":: Remove %s from group %s? [Y/n] "
-msgstr ":: Remover %s del grupo %s? [J/n] "
+msgstr ":: Remover %s del grupo %s? [S/n] "
 
 #: src/pacman.c:2118
 #, c-format
@@ -917,7 +917,7 @@ msgstr "error: no se pudo encontrar %s en la base de datos\n"
 #: src/pacman.c:2126
 #, c-format
 msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
-msgstr ":: %s esta marcado como HoldPkg.  Remover de todas formas? [Y/n] "
+msgstr ":: %s esta marcado como HoldPkg.  Remover de todas formas? [S/n] "
 
 #: src/pacman.c:2164
 msgid "finding removable dependencies...\n"
@@ -937,7 +937,7 @@ msgid ""
 "Do you want to remove these packages? [Y/n] "
 msgstr ""
 "\n"
-"Está seguro que quiere remover estos paquetes? [Y/n] "
+"Está seguro que quiere remover estos paquetes? [S/n] "
 
 #: src/pacman.c:2183
 #, c-format
@@ -1050,7 +1050,7 @@ msgstr "resolviendo %s\n"
 #: src/pacman.c:2789
 #, c-format
 msgid "%s requires %s, but it is in IgnorePkg.  Install anyway? [Y/n] "
-msgstr "%s requiere %s, pero este esta en IgnorePkg.  Instalar de todas formas? [Y/n] "
+msgstr "%s requiere %s, pero este esta en IgnorePkg.  Instalar de todas formas? [S/n] "
 
 #: src/pacman.c:2797
 #, c-format
