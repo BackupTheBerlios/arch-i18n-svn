@@ -75,7 +75,7 @@ OBJECTS = $(OBJDIR)pacman.o \
 			$(OBJDIR)rpmvercmp.o \
 			$(OBJDIR)i18n.o
 
-PO_LINGUAS = cz de es nl pt_BR pt_PT ru sv
+PO_LINGUAS = cs de es nl pt_BR pt_PT ru sv
 
 MAN_LINGUAS = pl pt_BR zh_CN
 
