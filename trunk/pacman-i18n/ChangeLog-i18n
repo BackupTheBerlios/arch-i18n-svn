@@ -1,3 +1,7 @@
+Matthias-Christian Ott <matthias.christian@tiscali.de> @ Fr Jan 21 15:02:21 CET 2005
+	[PATCH]: Pacman 2.9.5
+	Upgrade to the Pacman 2.9.5 source
+
 Matthias-Christian Ott <matthias.christian@tiscali.de> @ Mi Dez 29 15:15:53 CET 2004
 	[BUGFIX]: pacman.c:3855
 

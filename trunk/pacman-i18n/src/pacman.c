@@ -76,13 +76,14 @@ unsigned short pmo_q_search     = 0;
 unsigned short pmo_r_cascade    = 0;
 unsigned short pmo_r_dbonly     = 0;
 unsigned short pmo_r_recurse    = 0;
-unsigned short pmo_s_upgrade    = 0;
-unsigned short pmo_s_downloadonly = 0;
-unsigned short pmo_s_printuris    = 0;
-unsigned short pmo_s_sync       = 0;
-unsigned short pmo_s_search     = 0;
 unsigned short pmo_s_clean      = 0;
++unsigned short pmo_s_downloadonly = 0;
 PMList        *pmo_s_ignore     = NULL;
+unsigned short pmo_s_info       = 0;
+unsigned short pmo_s_printuris  = 0;
+unsigned short pmo_s_search     = 0;
+unsigned short pmo_s_sync       = 0;
+unsigned short pmo_s_upgrade    = 0
 unsigned short pmo_group        = 0;
 /* configuration file options */
 char          *pmo_dbpath       = NULL;
@@ -552,7 +553,7 @@ int pacman_sync(pacdb_t *db, PMList *targets)
 			FREELIST(pkg);
 		}
 		FREELIST(groups);
-	} else if(pmo_q_info) {
+	} else if(pmo_s_info) {
 		PMList *pkgs = NULL;
 		int found;
 		if(targets) {
@@ -580,7 +581,7 @@ int pacman_sync(pacdb_t *db, PMList *targets)
 							/* wtf */
 							continue;
 						}
-						dump_pkg_sync(p);
+						dump_pkg_sync(p, dbs->sync->treename);
 						printf("\n");
 						freepkg(p);
 						found = 1;
@@ -1462,7 +1463,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 	char pm_install[PATH_MAX];
 	pkginfo_t *info = NULL;
 	struct stat buf;
-	PMList *targ, *file, *lp, *j, *k;
+	PMList *targ, *lp, *j, *k;
 	PMList *alltargs = NULL;
 	PMList *filenames = NULL;
 	unsigned short real_pmo_upgrade;
@@ -1562,21 +1563,18 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 		}
 		/* check if an older version of said package is already in alltargs.
 		 * if so, replace it in the list */
-		for(j = alltargs, k = filenames; j && j->data && k; j = j->next, k = k->next) {
+		for(j = alltargs; j && j->data; j = j->next) {
 			pkginfo_t *pkg = (pkginfo_t*)j->data;
 			if(!strcmp(pkg->name, info->name)) {
 				if(rpmvercmp(pkg->version, info->version) < 0) {
 					vprint(_("replacing older version in target list. "));
 					FREEPKG(j->data);
 					j->data = info;
-					FREE(k->data);
-					k->data = strdup(targ->data);
 				}
 			}
 		}
 		vprint(_("done\n"));
 		alltargs = list_add(alltargs, info);
-		filenames = list_add(filenames, strdup(targ->data));
 	}
 	printf(_("done.\n"));
 
@@ -1687,7 +1685,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 		
 		/* re-order w.r.t. dependencies */		
 		vprint(_("sorting by dependencies\n"));
-		lp = sortbydeps(alltargs);
+		lp = sortbydeps(alltargs, PM_ADD);
 		/* free the old alltargs */
 		for(j = alltargs; j; j = j->next) {
 			j->data = NULL;
@@ -1725,7 +1723,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 	 * Install packages
 	 *
 	 */
-	for(targ = alltargs, file = filenames; targ && file; targ = targ->next, file = file->next) {
+	for(targ = alltargs; targ; targ = targ->next) {
 		pkginfo_t* oldpkg = NULL;
 		info = (pkginfo_t*)targ->data;
 		errors = 0;
@@ -1750,7 +1748,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 
 				/* pre_upgrade scriptlet */
 				if(info->scriptlet) {
-					runscriptlet(file->data, "pre_upgrade", info->version, oldpkg ? oldpkg->version : NULL);
+					runscriptlet(info->filename, "pre_upgrade", info->version, oldpkg ? oldpkg->version : NULL);
 				}
 
 				if(oldpkg) {
@@ -1781,13 +1779,13 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 			neednl = 1;
 			/* pre_install scriptlet */
 			if(info->scriptlet) {
-				runscriptlet(file->data, "pre_install", info->version, NULL);
+				runscriptlet(info->filename, "pre_install", info->version, NULL);
 			}
 		}
 		fflush(stdout);
 
 		/* open the .tar.gz package */
-		if(tar_open(&tar, (char*)file->data, &gztype, O_RDONLY, 0, TAR_GNU) == -1) {
+		if(tar_open(&tar, info->filename, &gztype, O_RDONLY, 0, TAR_GNU) == -1) {
 		  perror(_("could not open package"));
 			return(1);
 		}
@@ -2007,7 +2005,7 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 			 * or installed as a dependency for another package
 			 */
 			info->reason = REASON_EXPLICIT;
-			if(is_in(file->data, dependonly) || pmo_d_resolve) {
+			if(is_in(info->filename, dependonly) || pmo_d_resolve) {
 				info->reason = REASON_DEPEND;
 			}
 			/* make an install date (in UTC) */
@@ -2070,7 +2068,6 @@ int pacman_add(pacdb_t *db, PMList *targets, PMList *dependonly)
 		FREEPKG(lp->data);
 	}
 	FREELIST(alltargs);
-	FREELIST(filenames);
 
 	/* run ldconfig if it exists */
 	snprintf(expath, PATH_MAX, "%setc/ld.so.conf", pmo_root);
@@ -2181,6 +2178,16 @@ int pacman_remove(pacdb_t *db, PMList *targets)
 			vprint(_("finding removable dependencies...\n"));
 			alltargs = removedeps(db, alltargs);
 		}
+
+		/* re-order w.r.t. dependencies */		
+		vprint(_("sorting by dependencies\n"));
+		lp = sortbydeps(alltargs, PM_REMOVE);
+		/* free the old alltargs */
+		for(j = alltargs; j; j = j->next) {
+			j->data = NULL;
+		}
+		FREELIST(alltargs);
+		alltargs = lp;
 
 		if(pmo_r_recurse || pmo_r_cascade) {
 			/* list targets */
@@ -2559,17 +2566,20 @@ int pacman_upgrade(pacdb_t *db, PMList *targets, PMList *dependonly)
 
 /* Re-order a list of target packages with respect to their dependencies.
  *
- * Example:
+ * Example (PM_ADD):
  *   A depends on C
  *   B depends on A
  *   Target order is A,B,C,D
  *
  *   Should be re-ordered to C,A,B,D
  * 
+ * mode should be either PM_ADD or PM_REMOVE.  This affects the dependency
+ * order sortbydeps() will use.
+ *
  * This function returns the new PMList* target list.
  *
  */ 
-PMList* sortbydeps(PMList *targets)
++PMList* sortbydeps(PMList *targets, int mode)
 {
 	PMList *newtargs = NULL;
 	PMList *i, *j, *k;
@@ -2624,10 +2634,20 @@ PMList* sortbydeps(PMList *targets)
 			for(i = targets; i; i = i->next) {
 				i->data = NULL;
 			}
-			list_free(targets);
+			FREELIST(targets);
 		}
 		targets = newtargs;
 		clean = 1;
+	}
+	if(mode == PM_REMOVE) {
+		/* we're removing packages, so reverse the order */
+		newtargs = list_reverse(targets);
+		/* free the old one */
+		for(i = targets; i; i = i->next) {
+			i->data = NULL;
+		}
+		FREELIST(targets);
+		targets = newtargs;
 	}
 	return(targets);
 }
@@ -3776,7 +3796,7 @@ void version(void)
 {
 	printf(_("\n"));
 	printf(_(" .--.                  Pacman v%s\n"), PACVER);
-	printf(_("/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2004 Judd Vinet <jvinet@zeroflux.org>\n"));
+	printf(_("/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2005 Judd Vinet <jvinet@zeroflux.org>\n"));
 	printf(_("\\  '-. '-'  '-'  '-'  \n"));
 	printf(_(" '--'                  This program may be freely redistributed under\n"));
 	printf(_("                       the terms of the GNU General Public License\n\n"));

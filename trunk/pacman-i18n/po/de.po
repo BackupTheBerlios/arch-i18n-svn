@@ -1,5 +1,5 @@
 # Pacman German Translation
-# Copyright (C) 2004 Matthias-Christian Ott <matthias.christian@tiscali.de>
+# Copyright (C) 2005 Matthias-Christian Ott <matthias.christian@tiscali.de>
 # This file is distributed under the same license as the pacman package.
 # Matthias-Christian Ott <matthias.christian@tiscali.de>, 2004
 
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Pacman 2.9.4\n"
 "Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
 "POT-Creation-Date: 2004-12-21 14:48+0100\n"
-"PO-Revision-Date: 2004-12-23 17:45+0100\n"
+"PO-Revision-Date: 2005-01-21 14:38+0100\n"
 "Last-Translator: Matthias-Christian Ott <matthias.christian@tiscali.de>\n"
 "Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
 "MIME-Version: 1.0\n"
@@ -117,6 +117,11 @@ msgstr "%s: Syntaxfehler in der Beschreibungsdatei in Zeile %d\n"
 #: src/package.c:183 package.c:224
 msgid "error"
 msgstr "Fehler"
+
+#: src/package.c:337
+#, c-format
+msgid "Repository        : %s\n"
+msgstr "Paketquelle		: %s\n"
 
 #: src/package.c:332
 #, c-format

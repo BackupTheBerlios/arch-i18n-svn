@@ -145,6 +145,8 @@ pkginfo_t* load_pkg(char *pkgfile)
 		return(NULL);
 	}
 
+	info->filename = strdup(pkgfile);
+
 	return(info);
 }
 
@@ -261,6 +263,7 @@ pkginfo_t* newpkg()
 	pkg->groups         = NULL;
 	pkg->provides       = NULL;
 	pkg->replaces       = NULL;
+	pkg->filename       = NULL;
 
 	return(pkg);
 }
@@ -279,6 +282,7 @@ void freepkg(pkginfo_t *pkg)
 	FREELIST(pkg->groups);
 	FREELIST(pkg->provides);
 	FREELIST(pkg->replaces);
+	FREE(pkg->filename);
 	FREE(pkg);
 	return;
 }
@@ -329,7 +333,8 @@ void dump_pkg_full(pkginfo_t *info)
 	if(info == NULL) {
 		return;
 	}
-
+	
+	printf(_("Repository        : %s\n"), treename);
 	printf(_("Name           : %s\n"), info->name);
 	printf(_("Version        : %s\n"), info->version);
 	pm = list_sort(info->groups);
@@ -371,7 +376,7 @@ void dump_pkg_full(pkginfo_t *info)
 
 /* Display the content of a sync package
  */
-void dump_pkg_sync(pkginfo_t *info)
+void dump_pkg_sync(pkginfo_t *info, char *treename)
 {
 	PMList *pm;
 
