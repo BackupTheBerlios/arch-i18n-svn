@@ -1,0 +1,1603 @@
+# German messages for Pacman.
+# Copyright (C) Matthias-Christian Ott <matthias.christian@tiscali.de>
+# This file is distributed under the same license as the Pacman package.
+# Redshift <redshift@pandora.be>, 2004
+
+msgid ""
+msgstr ""
+"Project-Id-Version: pacman 2.9.2\n"
+"Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
+"POT-Creation-Date: 2004-12-02 16:08+0100\n"
+"PO-Revision-Date: 2004-12-20 21:51+0100\n"
+"Last-Translator: Redshift <redshift@pandora.be>\n"
+"Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/convertdb.c:49
+#, c-format
+msgid "converts a pacman 1.x database to a pacman 2.0 format\n"
+msgstr "Zet een pacman 1.x database om naar het pacman 2.0 formaat\n"
+
+#: src/convertdb.c:50
+#, c-format
+msgid ""
+"usage: %s <target_dir>\n"
+"\n"
+msgstr "gebruik: %s <doelmap>\n"
+"\n"
+""
+
+#: src/convertdb.c:51
+#, c-format
+msgid ""
+"convertdb will convert all package data from /var/lib/pacman/pacman.db\n"
+msgstr ""
+"convertdb zal alle pakketinformatie van /var/lib/pacman/pacman.db omzetten\n"
+
+#: src/convertdb.c:52
+#, c-format
+msgid ""
+"to a 2.0 format and place it in target_dir.\n"
+"\n"
+msgstr ""
+"naar een 2.0 formaat en zal het in doelmap plaatsen.\n"
+"\n"
+
+#: src/convertdb.c:73
+#, c-format
+msgid "converting %s\n"
+msgstr "omzetten %s\n"
+
+#: src/db.c:221 src/db.c:346
+#, c-format
+msgid "error: %s: %s\n"
+msgstr "fout: %s: %s\n"
+
+#: src/db.c:373
+#, c-format
+msgid "db_read: error: %s: %s\n"
+msgstr "db_read: fout: %s: %s\n"
+
+#: src/db.c:657
+#, c-format
+msgid "%s: exists in \"%s\" (target) and \"%s\" (target)"
+msgstr "%s: bestaat in \"%s\" (doel) en \"%s\" (doel)"
+
+#: src/db.c:715
+#, c-format
+msgid "%s: %s: exists in filesystem"
+msgstr "%s: %s: bestaat in het bestandssysteem"
+
+#: src/list.c:222
+#, c-format
+msgid "None\n"
+msgstr "Geen\n"
+
+#: src/md5driver.c:45
+#, c-format
+msgid "%s can't be opened\n"
+msgstr "%s kan niet geopend worden\n"
+
+#: src/package.c:52 src/pacman.c:1762
+msgid "could not open package"
+msgstr "kon het pakket niet openen"
+
+#: src/package.c:73
+#, c-format
+msgid "load_pkg: missing package name in %s.\n"
+msgstr "load_pkg: pakket naam ontbreekt in %s.\n"
+
+#: src/package.c:78
+#, c-format
+msgid "load_pkg: missing package version in %s.\n"
+msgstr "load_pkg: pakket versie ontbreekt in %s.\n"
+
+#: src/package.c:114
+#, c-format
+msgid "warning: could not remove tempfile %s\n"
+msgstr "waarschuwing: kon het tijdelijk bestand %s niet verwijderen\n"
+
+#: src/package.c:131
+#, c-format
+msgid "bad package file in %s"
+msgstr "slecht pakket bestand in %s"
+
+#: src/package.c:141
+#, c-format
+msgid "load_pkg: missing package info file in %s\n"
+msgstr "load_pkg: pakket info bestand ontbreekt in %s\n"
+
+#: src/package.c:181 src/package.c:222
+#, c-format
+msgid "%s: syntax error in description file line %d\n"
+msgstr "%s: grammatica fout in beschrijvingsbestand lijn %d\n"
+
+#: src/package.c:182 src/package.c:223
+msgid "error"
+msgstr "fout"
+
+#: src/package.c:331
+#, c-format
+msgid "Name           : %s\n"
+msgstr "Naam           : %s\n"
+
+#: src/package.c:332
+#, c-format
+msgid "Version        : %s\n"
+msgstr "Versie        : %s\n"
+
+#: src/package.c:334
+msgid "Groups         :"
+msgstr "Groepen         :"
+
+#: src/package.c:336
+#, c-format
+msgid "Packager       : %s\n"
+msgstr "Verpakker       : %s\n"
+
+#: src/package.c:337
+#, c-format
+msgid "URL            : %s\n"
+msgstr "URL            : %s\n"
+
+#: src/package.c:338
+#, c-format
+msgid "License        : %s\n"
+msgstr "Licentie        : %s\n"
+
+#: src/package.c:339
+#, c-format
+msgid "Architecture   : %s\n"
+msgstr "Architectuur   : %s\n"
+
+#: src/package.c:340
+#, c-format
+msgid "Size           : %ld\n"
+msgstr "Grootte           : %ld\n"
+
+#: src/package.c:341
+#, c-format
+msgid "Build Date     : %s %s\n"
+msgstr "Bouwdatum     : %s %s\n"
+
+#: src/package.c:342
+#, c-format
+msgid "Install Date   : %s %s\n"
+msgstr "Installatiedatum   : %s %s\n"
+
+#: src/package.c:343
+#, c-format
+msgid "Install Script : %s\n"
+msgstr "Installatiescript : %s\n"
+
+#: src/package.c:343
+msgid "Yes"
+msgstr "Ja"
+
+#: src/package.c:343
+msgid "No"
+msgstr "Nee"
+
+#: src/package.c:344
+#, c-format
+msgid "Reason:        : "
+msgstr "Reden:        : "
+
+#: src/package.c:346
+#, c-format
+msgid "explicitly installed\n"
+msgstr "Expliciet geinstalleerd\n"
+
+#: src/package.c:347
+#, c-format
+msgid "installed as a dependency for another package\n"
+msgstr "geinstalleerd als een afhankelijkheid voor een ander pakket\n"
+
+#: src/package.c:348
+#, c-format
+msgid "unknown\n"
+msgstr "onbekend\n"
+
+#: src/package.c:351
+msgid "Provides       :"
+msgstr "Voorziet       :"
+
+#: src/package.c:354
+msgid "Depends On     :"
+msgstr "Hangt af van     :"
+
+#: src/package.c:357
+msgid "Required By    :"
+msgstr "Vereist door    :"
+
+#: src/package.c:360
+msgid "Conflicts With :"
+msgstr "Conflicteert met :"
+
+#: src/package.c:362
+#, c-format
+msgid "Description    : "
+msgstr "Beschrijving    : "
+
+#: src/package.c:377
+#, c-format
+msgid "Name              : %s\n"
+msgstr "Naam              : %s\n"
+
+#: src/package.c:378
+#, c-format
+msgid "Version           : %s\n"
+msgstr "Versie           : %s\n"
+
+#: src/package.c:380
+msgid "Groups            :"
+msgstr "Groepen            :"
+
+#: src/package.c:383
+msgid "Provides          :"
+msgstr "Voorziet          :"
+
+#: src/package.c:386
+msgid "Depends On        :"
+msgstr "Hangt af van        :"
+
+#: src/package.c:389
+msgid "Conflicts With    :"
+msgstr "Conflicteert met    :"
+
+#: src/package.c:392
+msgid "Replaces          :"
+msgstr "Vervangt          :"
+
+#: src/package.c:394
+#, c-format
+msgid "Size (compressed) : %ld\n"
+msgstr "Grootte (gecomprimeerd) : %ld\n"
+
+#: src/package.c:395
+#, c-format
+msgid "Description       : "
+msgstr "Beschrijving       : "
+
+#: src/package.c:397
+#, c-format
+msgid ""
+"\n"
+"MD5 Sum           : %s\n"
+msgstr ""
+"\n"
+"MD5 Sum           : %s\n"
+
+#: src/pacman.c:163
+#, c-format
+msgid "error: you cannot perform this operation unless you are root.\n"
+msgstr "fout: je kan deze actie alleen uitvoeren als je root bent.\n"
+
+#: src/pacman.c:169
+#, c-format
+msgid "error: unable to lock pacman database.\n"
+msgstr "fout: niet in staat om de pacman database vast te zetten.\n"
+
+#: src/pacman.c:170
+#, c-format
+msgid "       if you're sure pacman is not already running, you\n"
+msgstr "       als je zeker bent dat pacman al niet draait, kan je\n"
+
+#: src/pacman.c:171
+#, c-format
+msgid "       can remove %s\n"
+msgstr "       %s verwijderen\n"
+
+#: src/pacman.c:193
+msgid "warning: cannot open logfile"
+msgstr "waarschuwing: kan logboekbestand niet openen"
+
+#: src/pacman.c:207
+#, c-format
+msgid "Installation Root: %s\n"
+msgstr "Installatie Stam: %s\n"
+
+#: src/pacman.c:209
+#, c-format
+msgid "Top-level DB Path: %s%s\n"
+msgstr "Hoogste niveau DB pad: %s%s\n"
+
+#: src/pacman.c:211
+msgid "Targets:"
+msgstr "Doelen:"
+
+#: src/pacman.c:220
+#, c-format
+msgid "initializing database %s...\n"
+msgstr "bezig met initialiseren van de database %s...\n"
+
+#: src/pacman.c:224
+#, c-format
+msgid "error: could not create database.\n"
+msgstr "fout: kon de database niet aanmaken.\n"
+
+#: src/pacman.c:228
+#, c-format
+msgid "error: could not open database.\n"
+msgstr "fout: kon de database niet openen.\n"
+
+#: src/pacman.c:245
+#, c-format
+msgid ""
+"error: no operation specified (use -h for help)\n"
+"\n"
+msgstr ""
+"fout: geen actie gespecifieerd (gebruik -h voor hulp)"
+"\n"
+
+#: src/pacman.c:292
+#, c-format
+msgid "conflict: %s\n"
+msgstr "conflict: %s\n"
+
+#: src/pacman.c:296
+#, c-format
+msgid "requires: %s"
+msgstr "vereist: %s"
+
+#: src/pacman.c:334
+#, c-format
+msgid "error: no usable package repositories configured.\n"
+msgstr "fout: geen bruikbare pakket magazijn geconfigureerd.\n"
+
+#: src/pacman.c:347
+#, c-format
+msgid "removing old packages from cache... "
+msgstr "bezig met het verwijderen van oude pakketten uit de cache... "
+
+#: src/pacman.c:350
+#, c-format
+msgid "error: could not access cache directory\n"
+msgstr "fout: kon de cache map niet bereiken\n"
+
+#: src/pacman.c:420
+#, c-format
+msgid "removing all packages from cache... "
+msgstr "bezig met alle pakketten te verwijderen van de cache... "
+
+#: src/pacman.c:422
+#, c-format
+msgid "error: could not remove cache directory: %s\n"
+msgstr "fout: kon de cache map niet verwijderen: %s\n"
+
+#: src/pacman.c:428
+#, c-format
+msgid "error: could not create new cache directory: %s\n"
+msgstr "fout: kon geen nieuwe cache map aanmaken: %s\n"
+
+#: src/pacman.c:433 src/pacman.c:1271 src/pacman.c:1552 src/pacman.c:1688 src/pacman.c:1990
+#: src/pacman.c:2025 src/pacman.c:2301
+#, c-format
+msgid "done.\n"
+msgstr "voltooid.\n"
+
+#: src/pacman.c:439
+#, c-format
+msgid ":: Synchronizing package databases... \n"
+msgstr ":: Synchroniseren van pakket databases... \n"
+
+#: src/pacman.c:440
+msgid "synchronizing package lists"
+msgstr "Bezig met het synchroniseren van pakketlijsten"
+
+#: src/pacman.c:452
+#, c-format
+msgid "error: could not open sync database: %s\n"
+msgstr "fout: kon de synchronisatiedatabase niet openen: %s\n"
+
+#: src/pacman.c:453
+#, c-format
+msgid "       have you used --refresh yet?\n"
+msgstr "       heb je al --refresh gebruikt?\n"
+
+#: src/pacman.c:567 src/pacman.c:2462 src/pacman.c:2510 src/pacman.c:2519
+#, c-format
+msgid "Package \"%s\" was not found.\n"
+msgstr "Pakket \"%s\" werd niet gevonden.\n"
+
+#: src/pacman.c:598
+#, c-format
+msgid "Repository \"%s\" was not found.\n"
+msgstr "Magazijn \"%s\" werd niet gevonden.\n"
+
+#: src/pacman.c:609
+msgid "starting full system upgrade"
+msgstr "opstarten van volledig systeem upgrade"
+
+#: src/pacman.c:621
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr ":: %s-%s: pakket upgrade genegeerd (wordt vervangen door %s-%s)\n"
+
+#: src/pacman.c:624
+#, c-format
+msgid ":: Replace %s with %s from \"%s\"? [Y/n] "
+msgstr ":: %s vervangen met %s van \"%s\"? [Y/n] "
+
+#: src/pacman.c:687
+#, c-format
+msgid ":: %s-%s: local version is newer\n"
+msgstr ":: %s-%s: lokale versie is nieuwer\n"
+
+#: src/pacman.c:698
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (%s)\n"
+msgstr ":: %s-%s: pakket upgrade genegeerd (%s)\n"
+
+#: src/pacman.c:722
+#, c-format
+msgid ""
+":: Above packages will be skipped.  To manually upgrade use 'pacman -S "
+"<pkg>'\n"
+msgstr ""
+"Bovenstaande pakket worden overgeslaan. Om manueel up te graden, gebruik 'pacman -S "
+"<pakket>'\n"
+
+
+#: src/pacman.c:732
+#, c-format
+msgid ""
+"\n"
+":: pacman has detected a newer version of the \"pacman\" package.\n"
+msgstr ""
+"\n"
+":: pacman heeft een nieuwere versie van het \"pacman\" pakket gedetecteerd.\n"
+
+#: src/pacman.c:733
+#, c-format
+msgid ":: It is recommended that you allow pacman to upgrade itself\n"
+msgstr ":: Het is aanbevolen dat je eerst pacman zichzelf laat upraden,\n"
+
+#: src/pacman.c:734
+#, c-format
+msgid ":: first, then you can re-run the operation with the newer version.\n"
+msgstr ":: dan kan je de actie opnieuw uitvoeren met de nieuwe versie.\n"
+
+#: src/pacman.c:736
+msgid ":: Upgrade pacman first? [Y/n] "
+msgstr ":: Eerst pacman upgraden? [Y/n] "
+
+#: src/pacman.c:800 src/pacman.c:2086
+#, c-format
+msgid ":: group %s:\n"
+msgstr ":: groep %s:\n"
+
+#: src/pacman.c:802
+msgid "    Install whole content? [Y/n] "
+msgstr "    Volledige inhoud installeren? [Y/n] "
+
+#: src/pacman.c:808
+#, c-format
+msgid ":: Install %s from group %s? [Y/n] "
+msgstr ":: %s installeren van groep %s? [Y/n] "
+
+#: src/pacman.c:815
+#, c-format
+msgid "%s: not found in sync db\n"
+msgstr "%s: niet gevonden in synchronisatiedatabase\n"
+
+#: src/pacman.c:819
+#, c-format
+msgid "%s: not present in \"%s\" repository\n"
+msgstr "%s: niet aanwezig in \"%s\" magazijn\n"
+
+#: src/pacman.c:832
+#, c-format
+msgid ":: %s-%s: local version is newer.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: lokale versie is nieuwever. Toch ugpraden? [Y/n] "
+
+#: src/pacman.c:841
+#, c-format
+msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: up to date. Toch upgraden? [Y/n] "
+
+#: src/pacman.c:884
+#, c-format
+msgid "error: unresolvable dependencies:\n"
+msgstr "fout: onopzoekbare afhankelijkheden:\n"
+
+#: src/pacman.c:887 src/pacman.c:1574
+#, c-format
+msgid "  %s: requires %s"
+msgstr "  %s: heeft %s nodig"
+
+#: src/pacman.c:894
+#, c-format
+msgid " but it is not in the sync db\n"
+msgstr " maar het is niet in de synchronisatiedatabase\n"
+
+#: src/pacman.c:989 src/pacman.c:1596
+#, c-format
+msgid ":: %s conflicts with %s. Remove %s? [Y/n] "
+msgstr ":: %s conflicteert met %s. %s verwijderen? [Y/n] "
+
+#: src/pacman.c:995 src/pacman.c:1602
+#, c-format
+msgid ""
+"\n"
+"error: package conflicts detected\n"
+msgstr ""
+"\n"
+"fout: pakketconflicteren gededecteert (vluchten!)\n"
+
+#: src/pacman.c:1000 src/pacman.c:1607
+#, c-format
+msgid ""
+"\n"
+"error: %s conflicts with %s\n"
+msgstr ""
+"\n"
+"fout: %s conflicteert met %s\n"
+
+#: src/pacman.c:1070
+#, c-format
+msgid ""
+"\n"
+"Remove:  "
+msgstr ""
+"\n"
+"Verwijder:  "
+
+#: src/pacman.c:1092
+#, c-format
+msgid ""
+"\n"
+"Targets: "
+msgstr ""
+"\n"
+"Doelen: "
+
+#: src/pacman.c:1095
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Total Package Size:   %.1f MB\n"
+msgstr ""
+"\n"
+"\n"
+"Totale pakket grootte:   %.1f MB\n"
+
+#: src/pacman.c:1105
+#, c-format
+msgid ""
+"\n"
+"Beginning download...\n"
+msgstr ""
+"\n"
+"Bezig met downloaden...\n"
+
+#: src/pacman.c:1108
+msgid ""
+"\n"
+"Proceed with download? [Y/n] "
+msgstr ""
+"\n"
+"Verder gaan met download? [Y/n] "
+
+#: src/pacman.c:1116
+#, c-format
+msgid ""
+"\n"
+"Beginning upgrade process...\n"
+msgstr ""
+"\n"
+"Bezig met upgrade proces...\n"
+
+#: src/pacman.c:1119
+msgid ""
+"\n"
+"Proceed with upgrade? [Y/n] "
+msgstr ""
+"\n"
+"Doorgaan met upgrade? [Y/n] "
+
+#: src/pacman.c:1166
+#, c-format
+msgid " %s-%s.pkg.tar.gz is already in the cache\n"
+msgstr " %s-%s.pkg.tar.gz zit al in de cache\n"
+
+#: src/pacman.c:1188
+#, c-format
+msgid ""
+"\n"
+":: Retrieving packages from %s...\n"
+msgstr ""
+"\n"
+":: Ophalen van pakketten van %s...\n"
+
+#: src/pacman.c:1194
+#, c-format
+msgid "warning: no %s cache exists.  creating..."
+msgstr "waarschuwing: cache %s bestaat niet.  Bezig met aanmaken..."
+
+#: src/pacman.c:1200
+msgid "warning: couldn't create package cache, using /tmp instead"
+msgstr "waarschuwing: kon pakketcache niet aanmaken, /tmp wordt gebruikt"
+
+#: src/pacman.c:1207
+#, c-format
+msgid "error: failed to retrieve some files from %s\n"
+msgstr "fout: kon sommige bestanden niet ophalen van %s\n"
+
+#: src/pacman.c:1229
+#, c-format
+msgid "checking package integrity... "
+msgstr "bezig met controleren van pakketintegriteit..."
+
+#: src/pacman.c:1245
+#, c-format
+msgid "error: can't get md5 checksum for package %s\n"
+msgstr "fout: kan MD5 checksum niet ophalen voor pakket %s\n"
+
+#: src/pacman.c:1255
+#, c-format
+msgid "error: can't get md5 checksum for archive %s\n"
+msgstr "fout: kan MD5 checksum niet ophalen voor archief %s\n"
+
+#: src/pacman.c:1264
+#, c-format
+msgid "error: archive %s is corrupted\n"
+msgstr "fout: archief %s is beschadigd\n"
+
+#: src/pacman.c:1288
+msgid "checking dependencies of packages designated for removal...\n"
+msgstr "bezig met controleren van pakketten bedoeld voor verwijdering...\n"
+
+#: src/pacman.c:1295 src/pacman.c:2140
+#, c-format
+msgid "error: this will break the following dependencies:\n"
+msgstr "fout: dit zal de volgende afhankelijkheden breken:\n"
+
+#: src/pacman.c:1298 src/pacman.c:2143
+#, c-format
+msgid "  %s: is required by %s\n"
+msgstr "  %s: vereist door %s\n"
+
+#: src/pacman.c:1317 src/pacman.c:1735
+#, c-format
+msgid ""
+"\n"
+"upgrade aborted.\n"
+msgstr ""
+"\n"
+"upgrade geannuleerd.\n"
+
+#: src/pacman.c:1349
+#, c-format
+msgid "package removal failed.  aborting...\n"
+msgstr "pakketverwijdering mislukte.  Annuleren...\n"
+
+#: src/pacman.c:1492
+#, c-format
+msgid "error: failed to download %s\n"
+msgstr "fout: kon %s niet downloaden\n"
+
+#: src/pacman.c:1508
+#, c-format
+msgid "loading package data... "
+msgstr "bezig met het laden van pakketgegevens... "
+
+#: src/pacman.c:1512
+#, c-format
+msgid "reading %s... "
+msgstr "%s lezen... "
+
+#: src/pacman.c:1519
+#, c-format
+msgid ""
+"\n"
+"error: package \"%s\" has more than one hyphen in its version (%s)\n"
+msgstr ""
+"\n"
+"fout: pakket \"%s\" heeft meer dan een streepje in zijn versie (%s)\n"
+
+#: src/pacman.c:1527
+msgid "not installed or lesser version\n"
+msgstr "niet geinstalleerd of lagere versie\n"
+
+#: src/pacman.c:1540
+msgid "replacing older version in target list. "
+msgstr "bezig met het vervangen van de oude versie in de doellijst. "
+
+#: src/pacman.c:1548
+msgid "done\n"
+msgstr "klaar\n"
+
+#: src/pacman.c:1563 src/pacman.c:2124
+msgid "checking dependencies...\n"
+msgstr "bezig met controleren van afhankelijkheden...\n"
+
+#: src/pacman.c:1571
+#, c-format
+msgid "error: unsatisfied dependencies:\n"
+msgstr "fout: mislukte afhankelijkheden:\n"
+
+#: src/pacman.c:1643
+#, c-format
+msgid ""
+"\n"
+"%s aborted.\n"
+msgstr ""
+"\n"
+"%s geannuleerd.\n"
+
+#: src/pacman.c:1643
+msgid "upgrade"
+msgstr "upgraden"
+
+#: src/pacman.c:1643
+msgid "install"
+msgstr "installeren"
+
+#: src/pacman.c:1660
+msgid "sorting by dependencies\n"
+msgstr "sorten volgens afhankelijkheden\n"
+
+#: src/pacman.c:1675
+#, c-format
+msgid "checking for file conflicts... "
+msgstr "controleren voor bestandsconflicten... "
+
+#: src/pacman.c:1679
+#, c-format
+msgid ""
+"\n"
+"error: the following file conflicts were found:\n"
+msgstr ""
+"\n"
+"fout: de volgende bestandsconflicten werden gevonden:\n"
+
+#: src/pacman.c:1685
+#, c-format
+msgid ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+msgstr ""
+"\n"
+"fouten kwamen voor, geen pakketten geupgrade.\n"
+
+#: src/pacman.c:1707
+#, c-format
+msgid "error: %s is already installed. (try --upgrade)\n"
+msgstr "fout: %s is al geinstalleerd. (probeer --upgrade)\n"
+
+#: src/pacman.c:1716
+#, c-format
+msgid "upgrading %s... "
+msgstr "%s upgraden... "
+
+#: src/pacman.c:1731
+msgid "removing old package first...\n"
+msgstr "eerst oud pakket verwijderen...\n"
+
+#: src/pacman.c:1751
+#, c-format
+msgid "installing %s... "
+msgstr "bezig met installeren van %s... "
+
+#: src/pacman.c:1765
+msgid "extracting files...\n"
+msgstr "bezig met uitpakken van bestanden...\n"
+
+#: src/pacman.c:1813 src/pacman.c:1921
+#, c-format
+msgid "could not extract %s: %s"
+msgstr "kon %s niet uitpakken: %s"
+
+#: src/pacman.c:1834
+#, c-format
+msgid "checking md5 hashes for %s\n"
+msgstr "bezig met controleren van MD5 hash %s\n"
+
+#: src/pacman.c:1835
+#, c-format
+msgid "  current:  %s\n"
+msgstr "  huidig:  %s\n"
+
+#: src/pacman.c:1836
+#, c-format
+msgid "  new:      %s\n"
+msgstr "  new:      %s\n"
+
+#: src/pacman.c:1838
+#, c-format
+msgid "  original: %s\n"
+msgstr "  origineel: %s\n"
+
+#: src/pacman.c:1850 src/pacman.c:1883
+#, c-format
+msgid "error: could not rename %s: %s"
+msgstr "fout: kon %s niet herbenoemen: %s"
+
+#: src/pacman.c:1853
+#, c-format
+msgid "error: could not copy %s to %s: %s"
+msgstr "fout: kon %s niet kopieeren naar %s: %s"
+
+#: src/pacman.c:1856 src/pacman.c:1885 src/pacman.c:2212
+#, c-format
+msgid "warning: %s saved as %s"
+msgstr "waarschuwing: %s bewaard als %s"
+
+#: src/pacman.c:1866 src/pacman.c:1869 src/pacman.c:1875
+msgid "  action: installing new file\n"
+msgstr "  actie: installeren nieuw bestand\n"
+
+#: src/pacman.c:1873
+msgid "  action: leaving existing file in place\n"
+msgstr "  actie: huidig bestand gerust laten\n"
+
+#: src/pacman.c:1879
+msgid "  action: saving current file and installing new one\n"
+msgstr "  actie: huidig bestand opslaan en nieuw installeren\n"
+
+#: src/pacman.c:1892
+#, c-format
+msgid "error: could not copy %s to %s: %s\n"
+msgstr "fout: kon %s niet kopieeren naar %s: %s\n"
+
+#: src/pacman.c:1907
+#, c-format
+msgid "%s is in NoUpgrade - skipping\n"
+msgstr "%s is vermeld in NoUpgrade - overgeslagen\n"
+
+#: src/pacman.c:1909
+#, c-format
+msgid "warning: extracting %s%s as %s"
+msgstr "waarschuwing: bezig met %s%s uit te pakken als %s"
+
+#: src/pacman.c:1945
+#, c-format
+msgid "errors occurred while %s %s"
+msgstr "fouten kwamen voor terwijl %s %s"
+
+#: src/pacman.c:1946
+msgid "upgrading"
+msgstr "upgraden"
+
+#: src/pacman.c:1946
+msgid "installing"
+msgstr "installeren"
+
+#: src/pacman.c:1976
+msgid "Updating database..."
+msgstr "Database up to date brengen..."
+
+#: src/pacman.c:1987
+#, c-format
+msgid "error updating database for %s!"
+msgstr "fout in updaten database voor %s!"
+
+#: src/pacman.c:1992
+#, c-format
+msgid "upgraded %s (%s -> %s)"
+msgstr "upgegrade: %s (%s -> %s)"
+
+#: src/pacman.c:1995
+#, c-format
+msgid "installed %s (%s)"
+msgstr "%s geinstalleerd (%s)"
+
+#: src/pacman.c:2053 src/pacman.c:2315
+#, c-format
+msgid "running \"%s\"\n"
+msgstr "bezig met \"%s\" te laten lopen\n"
+
+#: src/pacman.c:2088
+msgid "    Remove whole content? [Y/n] "
+msgstr "    Volledige inhoud verwijderen? [Y/n] "
+
+#: src/pacman.c:2095
+#, c-format
+msgid ":: Remove %s from group %s? [Y/n] "
+msgstr ":: %s verwijderen van groep %s? [Y/n] "
+
+#: src/pacman.c:2106
+#, c-format
+msgid "error: could not find %s in database\n"
+msgstr "fout: kon %s niet vinden in de database\n"
+
+#: src/pacman.c:2114
+#, c-format
+msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
+msgstr ":: %s is toegewijd als een HoldPkg.  Toch verwijderen? [Y/n] "
+
+#: src/pacman.c:2152
+msgid "finding removable dependencies...\n"
+msgstr "bezig met zoeken naar verwijderbare afhankelijkheden...\n"
+
+#: src/pacman.c:2158
+msgid ""
+"\n"
+"Targets:"
+msgstr ""
+"\n"
+"Doelen:"
+
+#: src/pacman.c:2160
+msgid ""
+"\n"
+"Do you want to remove these packages? [Y/n] "
+msgstr ""
+"\n"
+"Wil je deze pakketten verwijderen? [Y/n] "
+
+#: src/pacman.c:2171
+#, c-format
+msgid "removing %s... "
+msgstr "bezig met verwijderen van %s..."
+
+#: src/pacman.c:2194
+#, c-format
+msgid "file %s does not exist\n"
+msgstr "bestand %s bestaat niet\n"
+
+#: src/pacman.c:2216 src/pacman.c:2223
+msgid "cannot remove file"
+msgstr "kan bestand niet verwijderen"
+
+#: src/pacman.c:2302
+#, c-format
+msgid "removed %s (%s)"
+msgstr "%s verwijderd (%s)"
+
+#: src/pacman.c:2360
+#, c-format
+msgid "Group \"%s\" was not found.\n"
+msgstr "Groep \"%s\" was niet gevonden.\n"
+
+#: src/pacman.c:2377
+#, c-format
+msgid "error: no package file was specified for --file\n"
+msgstr "fout: geen pakketbestand was gespecifieerd voor --file\n"
+
+#: src/pacman.c:2382
+#, c-format
+msgid "error: %s is not a package\n"
+msgstr "fout: %s is geen pakket\n"
+
+#: src/pacman.c:2405
+#, c-format
+msgid "error: no file was specified for --owns\n"
+msgstr "fout: geen bestand was gespecifieerd voor --owns\n"
+
+#: src/pacman.c:2415
+#, c-format
+msgid "%s is owned by %s %s\n"
+msgstr "%s is eigenaar van %s %s\n"
+
+#: src/pacman.c:2422
+#, c-format
+msgid "No package owns %s\n"
+msgstr "Geen pakket bezit %s\n"
+
+#: src/pacman.c:2426
+#, c-format
+msgid "error: %s is not a file.\n"
+msgstr "fout: %s is geen bestand.\n"
+
+#: src/pacman.c:2486
+#, c-format
+msgid "error calculating md5sum for %s\n"
+msgstr "fout in md5sum berekening van %s\n"
+
+#: src/pacman.c:2566
+msgid "warning: possible dependency cycle detected\n"
+msgstr "fout: mogelijke afhankelijkheid cyclus gededecteerd\n"
+
+#: src/pacman.c:2642
+#, c-format
+msgid "warning: cannot find package \"%s\" or anything that provides it!\n"
+msgstr "fout: kan het pakket \"%s\" of iets dat het voorziet!\n"
+
+#: src/pacman.c:2647
+#, c-format
+msgid "dep is NULL!\n"
+msgstr "dep is NULL!\n"
+
+#: src/pacman.c:2657
+#, c-format
+msgid "excluding %s -- explicitly installed\n"
+msgstr "uitzonderen van %s -- expliciet geinstalleerd\n"
+
+#: src/pacman.c:2743
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\":\n"
+msgstr "fout: kan afhankelijkheden niet oplossen voor \"%s\":\n"
+
+#: src/pacman.c:2744
+#, c-format
+msgid "       \"%s\" is not in the package set\n"
+msgstr "       \"%s\" zit niet in de pakketset\n"
+
+#: src/pacman.c:2758
+#, c-format
+msgid "resolving %s\n"
+msgstr "%s oplossen\n"
+
+#: src/pacman.c:2771
+#, c-format
+msgid "adding %s-%s\n"
+msgstr "toevoegen %s-%s\n"
+
+#: src/pacman.c:2775
+#, c-format
+msgid "dependency cycle detected: %s\n"
+msgstr "afhankelijkheidscyclus gededecteerd: %s\n"
+
+#: src/pacman.c:3018
+#, c-format
+msgid "warning: invalid dependency in %s"
+msgstr "waarschuwing: ongeldige afhankelijkheid in %s"
+
+#: src/pacman.c:3085
+#, c-format
+msgid "data error: %s supposedly provides %s, but it was not found in db\n"
+msgstr "gegevensfout: %s zou %s moeten voorzien, maar het werd niet gevonden in de database\n"
+
+#: src/pacman.c:3243
+msgid "error creating temp directory"
+msgstr "fout in het aanmaken van de tijdelijke map"
+
+#: src/pacman.c:3261
+#, c-format
+msgid "Executing %s script...\n"
+msgstr "Bezig met uitvoeren van %s...\n"
+
+#: src/pacman.c:3273
+#, c-format
+msgid "warning: could not remove tmpdir %s\n"
+msgstr "waarschuwing: kon tijdelijke map %s niet verwijderen.\n"
+
+#: src/pacman.c:3360
+msgid "bad root path"
+msgstr "foutief root pad"
+
+#: src/pacman.c:3374
+#, c-format
+msgid ""
+"error: only one operation may be used at a time\n"
+"\n"
+msgstr ""
+"fout: slechts een operatie kan tergelijkertijd worden uitgevoerd\n"
+"\n"
+
+#: src/pacman.c:3424
+#, c-format
+msgid "config: new section '%s'\n"
+msgstr "configuratie: nieuwe sectie '%s'\n"
+
+#: src/pacman.c:3426
+#, c-format
+msgid "config: line %d: bad section name\n"
+msgstr "configuratie: lijn %d: foutieve sectie naam\n"
+
+#: src/pacman.c:3430
+#, c-format
+msgid ""
+"config: line %d: '%s' is reserved and cannot be used as a package tree\n"
+msgstr ""
+"configuratie: lijn %d: '%s' is gereserveerd en kan niet gebruikt worden als een pakketboom\n" 
+
+#: src/pacman.c:3456 src/pacman.c:3473 src/pacman.c:3557 src/pacman.c:3616
+#, c-format
+msgid "config: line %d: syntax error\n"
+msgstr "configuratie: lijn %d: grammaticafout\n"
+
+#: src/pacman.c:3462
+#, c-format
+msgid "config: line %d: all directives must belong to a section\n"
+msgstr "configuratie: lijn %d: alle parameters moeten tot een sectie behoren\n"
+
+#: src/pacman.c:3468
+msgid "config: nopassiveftp\n"
+msgstr "configuratie: nopassiveftp\n"
+
+#: src/pacman.c:3471
+msgid "config: usesyslog\n"
+msgstr "configuratie: usesyslog\n"
+
+#: src/pacman.c:3481
+#, c-format
+msgid "config: including %s\n"
+msgstr "configuratie: %s toevoegen\n"
+
+#: src/pacman.c:3490 src/pacman.c:3495
+#, c-format
+msgid "config: noupgrade: %s\n"
+msgstr "configuratie: noupgrade: %s\n"
+
+#: src/pacman.c:3502 src/pacman.c:3507
+#, c-format
+msgid "config: ignorepkg: %s\n"
+msgstr "configuratie: ignorepkg: %s\n"
+
+#: src/pacman.c:3514 src/pacman.c:3519
+#, c-format
+msgid "config: holdpkg: %s\n"
+msgstr "configuratie: holdpkg: %s\n"
+
+#: src/pacman.c:3526
+#, c-format
+msgid "config: dbpath: %s\n"
+msgstr "configuratie: dpath: %s\n"
+
+#: src/pacman.c:3532
+#, c-format
+msgid "config: log file: %s\n"
+msgstr "configuratie: logboekbestand: %s\n"
+
+#: src/pacman.c:3536
+#, c-format
+msgid "config: xfercommand: %s\n"
+msgstr "configuratie: xfercommand: %s\n"
+
+#: src/pacman.c:3546 src/pacman.c:3572 src/pacman.c:3578
+#, c-format
+msgid "config: line %d: bad server location\n"
+msgstr "configuratie: lijn %d: foutieve server locatie\n"
+
+#: src/pacman.c:3552
+#, c-format
+msgid "config: proxyserver: %s\n"
+msgstr "configuratie: proxyserver: %s\n"
+
+#: src/pacman.c:3555
+#, c-format
+msgid "config: proxyport: %u\n"
+msgstr "configuratie: proxyport: %u\n"
+
+#: src/pacman.c:3609
+#, c-format
+msgid "config: line %d: protocol %s is not supported\n"
+msgstr "configuratie: lijn %d: protocol %s is niet ondersteund\n"
+
+#: src/pacman.c:3613
+#, c-format
+msgid "config: %s: server: %s %s %s\n"
+msgstr "configuratie: %s: server: %s %s %s\n"
+
+#: src/pacman.c:3636
+#, c-format
+msgid "usage:  %s {-h --help}\n"
+msgstr "gebruik:  %s {-h --help}\n"
+
+#: src/pacman.c:3637
+#, c-format
+msgid "        %s {-V --version}\n"
+msgstr "        %s {-V --version}\n"
+
+#: src/pacman.c:3638
+#, c-format
+msgid "        %s {-A --add}     [options] <file>\n"
+msgstr "        %s {-A --add}     [opties] <bestand>\n"
+
+#: src/pacman.c:3639
+#, c-format
+msgid "        %s {-R --remove}  [options] <package>\n"
+msgstr "        %s {-R --remove}  [opties] <pakket>\n"
+
+#: src/pacman.c:3640
+#, c-format
+msgid "        %s {-U --upgrade} [options] <file>\n"
+msgstr "        %s {-U --upgrade} [opties] <bestand>\n"
+
+#: src/pacman.c:3641
+#, c-format
+msgid "        %s {-F --freshen} [options] <file>\n"
+msgstr "        %s {-F --freshen} [opties] <bestand>\n"
+
+#: src/pacman.c:3642
+#, c-format
+msgid "        %s {-Q --query}   [options] [package]\n"
+msgstr "        %s {-Q --query}   [opties] [pakket]\n"
+
+#: src/pacman.c:3643
+#, c-format
+msgid "        %s {-S --sync}    [options] [package]\n"
+msgstr "        %s {-S --sync}    [opties] [pakket]\n"
+
+#: src/pacman.c:3644
+#, c-format
+msgid ""
+"\n"
+"use '%s --help' with other options for more syntax\n"
+"\n"
+msgstr ""
+"\n"
+"gebruik '%s --help' met andere opties voor meer grammatica\n"
+"\n"
+
+#: src/pacman.c:3647
+#, c-format
+msgid "usage:  %s {-A --add} [options] <file>\n"
+msgstr "gebruik:  %s {-A --add} [opties] <bestand>\n"
+
+#: src/pacman.c:3648 src/pacman.c:3653 src/pacman.c:3665 src/pacman.c:3670 src/pacman.c:3682
+#, c-format
+msgid "options:\n"
+msgstr "opties:\n"
+
+#: src/pacman.c:3649 src/pacman.c:3655 src/pacman.c:3666 src/pacman.c:3684
+#, c-format
+msgid "  -d, --nodeps        skip dependency checks\n"
+msgstr "  -d, --nodeps        afhankelijkheidscontrole overslaan\n"
+
+#: src/pacman.c:3650 src/pacman.c:3667 src/pacman.c:3685
+#, c-format
+msgid "  -f, --force         force install, overwrite conflicting files\n"
+msgstr "  -f, --force         installatie forceren, conflicterende bestanden overschrijven\n"
+
+#: src/pacman.c:3652
+#, c-format
+msgid "usage:  %s {-R --remove} [options] <package>\n"
+msgstr "gebruik:  %s {-R --remove} [opties] <pakket>\n"
+
+#: src/pacman.c:3654
+#, c-format
+msgid ""
+"  -c, --cascade       remove packages and all packages that depend on them\n"
+msgstr ""
+"  -c, --cascade       alle pakketten en alle pakketten afhankelijk ervan verwijderen\n"
+
+#: src/pacman.c:3656
+#, c-format
+msgid "  -k, --dbonly        only remove database entry, do not remove files\n"
+msgstr "  -k, --dbonly        alleen database ingang verwijderen, bestanden niet verwijeren\n"
+
+#: src/pacman.c:3657
+#, c-format
+msgid "  -n, --nosave        remove configuration files as well\n"
+msgstr "  -n, --nosave        configuratiebestanden ook verwijderen\n"
+
+#: src/pacman.c:3658
+#, c-format
+msgid ""
+"  -s, --recursive     remove dependencies also (that won't break packages)\n"
+msgstr ""
+"  -s, --recursive     afhankelijkheden ook verwijderen (dat andere pakketen niet zal kapot maken)\n"
+
+#: src/pacman.c:3661
+#, c-format
+msgid "usage:  %s {-F --freshen} [options] <file>\n"
+msgstr "gebruik:  %s {-F --freshen} [opties] <bestand>\n"
+
+#: src/pacman.c:3663
+#, c-format
+msgid "usage:  %s {-U --upgrade} [options] <file>\n"
+msgstr "gebruik:  %s {-U --upgrade} [opties] <bestand>\n"
+
+#: src/pacman.c:3669
+#, c-format
+msgid "usage:  %s {-Q --query} [options] [package]\n"
+msgstr "gebruik:  %s {-Q --query} [opties] [pakket]\n"
+
+#: src/pacman.c:3671
+#, c-format
+msgid ""
+"  -e, --orphans       list all packages that were explicitly installed\n"
+msgstr ""
+"  -e, --orphans       lijst weergeven van alle pakketten die expliciet zijn geinstalleerd\n"
+
+#: src/pacman.c:3672
+#, c-format
+msgid "                      and are not required by any other packages\n"
+msgstr "                      en niet vereist zijn door enige andere pakketten\n"
+
+#: src/pacman.c:3673 src/pacman.c:3686
+#, c-format
+msgid "  -g, --groups        view all members of a package group\n"
+msgstr "  -g, --groups        bekijk alle leden van een pakketgroep\n"
+
+#: src/pacman.c:3674
+#, c-format
+msgid "  -i, --info          view package information (use -ii for more)\n"
+msgstr "  -i, --info          pakketinformatie weergeven (gebruik -ii voor meer)\n"
+
+#: src/pacman.c:3675
+#, c-format
+msgid "  -l, --list          list the contents of the queried package\n"
+msgstr "  -l, --list          inhoud van het opgevraagde pakket weergeven\n"
+
+#: src/pacman.c:3676
+#, c-format
+msgid "  -o, --owns <file>   query the package that owns <file>\n"
+msgstr "  -o, --owns <file>   pakket opvragen dat <bestand> bezit\n"
+
+#: src/pacman.c:3677
+#, c-format
+msgid ""
+"  -p, --file          pacman will query the package file [package] instead "
+"of\n"
+msgstr ""
+"  -p, --file          pacman zal gegevens opvragen van het pakketbestand [pakket] in plaats van\n"
+""
+
+#: src/pacman.c:3678
+#, c-format
+msgid "                      looking in the database\n"
+msgstr "                      in de database te kijken\n"
+
+#: src/pacman.c:3679
+#, c-format
+msgid ""
+"  -s, --search        search locally-installed packages for matching "
+"strings\n"
+msgstr ""
+"  -s, --search        zoek lokaal geinstalleerde pakket voor passende "
+"tekenreeksen\n"
+
+#: src/pacman.c:3681
+#, c-format
+msgid "usage:  %s {-S --sync} [options] [package]\n"
+msgstr "gebruik:  %s {-S --sync} [opties] [pakket]\n"
+
+#: src/pacman.c:3683
+#, c-format
+msgid ""
+"  -c, --clean         remove old packages from cache directory (use -cc for "
+"all)\n"
+msgstr ""
+"  -c, --clean         oude pakketen van de cache verwijderen (gebruik -cc om "
+" alles te verwijderen)\n"
+
+#: src/pacman.c:3687
+#, c-format
+msgid "  -i, --info          view package information\n"
+msgstr "  -i, --info          pakket informatie weergeven\n"
+
+#: src/pacman.c:3688
+#, c-format
+msgid ""
+"  -l, --list          list all packages belonging to the specified "
+"repository\n"
+msgstr ""
+"  -l, --list          toon alle pakketten die behoren tot het gespecifieerde "
+"magazijn\n"
+
+#: src/pacman.c:3689
+#, c-format
+msgid ""
+"  -p, --print-uris    print out download URIs for each package to be "
+"installed\n"
+msgstr ""
+"  -p, --print-uris    toon de download URIs voor elk pakket dat moet "
+"geinstalleerd worden\n"
+
+#: src/pacman.c:3690
+#, c-format
+msgid "  -s, --search        search remote repositories for matching strings\n"
+msgstr "  -s, --search        zoeken naar andere magazijn voor passende tekenreeksen\n"
+
+#: src/pacman.c:3691
+#, c-format
+msgid "  -u, --sysupgrade    upgrade all packages that are out of date\n"
+msgstr "  -u, --sysupgrade    alle pakketten upgraden die niet meer up to date zijn\n"
+
+#: src/pacman.c:3692
+#, c-format
+msgid ""
+"  -w, --downloadonly  download packages but do not install/upgrade anything\n"
+msgstr ""
+"  -w, --downloadonly  pakketten download maar niet installeren/upgraden\n"
+
+#: src/pacman.c:3693
+#, c-format
+msgid ""
+"  -y, --refresh       download fresh package databases from the server\n"
+msgstr ""
+"  -y, --refresh       een verse pakketdatabase afhalen van de server\n"
+
+#: src/pacman.c:3695
+#, c-format
+msgid "      --config <path> set an alternate configuration file\n"
+msgstr "      --config <pad> een alternatief configuratiebestand specifieeren\n"
+
+#: src/pacman.c:3696
+#, c-format
+msgid "      --noconfirm     do not ask for any confirmation\n"
+msgstr "      --noconfirm     niet om enige bevestiging vragen\n"
+
+#: src/pacman.c:3697
+#, c-format
+msgid "  -v, --verbose       be verbose\n"
+msgstr "  -v, --verbose       verbositeit\n"
+
+#: src/pacman.c:3698
+#, c-format
+msgid "  -r, --root <path>   set an alternate installation root\n"
+msgstr "  -r, --root <pad>   een alternatieve installtie-root opgeven\n"
+
+#: src/pacman.c:3699
+#, c-format
+msgid "  -b, --dbpath <path> set an alternate database location\n"
+msgstr "  -b, --dbpath <pad> een alternatief database locatie opgeven\n"
+
+#: src/pacman.c:3708
+#, c-format
+msgid " .--.                  Pacman v%s\n"
+msgstr " .--.                  Pacman v%s\n"
+
+#: src/pacman.c:3709
+#, c-format
+msgid ""
+"/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2004 Judd Vinet <jvinet@zeroflux."
+"org>\n"
+msgstr ""
+"/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2004 Judd Vinet <jvinet@zeroflux."
+"org>\n"
+
+#: src/pacman.c:3711
+#, c-format
+msgid " '--'                  This program may be freely redistributed under\n"
+msgstr " '--'                  This program may be freely redistributed under\n"
+
+
+#: src/pacman.c:3712
+#, c-format
+msgid ""
+"                       the terms of the GNU General Public License\n"
+"\n"
+msgstr ""
+"                       the terms of the GNU General Public License\n"
+"\n"
+
+#: src/pacman.c:3799
+msgid "Y"
+msgstr ""
+
+#: src/pacman.c:3799
+msgid "YES"
+msgstr ""
+
+#: src/pacman.c:3830
+#, c-format
+msgid "warning: could not remove lock file %s"
+msgstr "waarschuwing: kon vastzetbestand %s niet verwijderen"
+
+#: src/pacsync.c:83
+#, c-format
+msgid "failed to get lastupdate time for %s (no big deal)\n"
+msgstr "kon lastupdate tijd voor %s niet ophalen (niet erg)\n"
+
+#: src/pacsync.c:94
+#, c-format
+msgid "pacsync: new mtime for %s: %s\n"
+msgstr "pacsync: nieuwe mtime voor %s: %s\n"
+
+#: src/pacsync.c:97
+#, c-format
+msgid "failed to synchronize %s\n"
+msgstr "mislukt in synchroniseren van %s\n"
+
+#: src/pacsync.c:100
+#, c-format
+msgid ":: %s is up to date\n"
+msgstr ":: %s is up-to-date\n"
+
+#: src/pacsync.c:107
+#, c-format
+msgid "removing %s (if it exists)\n"
+msgstr "bezig met verwijderen van %s (als het bestaat)\n"
+
+#: src/pacsync.c:116
+#, c-format
+msgid "unpacking %s...\n"
+msgstr "bezig met %s uit te pakken...\n"
+
+#: src/pacsync.c:182
+#, c-format
+msgid "connecting to %s:21\n"
+msgstr "bezig met verbinden naar %s:21\n"
+
+#: src/pacsync.c:184 src/pacsync.c:215 src/pacsync.c:385
+#, c-format
+msgid "error: cannot connect to %s\n"
+msgstr "fout: kan niet verbinden naar %s\n"
+
+#: src/pacsync.c:188
+#, c-format
+msgid "error: anonymous login failed\n"
+msgstr "fout: anonieme login mislukte\n"
+
+#: src/pacsync.c:193
+#, c-format
+msgid "error: could not cwd to %s: %s\n"
+msgstr "fout: kon niet cwd'en naar %s: %s\n"
+
+#: src/pacsync.c:199
+#, c-format
+msgid "warning: failed to set passive mode\n"
+msgstr "waarschuwing: kon passive modus niet instellen\n"
+
+#: src/pacsync.c:202
+msgid "FTP passive mode not set\n"
+msgstr "FTP passieve modus niet ingesteld\n"
+
+#: src/pacsync.c:210 src/pacsync.c:380
+#, c-format
+msgid "connecting to %s\n"
+msgstr "bezig met verbinden met %s\n"
+
+#: src/pacsync.c:212 src/pacsync.c:382
+#, c-format
+msgid "connecting to %s:%u\n"
+msgstr "bezig met verbinden met %s:%u\n"
+
+#: src/pacsync.c:274
+#, c-format
+msgid "error: could not chdir to %s\n"
+msgstr "fout: kon niet chdir'en naar %s\n"
+
+#: src/pacsync.c:278
+#, c-format
+msgid "running command: %s\n"
+msgstr "bezig met uitvoeren van commando: %s\n"
+
+#: src/pacsync.c:281
+#, c-format
+msgid "error running XferCommand: fork failed!\n"
+msgstr "fout XferCommand uit te voeren: fork mislukte!\n"
+
+#: src/pacsync.c:285
+#, c-format
+msgid "XferCommand command returned non-zero status code (%d)\n"
+msgstr "XferCommand retourneerde een niet-nul (0) status code (%d)\n"
+
+#: src/pacsync.c:330
+#, c-format
+msgid "warning: failed to get filesize for %s\n"
+msgstr "fout: kon bestandsgrootte voor %s niet ophalen\n"
+
+#: src/pacsync.c:336
+#, c-format
+msgid "warning: failed to get mtime for %s\n"
+msgstr "fout: kon mtime voor %s niet ophalen\n"
+
+#: src/pacsync.c:341
+#, c-format
+msgid "mtimes are identical, skipping %s\n"
+msgstr "mtimes zijn identiek, %s overslaan\n"
+
+#: src/pacsync.c:355
+#, c-format
+msgid "warning: failed to resume download -- restarting\n"
+msgstr "fout: kon download niet hervatten -- opnieuw starten\n"
+
+#: src/pacsync.c:362 src/pacsync.c:406
+#, c-format
+msgid ""
+"\n"
+"failed downloading %s from %s: %s\n"
+msgstr ""
+"\n"
+"mislukt in downloaden %s van %s: %s\n"
+
+#: src/pacsync.c:415
+#, c-format
+msgid "copying %s to %s/%s\n"
+msgstr "bezig met kopieeren van %s naar %s\n"
+
+#: src/pacsync.c:418
+#, c-format
+msgid "failed copying %s\n"
+msgstr "mislukt in kopieeren van %s\n"
+
+#: src/util.c:89
+#, c-format
+msgid "bad tar archive: %s"
+msgstr "foutief tar archief: %s"
+
+#: src/util.c:97
+#, c-format
+msgid "could not extract %s: %s\n"
+msgstr "kon %s niet uitpakken: %s\n"
+

@@ -1,0 +1,64 @@
+
+               pacman - Package Management Utility
+
+               by Judd Vinet <jvinet@zeroflux.org>
+               <http://www.archlinux.org/pacman/>
+
+DESCRIPTION:
+------------
+   pacman is a utility which manages software packages in Linux.  It uses
+   simple .tar.gz files as a package format, and maintains a text-based
+   package database (more of a hierarchy), just in case some hand tweaking
+   is necessary.
+
+   pacman does not strive to "do everything."  It will add, remove and
+   upgrade packages in the system, and it will allow you to query the
+   package database for installed packages, files and owners.  It also
+   attempts to handle dependencies automatically and can download packages
+   from a remote server.
+
+   Although the package manager itself is quite simple, the pacman tarball
+   also comes with scripts that help automate building and installing
+   packages.  These are used extensively in the Arch Build System (ABS),
+   used in Arch Linux <http://www.archlinux.org>.
+
+   As of version 2.0, pacman can also keep your system's packages in
+   sync with a master server.  You can follow CURRENT and STABLE trees,
+   or lock yourself into a specific version.  See the pacman manpage
+   for more info on this (--sync operation).
+
+
+INSTALL:
+--------
+$ ./configure
+$ make
+# make install
+
+If your man files are located in a directory other than /usr/man, you may
+want to edit Makefile and modify the MANDIR line accordingly.
+
+Note:  Since pacman is compiled statically, you will need the static libraries
+       for libtar, glibc and zlib.
+
+
+BUGS:
+-----
+If you find bugs (which is quite likely), please submit them to
+<jvinet@zeroflux.org> with specific information such as your
+commandline, the nature of the bug, and even the package database if
+it helps.
+
+
+COPYRIGHT:
+----------
+pacman is Copyright (c) 2002-2004 Judd Vinet <jvinet@zeroflux.org> and is
+licensed through the GNU General Public License (see COPYING).
+
+pacman uses "libtar", a library for reading/writing tar-files. This 
+library is Copyright (c) 1998-2001 Mark D. Roth <roth@uiuc.edu> (see 
+libtar-X.X.X/COPYRIGHT for furthur details).
+
+pacman uses "ftplib", a library for sending/receiving files via FTP.  This
+library is copyright (c) 1996-2000 Thomas Pfau, pfau@cnj.digex.net (see
+libftp/ftplib.c for furthur details).
+

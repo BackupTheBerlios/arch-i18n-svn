@@ -1,0 +1,142 @@
+#
+#  pacman
+#
+#  Copyright (c) 2002 by Judd Vinet <jvinet@zeroflux.org>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, 
+#  USA.
+#
+
+# NOTE:  Since pacman is compiled statically, you will need the static
+#        libraries for zlib and glibc.
+
+DESTDIR =
+prefix = @prefix@
+exec_prefix = @prefix@
+
+BINDIR = @bindir@
+MANDIR = @mandir@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+
+PACVER = 2.9.4
+
+TOPDIR = @srcdir@
+SRCDIR = $(TOPDIR)/src/
+OBJDIR = $(TOPDIR)/src/
+MANSRC = $(TOPDIR)/doc/
+SCRDIR = $(TOPDIR)/scripts/
+DATADIR = @datadir@
+LOCALEDIR = $(DATADIR)/locale
+
+CXX = @CC@
+CXXFLAGS += @CFLAGS@ -g -Wall -pedantic -fno-exceptions \
+            -D_GNU_SOURCE -DPACVER=\"$(PACVER)\" -DLOCALEDIR=\"$(LOCALEDIR)\" -I. -Ilibftp
+LDFLAGS += @LDFLAGS@ -Llibftp -lftp -ltar -lz
+
+SRCS = $(SRCDIR)pacman.c \
+			$(SRCDIR)db.c \
+			$(SRCDIR)util.c \
+			$(SRCDIR)list.c \
+			$(SRCDIR)package.c \
+			$(SRCDIR)pacsync.c \
+			$(SRCDIR)md5.c \
+			$(SRCDIR)md5driver.c \
+			$(SRCDIR)strhash.c \
+			$(SRCDIR)vercmp.c \
+			$(SRCDIR)rpmvercmp.c \
+			$(SRCDIR)i18n.c
+
+
+OBJECTS = $(OBJDIR)pacman.o \
+			$(OBJDIR)db.o \
+			$(OBJDIR)util.o \
+			$(OBJDIR)list.o \
+			$(OBJDIR)package.o \
+			$(OBJDIR)pacsync.o \
+			$(OBJDIR)md5.o \
+			$(OBJDIR)md5driver.o \
+			$(OBJDIR)strhash.o \
+			$(OBJDIR)rpmvercmp.o \
+			$(OBJDIR)i18n.o
+
+PO_LINGUAS = cz de nl pt_BR pt_PT sv
+
+MAN_LINGUAS = zh_CN
+
+all: libftp.a pacman vercmp convertdb man
+
+pacman: $(OBJECTS) libftp.a
+	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJECTS) -o $@.static -static $(LDFLAGS)
+
+vercmp: $(OBJDIR)vercmp.o $(OBJDIR)rpmvercmp.o
+	$(CXX) $(OBJDIR)vercmp.o $(OBJDIR)rpmvercmp.o $(CXXFLAGS) -o $@
+
+convertdb: $(OBJDIR)convertdb.o $(OBJDIR)list.o $(OBJDIR)util.o $(OBJDIR)i18n.o
+	$(CXX) $(OBJDIR)convertdb.o $(OBJDIR)list.o $(OBJDIR)util.o $(OBJDIR)i18n.o $(LDFLAGS) -o $@
+
+.c.o: $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
+
+man: $(MANSRC)pacman.8 \
+		 $(MANSRC)makepkg.8
+
+%.8: %.8.in
+	sed -e "s/#VERSION#/$(PACVER)/" $< > $@
+
+dist: distclean
+	(cd ..; tar czvf pacman-$(PACVER).tar.gz pacman-$(PACVER))
+
+libftp.a:
+	(cd libftp; make libftp.a)
+
+install: pacman vercmp convertdb man
+	$(INSTALL) -D -m0755 pacman $(DESTDIR)$(BINDIR)/pacman
+	$(INSTALL) -D -m0755 pacman.static $(DESTDIR)$(BINDIR)/pacman.static
+	$(INSTALL) -D -m0755 vercmp $(DESTDIR)$(BINDIR)/vercmp
+	$(INSTALL) -D -m0755 convertdb $(DESTDIR)$(BINDIR)/convertdb
+	$(INSTALL) -D -m0755 $(SCRDIR)makepkg $(DESTDIR)$(BINDIR)/makepkg
+	$(INSTALL) -D -m0755 $(SCRDIR)makeworld $(DESTDIR)$(BINDIR)/makeworld
+	$(INSTALL) -D -m0755 $(SCRDIR)gensync $(DESTDIR)$(BINDIR)/gensync
+	$(INSTALL) -D -m0755 $(SCRDIR)updatesync $(DESTDIR)$(BINDIR)/updatesync
+	$(INSTALL) -D -m0644 $(MANSRC)pacman.8 $(DESTDIR)$(MANDIR)/man8/pacman.8
+	$(INSTALL) -D -m0644 $(MANSRC)makepkg.8 $(DESTDIR)$(MANDIR)/man8/makepkg.8
+	
+	for i in $(MAN_LINGUAS) ; do \
+	    $(INSTALL) -D -m0644 $(MANSRC)$$i/pacman.8 $(DESTDIR)$(MANDIR)/$$i/man8/pacman.8 ; \
+	    $(INSTALL) -D -m0644 $(MANSRC)$$i/makepkg.8 $(DESTDIR)$(MANDIR)/$$i/man8/makepkg.8 ; \
+	done
+	
+	$(INSTALL) -D -m0644 etc/pacman.conf $(DESTDIR)/etc/pacman.conf
+	$(INSTALL) -D -m0644 etc/makepkg.conf $(DESTDIR)/etc/makepkg.conf
+	
+	for i in $(PO_LINGUAS) ; do \
+	    $(INSTALL) -D -m0644 po/$$i.mo $(DESTDIR)$(LOCALEDIR)/$$i/LC_MESSAGES/pacman.mo ; \
+	done
+
+clean:
+	rm -f *~ $(OBJDIR)*.o $(MANSRC)*.8
+	(cd libftp; make clobber)
+
+distclean: clean
+	rm -f pacman pacman.static convertdb vercmp
+	rm -f Makefile
+	rm -f config.h config.status config.log
+
+# End of file

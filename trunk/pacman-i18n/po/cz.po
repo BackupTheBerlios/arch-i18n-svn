@@ -1,0 +1,1606 @@
+# Czech(CZ) messages for Pacman.
+# Copyright (C) Luká¹ Konarovský <lukas@daeltar.org>
+# This file is distributed under the same license as the Pacman package.
+# Luká¹ Konarovský <lukas@daeltar.org>, 2004
+
+msgid ""
+msgstr ""
+"Project-Id-Version: pacman 2.9.2\n"
+"Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
+"POT-Creation-Date: 2004-12-02 16:08+0100\n"
+"PO-Revision-Date: 2004-12-02 16:08+0100\n"
+"Last-Translator: Luká¹ Konarovský <lukas@daeltar.org>\n"
+"Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/convertdb.c:49
+#, c-format
+msgid "converts a pacman 1.x database to a pacman 2.0 format\n"
+msgstr "konverze databáze verze 1.x do formátu pacman 2.0\n"
+
+#: src/convertdb.c:50
+#, c-format
+msgid ""
+"usage: %s <target_dir>\n"
+"\n"
+msgstr ""
+"pou¾ití: %s <cílový_adresáø>\n"
+"\n"
+
+#: src/convertdb.c:51
+#, c-format
+msgid ""
+"convertdb will convert all package data from /var/lib/pacman/pacman.db\n"
+msgstr ""
+"convertdb provede konverzi v¹ech dat balíèkù z /var/lib/pacman.db\n"
+
+#: src/convertdb.c:52
+#, c-format
+msgid ""
+"to a 2.0 format and place it in target_dir.\n"
+"\n"
+msgstr ""
+"do formátu 2.0 a umístí je v cílový_adresáø.\n\n"
+"\n"
+
+#: src/convertdb.c:73
+#, c-format
+msgid "converting %s\n"
+msgstr "konvertuji %s\n"
+
+#: src/db.c:221 src/db.c:346
+#, c-format
+msgid "error: %s: %s\n"
+msgstr "error: %s: %s\n"
+
+#: src/db.c:373
+#, c-format
+msgid "db_read: error: %s: %s\n"
+msgstr "db_read: error: %s: %s\n"
+
+#: src/db.c:657
+#, c-format
+msgid "%s: exists in \"%s\" (target) and \"%s\" (target)"
+msgstr "%s: existuje v \"%s\" (cíl) a \"%s\" (cíl)"
+
+#: src/db.c:715
+#, c-format
+msgid "%s: %s: exists in filesystem"
+msgstr "%s: %s: existuje v souborovém systému"
+
+#: src/list.c:222
+#, c-format
+msgid "None\n"
+msgstr "®ádný\n"
+
+#: src/md5driver.c:45
+#, c-format
+msgid "%s can't be opened\n"
+msgstr "%s nemù¾e být otevøen\n"
+
+#: src/package.c:52 src/pacman.c:1762
+msgid "could not open package"
+msgstr "nemohu otevøít balíèek"
+
+#: src/package.c:73
+#, c-format
+msgid "load_pkg: missing package name in %s.\n"
+msgstr "load_pkg: chybí jméno balíèku v %s\n"
+
+#: src/package.c:78
+#, c-format
+msgid "load_pkg: missing package version in %s.\n"
+msgstr "load_pkg: chybí verze balíèku v %s\n"
+
+#: src/package.c:114
+#, c-format
+msgid "warning: could not remove tempfile %s\n"
+msgstr "varování: nemohu odstranit doèasný soubor %s\n"
+
+#: src/package.c:131
+#, c-format
+msgid "bad package file in %s"
+msgstr "ìpatný soubor balíèku v %s"
+
+#: src/package.c:141
+#, c-format
+msgid "load_pkg: missing package info file in %s\n"
+msgstr "load_pkg: chybí informace k balíèeku  v %s\n"
+
+#: src/package.c:181 src/package.c:222
+#, c-format
+msgid "%s: syntax error in description file line %d\n"
+msgstr "%s: syntaktická chyba v popisném souboru, øádek %d\n"
+
+#: src/package.c:182 src/package.c:223
+msgid "error"
+msgstr "error"
+
+#: src/package.c:331
+#, c-format
+msgid "Name           : %s\n"
+msgstr "Jméno          : %s\n"
+
+#: src/package.c:332
+#, c-format
+msgid "Version        : %s\n"
+msgstr "Verze          : %s\n"
+
+#: src/package.c:334
+msgid "Groups         :"
+msgstr "Skupiny        :"
+
+#: src/package.c:336
+#, c-format
+msgid "Packager       : %s\n"
+msgstr "Zapakoval      : %s\n"
+
+#: src/package.c:337
+#, c-format
+msgid "URL            : %s\n"
+msgstr "URL            : %s\n"
+
+#: src/package.c:338
+#, c-format
+msgid "License        : %s\n"
+msgstr "Licence        : %s\n"
+
+#: src/package.c:339
+#, c-format
+msgid "Architecture   : %s\n"
+msgstr "Architektura   : %s\n"
+
+#: src/package.c:340
+#, c-format
+msgid "Size           : %ld\n"
+msgstr "Velikost       : %ld\n"
+
+#: src/package.c:341
+#, c-format
+msgid "Build Date     : %s %s\n"
+msgstr "Sestaveno      : %s %s\n"
+
+#: src/package.c:342
+#, c-format
+msgid "Install Date   : %s %s\n"
+msgstr "Nainstalováno  : %s\n"
+
+#: src/package.c:343
+#, c-format
+msgid "Install Script : %s\n"
+msgstr "Inst. skript   : %s\n"
+
+#: src/package.c:343
+msgid "Yes"
+msgstr "Ano"
+
+#: src/package.c:343
+msgid "No"
+msgstr "Ne"
+
+#: src/package.c:344
+#, c-format
+msgid "Reason:        : "
+msgstr "Dùvod:         : "
+
+#: src/package.c:346
+#, c-format
+msgid "explicitly installed\n"
+msgstr "explicitnì instalováno\n"
+
+#: src/package.c:347
+#, c-format
+msgid "installed as a dependency for another package\n"
+msgstr "nainstalováno jako závislost pro jiný balíèek\n"
+
+#: src/package.c:348
+#, c-format
+msgid "unknown\n"
+msgstr "neznámy\n"
+
+#: src/package.c:351
+msgid "Provides       :"
+msgstr "Poskytuje      :"
+
+#: src/package.c:354
+msgid "Depends On     :"
+msgstr "Závisí na      :"
+
+#: src/package.c:357
+msgid "Required By    :"
+msgstr "Vy¾adován      :"
+
+#: src/package.c:360
+msgid "Conflicts With :"
+msgstr "Konfliktní s   :"
+
+#: src/package.c:362
+#, c-format
+msgid "Description    : "
+msgstr "Popis          : "
+
+#: src/package.c:377
+#, c-format
+msgid "Name              : %s\n"
+msgstr "Jméno             : %s\n"
+
+#: src/package.c:378
+#, c-format
+msgid "Version           : %s\n"
+msgstr "Verze             : %s\n"
+
+#: src/package.c:380
+msgid "Groups            :"
+msgstr "Skupiny           :"
+
+#: src/package.c:383
+msgid "Provides          :"
+msgstr "Poskytuje         :"
+
+#: src/package.c:386
+msgid "Depends On        :"
+msgstr "Závisí na         :"
+
+#: src/package.c:389
+msgid "Conflicts With    :"
+msgstr "Konfliktní s      :"
+
+#: src/package.c:392
+msgid "Replaces          :"
+msgstr "Nahrazuje          :"
+
+#: src/package.c:394
+#, c-format
+msgid "Size (compressed) : %ld\n"
+msgstr "Velikost (komprimováno) : %ld\n"
+
+#: src/package.c:395
+#, c-format
+msgid "Description       : "
+msgstr "Popis             : "
+
+#: src/package.c:397
+#, c-format
+msgid ""
+"\n"
+"MD5 Sum           : %s\n"
+msgstr ""
+"\n"
+"MD5 Sum           : %s\n"
+
+#: src/pacman.c:120
+msgid "COLUMNS"
+msgstr ""
+
+#: src/pacman.c:163
+#, c-format
+msgid "error: you cannot perform this operation unless you are root.\n"
+msgstr "error: nemù¾ete vykonat tuto operaci pakli¾e nejste root.\n"
+
+#: src/pacman.c:169
+#, c-format
+msgid "error: unable to lock pacman database.\n"
+msgstr "error: nemohu zamknout databázi pacmana\n"
+
+#: src/pacman.c:170
+#, c-format
+msgid "       if you're sure pacman is not already running, you\n"
+msgstr "       pokud jste si jisti, ¾e pacman ji¾ nebì¾í, \n"
+
+#: src/pacman.c:171
+#, c-format
+msgid "       can remove %s\n"
+msgstr "       mù¾ete odstranit %s\n"
+
+#: src/pacman.c:193
+msgid "warning: cannot open logfile"
+msgstr "warning: nemohu otavøít logfile"
+
+#: src/pacman.c:207
+#, c-format
+msgid "Installation Root: %s\n"
+msgstr "Installation Root: %s\n"
+
+#: src/pacman.c:209
+#, c-format
+msgid "Top-level DB Path: %s%s\n"
+msgstr "Cesta k DB: %s%s\n"
+
+#: src/pacman.c:211
+msgid "Targets:"
+msgstr "Cíle:"
+
+#: src/pacman.c:220
+#, c-format
+msgid "initializing database %s...\n"
+msgstr "inicializuji databázi %s...\n"
+
+#: src/pacman.c:224
+#, c-format
+msgid "error: could not create database.\n"
+msgstr "error: nemohu vytvoøit databázi.\n"
+
+#: src/pacman.c:228
+#, c-format
+msgid "error: could not open database.\n"
+msgstr "error: nemohu otavøít databázi.\n"
+
+#: src/pacman.c:245
+#, c-format
+msgid ""
+"error: no operation specified (use -h for help)\n"
+"\n"
+msgstr ""
+"error: nebyla specifikována ¾ádná operace (pou¾ijte -h pro nápovìdu)\n"
+"\n"
+
+#: src/pacman.c:292
+#, c-format
+msgid "conflict: %s\n"
+msgstr "konflikt: %s\n"
+
+#: src/pacman.c:296
+#, c-format
+msgid "requires: %s"
+msgstr "vy¾aduje: %s"
+
+#: src/pacman.c:334
+#, c-format
+msgid "error: no usable package repositories configured.\n"
+msgstr "error: nebyly nakonfigurovány ¾ádne pou¾itelné repository.\n"
+
+#: src/pacman.c:347
+#, c-format
+msgid "removing old packages from cache... "
+msgstr "odstraòuji staré balíèky z cache... "
+
+#: src/pacman.c:350
+#, c-format
+msgid "error: could not access cache directory\n"
+msgstr "error: nemohu pøistupovat k cache adresáøi\n"
+
+#: src/pacman.c:420
+#, c-format
+msgid "removing all packages from cache... "
+msgstr "odstraòuji v¹echny balíèky z cache..."
+
+#: src/pacman.c:422
+#, c-format
+msgid "error: could not remove cache directory: %s\n"
+msgstr "error: nemohu odstranit cache adresáø: %s\n"
+
+#: src/pacman.c:428
+#, c-format
+msgid "error: could not create new cache directory: %s\n"
+msgstr "errorr: nemohu vytvoøit nový cache adresáø: %s\n"
+
+#: src/pacman.c:433 src/pacman.c:1271 src/pacman.c:1552 src/pacman.c:1688 src/pacman.c:1990
+#: src/pacman.c:2025 src/pacman.c:2301
+#, c-format
+msgid "done.\n"
+msgstr "hotovo.\n"
+
+#: src/pacman.c:439
+#, c-format
+msgid ":: Synchronizing package databases... \n"
+msgstr ":: Synchronizuji databáze balíèkù... \n"
+
+#: src/pacman.c:440
+msgid "synchronizing package lists"
+msgstr "synchronizuji seznam balíèkù"
+
+#: src/pacman.c:452
+#, c-format
+msgid "error: could not open sync database: %s\n"
+msgstr "error: nemohu otevøit databázi pro zesynchronizování: %s\n"
+
+#: src/pacman.c:453
+#, c-format
+msgid "       have you used --refresh yet?\n"
+msgstr "       pou¾ili jste ji¾ --refresh ?\n"
+
+#: src/pacman.c:567 src/pacman.c:2462 src/pacman.c:2510 src/pacman.c:2519
+#, c-format
+msgid "Package \"%s\" was not found.\n"
+msgstr "Balíèek \"%s\" nebyl nalezen.\n"
+
+#: src/pacman.c:598
+#, c-format
+msgid "Repository \"%s\" was not found.\n"
+msgstr "Repository \"%s\" nebylo nalezeno.\n"
+
+#: src/pacman.c:609
+msgid "starting full system upgrade"
+msgstr "startuji kompletní upgrade systému"
+
+#: src/pacman.c:621
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr ":: %s-%s: ignoruji upgrade balíèku (%s-%s)\n"
+
+#: src/pacman.c:624
+#, c-format
+msgid ":: Replace %s with %s from \"%s\"? [Y/n] "
+msgstr ":: Nahradit %s -> %s z \"%s\"? [Y/n] "
+
+#: src/pacman.c:687
+#, c-format
+msgid ":: %s-%s: local version is newer\n"
+msgstr ":: %s-%s: lokálnì instalovaná verze je novìj¹í\n"
+
+#: src/pacman.c:698
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (%s)\n"
+msgstr ":: %s-%s: ignoruji upgrade balíèku (%s)\n"
+
+#: src/pacman.c:722
+#, c-format
+msgid ""
+":: Above packages will be skipped.  To manually upgrade use 'pacman -S "
+"<pkg>'\n"
+msgstr ""
+":: Vý¹e uvedené balíèky budou vynechány.\n"
+"Pro manuální upgrade, pou¾ijte 'pacman -S <pkg>'\n"
+
+#: src/pacman.c:732
+#, c-format
+msgid ""
+"\n"
+":: pacman has detected a newer version of the \"pacman\" package.\n"
+msgstr ""
+"\n"
+":: pacman nalezl novìj¹í verzi balíèku \"pacman\".\n"
+
+#: src/pacman.c:733
+#, c-format
+msgid ":: It is recommended that you allow pacman to upgrade itself\n"
+msgstr ":: Je doporuèeno nechat pacman, aby nejprve upgradoval sám sebe\n"
+
+#: src/pacman.c:734
+#, c-format
+msgid ":: first, then you can re-run the operation with the newer version.\n"
+msgstr ":: , potom nechte zopakovat operaci s jeho novìj¹í verzí.\n"
+
+#: src/pacman.c:736
+msgid ":: Upgrade pacman first? [Y/n] "
+msgstr ": Upgadovat nejprve pacman? [Y/n] "
+
+#: src/pacman.c:800 src/pacman.c:2086
+#, c-format
+msgid ":: group %s:\n"
+msgstr ":: skupina %s:\n"
+
+#: src/pacman.c:802
+msgid "    Install whole content? [Y/n] "
+msgstr "    Instalovat v¹e? [Y/n] "
+
+#: src/pacman.c:808
+#, c-format
+msgid ":: Install %s from group %s? [Y/n] "
+msgstr ":: Instalovat %s ze skupiny %s? [Y/n] "
+
+#: src/pacman.c:815
+#, c-format
+msgid "%s: not found in sync db\n"
+msgstr "%s: nenalezeno v sync db\n"
+
+#: src/pacman.c:819
+#, c-format
+msgid "%s: not present in \"%s\" repository\n"
+msgstr "%s: není v \"%s\" repository\n"
+
+#: src/pacman.c:832
+#, c-format
+msgid ":: %s-%s: local version is newer.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: lokální verze je novìj¹í.  Provést upgrade? [Y/n] "
+
+#: src/pacman.c:841
+#, c-format
+msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: je v aktualní verzi.  Pøesto provést upgrade? [Y/n] "
+
+#: src/pacman.c:884
+#, c-format
+msgid "error: unresolvable dependencies:\n"
+msgstr "error: nevyøe¹itelné závislosti:\n"
+
+#: src/pacman.c:887 src/pacman.c:1574
+#, c-format
+msgid "  %s: requires %s"
+msgstr "  %s: vy¾aduje %s"
+
+#: src/pacman.c:894
+#, c-format
+msgid " but it is not in the sync db\n"
+msgstr ", ale není v sync db\n"
+
+#: src/pacman.c:989 src/pacman.c:1596
+#, c-format
+msgid ":: %s conflicts with %s. Remove %s? [Y/n] "
+msgstr ":: %s je v konfliktu s %s. Odstranit %s? [Y/n]"
+
+#: src/pacman.c:995 src/pacman.c:1602
+#, c-format
+msgid ""
+"\n"
+"error: package conflicts detected\n"
+msgstr ""
+"\n"
+"error: detekována kolize balíèkù\n"
+
+#: src/pacman.c:1000 src/pacman.c:1607
+#, c-format
+msgid ""
+"\n"
+"error: %s conflicts with %s\n"
+msgstr ""
+"\n"
+"error: %s je v konfliktu s %s\n"
+
+#: src/pacman.c:1070
+#, c-format
+msgid ""
+"\n"
+"Remove:  "
+msgstr ""
+"\n"
+"Odstranit:  "
+
+#: src/pacman.c:1092
+#, c-format
+msgid ""
+"\n"
+"Targets: "
+msgstr ""
+"\n"
+"Cíle: "
+
+#: src/pacman.c:1095
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Total Package Size:   %.1f MB\n"
+msgstr ""
+"\n"
+"\n"
+"Celková velikost balíèkù:   %.1f MB\n"
+
+#: src/pacman.c:1105
+#, c-format
+msgid ""
+"\n"
+"Beginning download...\n"
+msgstr ""
+"\n"
+"Zaèíná download...\n"
+
+#: src/pacman.c:1108
+msgid ""
+"\n"
+"Proceed with download? [Y/n] "
+msgstr ""
+"\n"
+"Zapoèíst download? [Y/n] "
+
+#: src/pacman.c:1116
+#, c-format
+msgid ""
+"\n"
+"Beginning upgrade process...\n"
+msgstr ""
+"\n"
+"Zaèíná upgrade...\n"
+
+#: src/pacman.c:1119
+msgid ""
+"\n"
+"Proceed with upgrade? [Y/n] "
+msgstr ""
+"\n"
+"Zapoèíst upgrade? [Y/n] "
+
+#: src/pacman.c:1166
+#, c-format
+msgid " %s-%s.pkg.tar.gz is already in the cache\n"
+msgstr "%s-%s.pkg.tar.gz je ji¾ v cache\n"
+
+#: src/pacman.c:1188
+#, c-format
+msgid ""
+"\n"
+":: Retrieving packages from %s...\n"
+msgstr ""
+"\n"
+":: Obdr¾uji balíèky z %s...\n"
+
+#: src/pacman.c:1194
+#, c-format
+msgid "warning: no %s cache exists.  creating..."
+msgstr "warning: %s cache neexistuje.  vytváøím..."
+
+#: src/pacman.c:1200
+msgid "warning: couldn't create package cache, using /tmp instead"
+msgstr "warning: nemohu vytvoøit cache pto balíèky, namísto toho pou¾ívám /tmp"
+
+#: src/pacman.c:1207
+#, c-format
+msgid "error: failed to retrieve some files from %s\n"
+msgstr "error: selhalo obdr¾ování souborl z %s\n"
+
+#: src/pacman.c:1229
+#, c-format
+msgid "checking package integrity... "
+msgstr "kontroluji integritu balíèku... "
+
+#: src/pacman.c:1245
+#, c-format
+msgid "error: can't get md5 checksum for package %s\n"
+msgstr "error: nemohu získat md5 kontrolní souèet pro balíèek %s\n"
+
+#: src/pacman.c:1255
+#, c-format
+msgid "error: can't get md5 checksum for archive %s\n"
+msgstr "error: nemohu obdr¾et md5 kontrolní souèet pro archiv %s\n"
+
+#: src/pacman.c:1264
+#, c-format
+msgid "error: archive %s is corrupted\n"
+msgstr "error: archiv %s je po¹kozen\n"
+
+#: src/pacman.c:1288
+msgid "checking dependencies of packages designated for removal...\n"
+msgstr "kontroluji zavíslosti balíèkù urèených pro odstranìní...\n"
+
+#: src/pacman.c:1295 src/pacman.c:2140
+#, c-format
+msgid "error: this will break the following dependencies:\n"
+msgstr "error: toto poru¹í následující závislosti:\n"
+
+#: src/pacman.c:1298 src/pacman.c:2143
+#, c-format
+msgid "  %s: is required by %s\n"
+msgstr "  %s: je vy¾adováno %s\n"
+
+#: src/pacman.c:1317 src/pacman.c:1735
+#, c-format
+msgid ""
+"\n"
+"upgrade aborted.\n"
+msgstr ""
+"\n"
+"upgrade pøeru¹en.\n"
+
+#: src/pacman.c:1349
+#, c-format
+msgid "package removal failed.  aborting...\n"
+msgstr "odstranìní balíèku selhalo. pøeru¹uji...\n"
+
+#: src/pacman.c:1492
+#, c-format
+msgid "error: failed to download %s\n"
+msgstr "error: selhal download %s\n"
+
+#: src/pacman.c:1508
+#, c-format
+msgid "loading package data... "
+msgstr "naèítám data balíèku... "
+
+#: src/pacman.c:1512
+#, c-format
+msgid "reading %s... "
+msgstr "naèítám %s... "
+
+#: src/pacman.c:1519
+#, c-format
+msgid ""
+"\n"
+"error: package \"%s\" has more than one hyphen in its version (%s)\n"
+msgstr ""
+"\n"
+"error: balíèek \"%s\" má více ne¾ ne¾ jednu pomlèku v definici verze (%s)\n"
+
+#: src/pacman.c:1527
+msgid "not installed or lesser version\n"
+msgstr "není nainstalováno nebo je v ni¾¹í verzi\n"
+
+#: src/pacman.c:1540
+msgid "replacing older version in target list. "
+msgstr "nahrazuji star¹í verzi v seznamu cílù"
+
+#: src/pacman.c:1548
+msgid "done\n"
+msgstr "hotovo\n"
+
+#: src/pacman.c:1563 src/pacman.c:2124
+msgid "checking dependencies...\n"
+msgstr "kontroluji závislosti...\n"
+
+#: src/pacman.c:1571
+#, c-format
+msgid "error: unsatisfied dependencies:\n"
+msgstr "error: nesplnìné závislosti:\n"
+
+#: src/pacman.c:1643
+#, c-format
+msgid ""
+"\n"
+"%s aborted.\n"
+msgstr ""
+"\n"
+"%s pøeru¹eno.\n"
+
+#: src/pacman.c:1643
+msgid "upgrade"
+msgstr "upgrade"
+
+#: src/pacman.c:1643
+msgid "install"
+msgstr "install"
+
+#: src/pacman.c:1660
+msgid "sorting by dependencies\n"
+msgstr "øadím dle závislostí\n"
+
+#: src/pacman.c:1675
+#, c-format
+msgid "checking for file conflicts... "
+msgstr "kontroluji kolize konfliktù... "
+
+#: src/pacman.c:1679
+#, c-format
+msgid ""
+"\n"
+"error: the following file conflicts were found:\n"
+msgstr ""
+"\n"
+"error: byly nalezeny následující konflikty souborù:\n"
+
+#: src/pacman.c:1685
+#, c-format
+msgid ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+msgstr ""
+"\n"
+"naskytly se chyby, ¾ádné balíèky nebyly upgradovány.\n"
+
+#: src/pacman.c:1707
+#, c-format
+msgid "error: %s is already installed. (try --upgrade)\n"
+msgstr "error: %s je ji¾ nainstalován. (zkuste --upgrade)\n"
+
+#: src/pacman.c:1716
+#, c-format
+msgid "upgrading %s... "
+msgstr "upgraduji %s... "
+
+#: src/pacman.c:1731
+msgid "removing old package first...\n"
+msgstr "nejprve odstraòuji staré balíèky...\n"
+
+#: src/pacman.c:1751
+#, c-format
+msgid "installing %s... "
+msgstr "instaluji %s... "
+
+#: src/pacman.c:1765
+msgid "extracting files...\n"
+msgstr "extrahuji soubory...\n"
+
+#: src/pacman.c:1813 src/pacman.c:1921
+#, c-format
+msgid "could not extract %s: %s"
+msgstr "nemohu extrahovat %s: %s"
+
+#: src/pacman.c:1834
+#, c-format
+msgid "checking md5 hashes for %s\n"
+msgstr "kontroluji md5 kontrolní souèty pro %s\n"
+
+#: src/pacman.c:1835
+#, c-format
+msgid "  current:  %s\n"
+msgstr "  aktuální:  %s\n"
+
+#: src/pacman.c:1836
+#, c-format
+msgid "  new:      %s\n"
+msgstr "  nový:      %s\n"
+
+#: src/pacman.c:1838
+#, c-format
+msgid "  original: %s\n"
+msgstr "  pùvodní: %s\n"
+
+#: src/pacman.c:1850 src/pacman.c:1883
+#, c-format
+msgid "error: could not rename %s: %s"
+msgstr "error: nemohu pøejmenovat %s: %s"
+
+#: src/pacman.c:1853
+#, c-format
+msgid "error: could not copy %s to %s: %s"
+msgstr "error: nemohu zkopírovat %s do %s: %s"
+
+#: src/pacman.c:1856 src/pacman.c:1885 src/pacman.c:2212
+#, c-format
+msgid "warning: %s saved as %s"
+msgstr "varování: %s ulo¾eno jako %s"
+
+#: src/pacman.c:1866 src/pacman.c:1869 src/pacman.c:1875
+msgid "  action: installing new file\n"
+msgstr "  akce: instalování nových souborù\n"
+
+#: src/pacman.c:1873
+msgid "  action: leaving existing file in place\n"
+msgstr "  action: zachovávám existující soubory na jejich místì\n"
+
+#: src/pacman.c:1879
+msgid "  action: saving current file and installing new one\n"
+msgstr "  akce: ukládám aktuální soubor a instalují ten nový\n"
+
+#: src/pacman.c:1892
+#, c-format
+msgid "error: could not copy %s to %s: %s\n"
+msgstr "error: nemohu zkopírovat %s do %s: %s\n"
+
+#: src/pacman.c:1907
+#, c-format
+msgid "%s is in NoUpgrade - skipping\n"
+msgstr "%s je v poli NoUpgrade - vynechávám\n"
+
+#: src/pacman.c:1909
+#, c-format
+msgid "warning: extracting %s%s as %s"
+msgstr "warning: extrahuji %s%s jako %s"
+
+#: src/pacman.c:1945
+#, c-format
+msgid "errors occurred while %s %s"
+msgstr "vyskytly se chyby bìhem %s %s"
+
+#: src/pacman.c:1946
+msgid "upgrading"
+msgstr "upgraduji"
+
+#: src/pacman.c:1946
+msgid "installing"
+msgstr "instaluji"
+
+#: src/pacman.c:1976
+msgid "Updating database..."
+msgstr "Updatuji databázi..."
+
+#: src/pacman.c:1987
+#, c-format
+msgid "error updating database for %s!"
+msgstr "chyba bìhem updatování databáze pro %s!"
+
+#: src/pacman.c:1992
+#, c-format
+msgid "upgraded %s (%s -> %s)"
+msgstr "upgradováno %s (%s -> %s)"
+
+#: src/pacman.c:1995
+#, c-format
+msgid "installed %s (%s)"
+msgstr "instalováno %s (%s)"
+
+#: src/pacman.c:2053 src/pacman.c:2315
+#, c-format
+msgid "running \"%s\"\n"
+msgstr "pu¹tìn \"%s\"\n"
+
+#: src/pacman.c:2088
+msgid "    Remove whole content? [Y/n] "
+msgstr "    Odrstranit ve¹kerý obsah? [Y/n] "
+
+#: src/pacman.c:2095
+#, c-format
+msgid ":: Remove %s from group %s? [Y/n] "
+msgstr ":: Odstranit %s ze skupiny %s? [Y/n] "
+
+#: src/pacman.c:2106
+#, c-format
+msgid "error: could not find %s in database\n"
+msgstr "error: nemohu najít %s v databázi\n"
+
+#: src/pacman.c:2114
+#, c-format
+msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
+msgstr ":: %s je obsa¾eno v poli HoldPkg. Pøesto odstranit? [Y/n] "
+
+#: src/pacman.c:2152
+msgid "finding removable dependencies...\n"
+msgstr "hledám odstranitelné závislosti...\n"
+
+#: src/pacman.c:2158
+msgid ""
+"\n"
+"Targets:"
+msgstr ""
+"\n"
+"Cíle:"
+
+#: src/pacman.c:2160
+msgid ""
+"\n"
+"Do you want to remove these packages? [Y/n] "
+msgstr ""
+"\n"
+"Pøejete si odstranit tyto balíèky? [Y/n] "
+
+#: src/pacman.c:2171
+#, c-format
+msgid "removing %s... "
+msgstr "odstraòuji %s... "
+
+#: src/pacman.c:2194
+#, c-format
+msgid "file %s does not exist\n"
+msgstr "soubor %s neexistuje\n"
+
+#: src/pacman.c:2216 src/pacman.c:2223
+msgid "cannot remove file"
+msgstr "nemohu odstranit soubor"
+
+#: src/pacman.c:2302
+#, c-format
+msgid "removed %s (%s)"
+msgstr "%s byl odstranìn (%s)"
+
+#: src/pacman.c:2360
+#, c-format
+msgid "Group \"%s\" was not found.\n"
+msgstr "Skupina \"%s\" nebyla nalezena.\n"
+
+#: src/pacman.c:2377
+#, c-format
+msgid "error: no package file was specified for --file\n"
+msgstr "error: ¾ádný balíèek nebyl specifikován pro --file\n"
+
+#: src/pacman.c:2382
+#, c-format
+msgid "error: %s is not a package\n"
+msgstr "error: %s není balíèek\n"
+
+#: src/pacman.c:2405
+#, c-format
+msgid "error: no file was specified for --owns\n"
+msgstr "error: ¾ádný soubor nebyl specifikován pro --owns\n"
+
+#: src/pacman.c:2415
+#, c-format
+msgid "%s is owned by %s %s\n"
+msgstr "%s je vlastnìn %s %s\n"
+
+#: src/pacman.c:2422
+#, c-format
+msgid "No package owns %s\n"
+msgstr "®ádný balíèek nevlastní %s\n"
+
+#: src/pacman.c:2426
+#, c-format
+msgid "error: %s is not a file.\n"
+msgstr "error: %s není soubor.\n"
+
+#: src/pacman.c:2486
+#, c-format
+msgid "error calculating md5sum for %s\n"
+msgstr "error vypoèítávám md5sum pro %s\n"
+
+#: src/pacman.c:2566
+msgid "warning: possible dependency cycle detected\n"
+msgstr "varování: byla nalezena mo¾ná cyklická závislost\n"
+
+#: src/pacman.c:2642
+#, c-format
+msgid "warning: cannot find package \"%s\" or anything that provides it!\n"
+msgstr "varování: nemohu nalézt \"%s\" ani nic, co by poskytovalo po¾adovanou funkènost!\n"
+
+#: src/pacman.c:2647
+#, c-format
+msgid "dep is NULL!\n"
+msgstr "dep je NULL!\n"
+
+#: src/pacman.c:2657
+#, c-format
+msgid "excluding %s -- explicitly installed\n"
+msgstr "vyjímám %s -- explicitnì nainstalováno\n"
+
+#: src/pacman.c:2743
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\":\n"
+msgstr "error: nemohu zpracovat závislosti pro \"%s\":\n"
+
+#: src/pacman.c:2744
+#, c-format
+msgid "       \"%s\" is not in the package set\n"
+msgstr "       \"%s\" není v package set\n"
+
+#: src/pacman.c:2758
+#, c-format
+msgid "resolving %s\n"
+msgstr "zpracovávám %s\n"
+
+#: src/pacman.c:2771
+#, c-format
+msgid "adding %s-%s\n"
+msgstr "pøidávám %s-%s\n"
+
+#: src/pacman.c:2775
+#, c-format
+msgid "dependency cycle detected: %s\n"
+msgstr "detekován cyklus závislostí: %s\n"
+
+#: src/pacman.c:3018
+#, c-format
+msgid "warning: invalid dependency in %s"
+msgstr "varování: neplatná závislost v %s"
+
+#: src/pacman.c:3085
+#, c-format
+msgid "data error: %s supposedly provides %s, but it was not found in db\n"
+msgstr "chyba dat: %s údajnì poskytovaný %s, nebyl nalezen v db\n"
+
+#: src/pacman.c:3243
+msgid "error creating temp directory"
+msgstr "chyba pøi vytváøení doèasného adresáøe"
+
+#: src/pacman.c:3261
+#, c-format
+msgid "Executing %s script...\n"
+msgstr "Vykonávám %s script...\n"
+
+#: src/pacman.c:3273
+#, c-format
+msgid "warning: could not remove tmpdir %s\n"
+msgstr "varování: nemohu odstranit doèasný adresáø %s\n"
+
+#: src/pacman.c:3360
+msgid "bad root path"
+msgstr "bad root path"
+
+#: src/pacman.c:3374
+#, c-format
+msgid ""
+"error: only one operation may be used at a time\n"
+"\n"
+msgstr ""
+"error: najednou mù¾ete pou¾ít pouze jednu operaci\n"
+"\n"
+
+#: src/pacman.c:3424
+#, c-format
+msgid "config: new section '%s'\n"
+msgstr "config: nová sekce '%s'\n"
+
+#: src/pacman.c:3426
+#, c-format
+msgid "config: line %d: bad section name\n"
+msgstr "config: øádek %d: neplatné jméno sekce\n"
+
+#: src/pacman.c:3430
+#, c-format
+msgid ""
+"config: line %d: '%s' is reserved and cannot be used as a package tree\n"
+msgstr ""
+"config: øádek %d: '%s' je rezervován a nemù¾e být pou¾it ve stromu balíèku\n" 
+
+#: src/pacman.c:3456 src/pacman.c:3473 src/pacman.c:3557 src/pacman.c:3616
+#, c-format
+msgid "config: line %d: syntax error\n"
+msgstr "config: øádek %d: syntaktická chyba\n"
+
+#: src/pacman.c:3462
+#, c-format
+msgid "config: line %d: all directives must belong to a section\n"
+msgstr "config: øádek %d: all directives must belong to a section\n"
+
+#: src/pacman.c:3468
+msgid "config: nopassiveftp\n"
+msgstr "config: nopassiveftp\n"
+
+#: src/pacman.c:3471
+msgid "config: usesyslog\n"
+msgstr "config: usesyslog\n"
+
+#: src/pacman.c:3481
+#, c-format
+msgid "config: including %s\n"
+msgstr "config: including %s\n"
+
+#: src/pacman.c:3490 src/pacman.c:3495
+#, c-format
+msgid "config: noupgrade: %s\n"
+msgstr "config: noupgrade: %s\n"
+
+#: src/pacman.c:3502 src/pacman.c:3507
+#, c-format
+msgid "config: ignorepkg: %s\n"
+msgstr "config: ignorepkg: %s\n"
+
+#: src/pacman.c:3514 src/pacman.c:3519
+#, c-format
+msgid "config: holdpkg: %s\n"
+msgstr "config: holdpkg: %s\n"
+
+#: src/pacman.c:3526
+#, c-format
+msgid "config: dbpath: %s\n"
+msgstr "config: dbpath: %s\n"
+
+#: src/pacman.c:3532
+#, c-format
+msgid "config: log file: %s\n"
+msgstr "config: log file: %s\n"
+
+#: src/pacman.c:3536
+#, c-format
+msgid "config: xfercommand: %s\n"
+msgstr "config: xfercommand: %s\n"
+
+#: src/pacman.c:3546 src/pacman.c:3572 src/pacman.c:3578
+#, c-format
+msgid "config: line %d: bad server location\n"
+msgstr "config: øádek %d: neplatné umístìní serveru\n"
+
+#: src/pacman.c:3552
+#, c-format
+msgid "config: proxyserver: %s\n"
+msgstr "config: proxyserver: %s\n"
+
+#: src/pacman.c:3555
+#, c-format
+msgid "config: proxyport: %u\n"
+msgstr "config: proxyport: %u\n"
+
+#: src/pacman.c:3609
+#, c-format
+msgid "config: line %d: protocol %s is not supported\n"
+msgstr "config: øádek %d: protokol %s není podporován\n"
+
+#: src/pacman.c:3613
+#, c-format
+msgid "config: %s: server: %s %s %s\n"
+msgstr "config: server: %s %s %s\n"
+
+#: src/pacman.c:3636
+#, c-format
+msgid "usage:  %s {-h --help}\n"
+msgstr "pou¾ití:  %s {-h --help}\n"
+
+#: src/pacman.c:3637
+#, c-format
+msgid "        %s {-V --version}\n"
+msgstr "        %s {-V --version}\n"
+
+#: src/pacman.c:3638
+#, c-format
+msgid "        %s {-A --add}     [options] <file>\n"
+msgstr "        %s {-A --add}     [nastavení] <soubor>\n"
+
+#: src/pacman.c:3639
+#, c-format
+msgid "        %s {-R --remove}  [options] <package>\n"
+msgstr "        %s {-R --remove}  [nastavení] <balíèek>\n"
+
+#: src/pacman.c:3640
+#, c-format
+msgid "        %s {-U --upgrade} [options] <file>\n"
+msgstr "        %s {-U --upgrade} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3641
+#, c-format
+msgid "        %s {-F --freshen} [options] <file>\n"
+msgstr "        %s {-F --freshen} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3642
+#, c-format
+msgid "        %s {-Q --query}   [options] [package]\n"
+msgstr "        %s {-Q --query}   [nastavení] [balíèek]\n"
+
+#: src/pacman.c:3643
+#, c-format
+msgid "        %s {-S --sync}    [options] [package]\n"
+msgstr "        %s {-S --sync}    [nastavení] [balíèek]\n"
+
+#: src/pacman.c:3644
+#, c-format
+msgid ""
+"\n"
+"use '%s --help' with other options for more syntax\n"
+"\n"
+msgstr ""
+"\n"
+"pou¾ijte '%s --help' s jinými nastaveními pro více syntaxe\n"
+"\n"
+
+#: src/pacman.c:3647
+#, c-format
+msgid "usage:  %s {-A --add} [options] <file>\n"
+msgstr "pou¾ití:  %s {-A --add} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3648 src/pacman.c:3653 src/pacman.c:3665 src/pacman.c:3670 src/pacman.c:3682
+#, c-format
+msgid "options:\n"
+msgstr "nastavení:\n"
+
+#: src/pacman.c:3649 src/pacman.c:3655 src/pacman.c:3666 src/pacman.c:3684
+#, c-format
+msgid "  -d, --nodeps        skip dependency checks\n"
+msgstr "  -d, --nodeps        vynechat kontrolu závislostí\n"
+
+#: src/pacman.c:3650 src/pacman.c:3667 src/pacman.c:3685
+#, c-format
+msgid "  -f, --force         force install, overwrite conflicting files\n"
+msgstr "  -f, --force         vynutit instalaci, pøepsat konfliktní soubory\n"
+
+#: src/pacman.c:3652
+#, c-format
+msgid "usage:  %s {-R --remove} [options] <package>\n"
+msgstr "pou¾ití:  %s {-R --remove} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3654
+#, c-format
+msgid ""
+"  -c, --cascade       remove packages and all packages that depend on them\n"
+msgstr ""
+"  -c, --cascade       odstarnit balíèek a v¹echny balíèky, které na n¹m závisí\n"
+
+#: src/pacman.c:3656
+#, c-format
+msgid "  -k, --dbonly        only remove database entry, do not remove files\n"
+msgstr "  -k, --dbonly        pouze odstranit polo¾ku v databázi, neodstraòovat soubory\n"
+
+#: src/pacman.c:3657
+#, c-format
+msgid "  -n, --nosave        remove configuration files as well\n"
+msgstr "  -n, --nosave        remove configuration files as well\n"
+
+#: src/pacman.c:3658
+#, c-format
+msgid ""
+"  -s, --recursive     remove dependencies also (that won't break packages)\n"
+msgstr ""
+"  -s, --recursive     remove dependencies also (that won't break packages)\n"
+
+#: src/pacman.c:3661
+#, c-format
+msgid "usage:  %s {-F --freshen} [options] <file>\n"
+msgstr "pou¾ití:  %s {-F --freshen} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3663
+#, c-format
+msgid "usage:  %s {-U --upgrade} [options] <file>\n"
+msgstr "pou¾ití:  %s {-U --upgrade} [nastavení] <soubor>\n"
+
+#: src/pacman.c:3669
+#, c-format
+msgid "usage:  %s {-Q --query} [options] [package]\n"
+msgstr "pou¾ití:  %s {-Q --query} [nastavení] [balíèek]\n"
+
+#: src/pacman.c:3671
+#, c-format
+msgid ""
+"  -e, --orphans       list all packages that were explicitly installed\n"
+msgstr ""
+"  -e, --orphans       list all packages that were explicitly installed\n"
+
+#: src/pacman.c:3672
+#, c-format
+msgid "                      and are not required by any other packages\n"
+msgstr "                      and are not required by any other packages\n"
+
+#: src/pacman.c:3673 src/pacman.c:3686
+#, c-format
+msgid "  -g, --groups        view all members of a package group\n"
+msgstr "  -g, --groups        view all members of a package group\n"
+
+#: src/pacman.c:3674
+#, c-format
+msgid "  -i, --info          view package information (use -ii for more)\n"
+msgstr "  -i, --info          view package information (use -ii for more)\n"
+
+#: src/pacman.c:3675
+#, c-format
+msgid "  -l, --list          list the contents of the queried package\n"
+msgstr "  -l, --list          list the contents of the queried package\n"
+
+#: src/pacman.c:3676
+#, c-format
+msgid "  -o, --owns <file>   query the package that owns <file>\n"
+msgstr "  -o, --owns <soubor>   dotázat se na balíèek, který vlastní <soubor>\n"
+
+#: src/pacman.c:3677
+#, c-format
+msgid ""
+"  -p, --file          pacman will query the package file [package] instead "
+"of\n"
+msgstr ""
+"  -p, --file          pacman will query the package file [package] instead "
+"of\n"
+
+#: src/pacman.c:3678
+#, c-format
+msgid "                      looking in the database\n"
+msgstr "                      looking in the database\n"
+
+#: src/pacman.c:3679
+#, c-format
+msgid ""
+"  -s, --search        search locally-installed packages for matching "
+"strings\n"
+msgstr ""
+"  -s, --search         search locally-installed packages for matching "
+"strings\n"
+
+#: src/pacman.c:3681
+#, c-format
+msgid "usage:  %s {-S --sync} [options] [package]\n"
+msgstr "pou¾ití:  %s {-S --sync} [nastavení] [balíèek]\n"
+
+#: src/pacman.c:3683
+#, c-format
+msgid ""
+"  -c, --clean         remove old packages from cache directory (use -cc for "
+"all)\n"
+msgstr ""
+"  -c, --clean         remove old packages from cache directory (use -cc for "
+"all)\n"
+
+#: src/pacman.c:3687
+#, c-format
+msgid "  -i, --info          view package information\n"
+msgstr "  -i, --info          zobrazit informace o balíèku\n"
+
+#: src/pacman.c:3688
+#, c-format
+msgid ""
+"  -l, --list          list all packages belonging to the specified "
+"repository\n"
+msgstr ""
+"  -l, --list          list all packages belonging to the specified "
+"repository\n"
+
+#: src/pacman.c:3689
+#, c-format
+msgid ""
+"  -p, --print-uris    print out download URIs for each package to be "
+"installed\n"
+msgstr ""
+"  -p, --print-uris    print out download URIs for each package to be "
+"installed\n"
+
+#: src/pacman.c:3690
+#, c-format
+msgid "  -s, --search        search remote repositories for matching strings\n"
+msgstr "  -s, --search        search remote repositories for matching strings\n"
+
+#: src/pacman.c:3691
+#, c-format
+msgid "  -u, --sysupgrade    upgrade all packages that are out of date\n"
+msgstr "  -u, --sysupgrade    upgrade all packages that are out of date\n"
+
+#: src/pacman.c:3692
+#, c-format
+msgid ""
+"  -w, --downloadonly  download packages but do not install/upgrade anything\n"
+msgstr ""
+"  -w, --downloadonly  download packages but do not install/upgrade anything\n"
+
+
+#: src/pacman.c:3693
+#, c-format
+msgid ""
+"  -y, --refresh       download fresh package databases from the server\n"
+msgstr ""
+"  -y, --refresh       download fresh package databases from the server\n"
+
+#: src/pacman.c:3695
+#, c-format
+msgid "      --config <path> set an alternate configuration file\n"
+msgstr "      --config <path> set an alternate configuration file\n"
+
+#: src/pacman.c:3696
+#, c-format
+msgid "      --noconfirm     do not ask for any confirmation\n"
+msgstr "      --noconfirm     do not ask for any confirmation\n"
+
+#: src/pacman.c:3697
+#, c-format
+msgid "  -v, --verbose       be verbose\n"
+msgstr "  -v, --verbose       be verbose\n"
+
+#: src/pacman.c:3698
+#, c-format
+msgid "  -r, --root <path>   set an alternate installation root\n"
+msgstr "  -r, --root <path>   set an alternate installation root\n"
+
+#: src/pacman.c:3699
+#, c-format
+msgid "  -b, --dbpath <path> set an alternate database location\n"
+msgstr "  -b, --dbpath <path> set an alternate database location\n"
+
+#: src/pacman.c:3708
+#, c-format
+msgid " .--.                  Pacman v%s\n"
+msgstr " .--.                  Pacman v%s\n"
+
+#: src/pacman.c:3709
+#, c-format
+msgid ""
+"/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2004 Judd Vinet <jvinet@zeroflux."
+"org>\n"
+msgstr ""
+"/ _.-' .-.  .-.  .-.   Copyright (C) 2002-2004 Judd Vinet <jvinet@zeroflux."
+"org>\n"
+
+#: src/pacman.c:3711
+#, c-format
+msgid " '--'                  This program may be freely redistributed under\n"
+msgstr " '--'                  This program may be freely redistributed under\n"
+
+
+#: src/pacman.c:3712
+#, c-format
+msgid ""
+"                       the terms of the GNU General Public License\n"
+"\n"
+msgstr ""
+"                       the terms of the GNU General Public License\n"
+"\n"
+
+#: src/pacman.c:3799
+msgid "Y"
+msgstr "Y"
+
+#: src/pacman.c:3799
+msgid "YES"
+msgstr "YES"
+
+#: src/pacman.cconver:3830
+#, c-format
+msgid "warning: could not remove lock file %s"
+msgstr "varování: nemohu odstranit lock file %s"
+
+#: src/pacsync.c:83
+#, c-format
+msgid "failed to get lastupdate time for %s (no big deal)\n"
+msgstr "failed to get lastupdate time for %s (no big deal)\n"
+
+#: src/pacsync.c:94
+#, c-format
+msgid "pacsync: new mtime for %s: %s\n"
+msgstr "pacsync: new mtime for %s: %s\n"
+
+#: src/pacsync.c:97
+#, c-format
+msgid "failed to synchronize %s\n"
+msgstr "selhalo zesynchronizování %s\n"
+
+#: src/pacsync.c:100
+#, c-format
+msgid ":: %s is up to date\n"
+msgstr ":: %s je v aktuální verzi\n"
+
+#: src/pacsync.c:107
+#, c-format
+msgid "removing %s (if it exists)\n"
+msgstr "odstraòuji %s (pokud existuje)\n"
+
+#: src/pacsync.c:116
+#, c-format
+msgid "unpacking %s...\n"
+msgstr "extrahuji %s...\n"
+
+#: src/pacsync.c:182
+#, c-format
+msgid "connecting to %s:21\n"
+msgstr "pøipojuji se k %s:21\n"
+
+#: src/pacsync.c:184 src/pacsync.c:215 src/pacsync.c:385
+#, c-format
+msgid "error: cannot connect to %s\n"
+msgstr "error: nemohu se pøipojit k %s\n"
+
+#: src/pacsync.c:188
+#, c-format
+msgid "error: anonymous login failed\n"
+msgstr "error: anonymní pøipojení selhalo\n"
+
+#: src/pacsync.c:193
+#, c-format
+msgid "error: could not cwd to %s: %s\n"
+msgstr "error: could not cwd to %s: %s\n"
+
+#: src/pacsync.c:199
+#, c-format
+msgid "warning: failed to set passive mode\n"
+msgstr "varování: selhalo nastavení pasivního módu\n"
+
+#: src/pacsync.c:202
+msgid "FTP passive mode not set\n"
+msgstr "FTP passive mode not set\n"
+
+#: src/pacsync.c:210 src/pacsync.c:380
+#, c-format
+msgid "connecting to %s\n"
+msgstr "pøipojuji se k %s\n"
+
+#: src/pacsync.c:212 src/pacsync.c:382
+#, c-format
+msgid "connecting to %s:%u\n"
+msgstr "pøipojuji se k %s:%u\n"
+
+#: src/pacsync.c:274
+#, c-format
+msgid "error: could not chdir to %s\n"
+msgstr "error: nemohu zmìnit adresáø na %s\n"
+
+#: src/pacsync.c:278
+#, c-format
+msgid "running command: %s\n"
+msgstr "spu¹tìn pøíkaz: %s\n"
+
+#: src/pacsync.c:281
+#, c-format
+msgid "error running XferCommand: fork failed!\n"
+msgstr "error running XferCommand: fork failed!\n"
+
+#: src/pacsync.c:285
+#, c-format
+msgid "XferCommand command returned non-zero status code (%d)\n"
+msgstr "XferCommand command returned non-zero status code (%d)\n"
+
+#: src/pacsync.c:330
+#, c-format
+msgid "warning: failed to get filesize for %s\n"
+msgstr "varování: selhalo získání velikosti pro %s\n"
+
+#: src/pacsync.c:336
+#, c-format
+msgid "warning: failed to get mtime for %s\n"
+msgstr "varování: failed to get mtime for %s\n"
+
+#: src/pacsync.c:341
+#, c-format
+msgid "mtimes are identical, skipping %s\n"
+msgstr "mtimes are identical, skipping %s\n"
+
+#: src/pacsync.c:355
+#, c-format
+msgid "warning: failed to resume download -- restarting\n"
+msgstr "varování: failed to resume download -- restarting\n"
+
+#: src/pacsync.c:362 src/pacsync.c:406
+#, c-format
+msgid ""
+"\n"
+"failed downloading %s from %s: %s\n"
+msgstr ""
+"\n"
+"failed downloading %s from %s: %s\n"
+
+#: src/pacsync.c:415
+#, c-format
+msgid "copying %s to %s/%s\n"
+msgstr "kopírování z %s do %s/%s\n"
+
+#: src/pacsync.c:418
+#, c-format
+msgid "failed copying %s\n"
+msgstr "selhalo kopírování %s\n"
+
+#: src/util.c:89
+#, c-format
+msgid "bad tar archive: %s"
+msgstr "¹patný tar archiv: %s"
+
+#: src/util.c:97
+#, c-format
+msgid "could not extract %s: %s\n"
+msgstr "nemohu extrahovat %s: %s\n"

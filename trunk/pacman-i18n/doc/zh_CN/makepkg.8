@@ -1,0 +1,409 @@
+﻿.TH makepkg 8 "August 3, 2004" "makepkg 2.9.2" ""
+.SH NAME
+makepkg \- 软件包创建工具
+.SH SYNOPSIS
+\fBmakepkg [选项]\fP
+.SH DESCRIPTION
+\fBmakepkg\fP 会为你创建软件包。它所需要的一切只是
+一个符合创建环境的linux平台、wget和一些用于创建的脚本。基于
+脚本创建软件包的好处在于你仅仅需要做一次工作。一旦你
+已经有一个软件包的创建脚本，你仅需要运行makepkg，剩下的
+它会负责完成：下载、验证源代码、检查依赖关系、
+配置创建环境、创建软件包、安装软件包
+到一个临时的根目录、自定义、产生meta信息、把整个打包好
+以供\fBpacman\fP使用。
+
+\fBmakeworld\fP 能用于重建整个的软件包组或者
+整个创建树目录。\fBmakeworld --help\fP 查看语法。
+.SH 创建过程 （或者叫如何创建你自己的软件包）
+在一个单独的目录下开始（也就是说，这个目录仅用于创建这个软件包
+而不是其他目的）。创建脚本应当命名为PKGBUILD
+而且应当类似下面的例子。
+
+\fB提示:\fP 如果你在本地机器上有一个Arch创建系统（ABS）的目录树，
+你可以复制PKGBUILD.proto文件到你新软件包的创建目录中
+并在那里进行修改。要获得/同步ABS目录树，使用
+包含在pacman/makepkg中的 \fBabs\fP 脚本。
+
+.TP
+.TP
+.SH PKGBUILD 例子:
+.RS
+.nf
+pkgname=modutils
+pkgver=2.4.25
+pkgrel=1
+pkgdesc="Utilities for inserting and removing modules from the linux kernel"
+url="http://www.kernel.org"
+backup=(etc/modules.conf)
+makedepends=('bash' 'mawk')
+depends=('glibc' 'zlib')
+source=(ftp://ftp.kernel.org/pub/linux/utils/kernel/$pkgname/v2.4/$pkgname-$pkgver.tar.bz2 \\
+        modules.conf)
+md5sums=('2c0cca3ef6330a187c6ef4fe41ecaa4d' \\
+        '35175bee593a7cc7d6205584a94d8625')
+
+build() {
+  cd $startdir/src/$pkgname-$pkgver
+  ./configure --prefix=/usr --enable-insmod-static
+  make || return 1
+  make prefix=$startdir/pkg/usr install
+  mv $startdir/pkg/usr/sbin $startdir/pkg
+  mkdir -p $startdir/pkg/etc
+  cp ../modules.conf $startdir/pkg/etc
+}
+.fi
+.RE
+
+如你所见，设置相当的简单。头三行定义了
+软件包的名字和版本信息。它们同样定义了最终的软件包名字
+名字使用 \fI$pkgname-$pkgver-$pkgrel.pkg.tar.gz\fP 格式。第4行
+则提供了软件包的简短描述。每一个PKGBUILD脚本
+都应当包含这4行。
+
+\fIbackup=\fP 行指定了当删除或者升级软件包时
+应当特殊对待的一些文件。更多信息参见\fIpacman\fP帮助页中
+\fB处理配置文件\fP 部分。
+
+第7、8行列出的是该软件包的依赖关系。\fIdepends\fP队列
+指明运行时需要的依赖关系，\fImakedepends\fP则指明创建时需要的
+依赖关系。要运行软件包，必须满足\fIdepends\fP要求。要
+创建该软件包，必须首先满足\fB所有的\fP依赖关系。makepkg
+在尝试创建该软件包之前会先进行检查。
+
+\fIsource\fP队列则告诉makepkg在编译开始之前，哪些文件应该先下载并解压
+\fImd5sums\fP队列提供了每个文件的md5sums校验码。这个校验码将
+用于验证源代码文件的完整性。
+
+一旦你创建好了你的PKGBUILD，你就可以从创建目录中运行\fImakepkg\fP。
+然后makepkg将检查依赖关系，寻找创建所需要的源代码文件
+如果缺少某些文件，它就会尝试下载这些文件，前提是\fIsource\fP队列
+这里有完全符合要求的URL地址。
+
+接着源代码将被解压到命名为./src的下级目录，并
+调用\fIbuild\fP函数。所有的软件包配置，
+创建和安装均在这里完成。一些自定义也可能
+发生在这里。
+
+软件包创建完毕之后，\fIbuild\fP函数必须安装软件包的文件
+到一个特殊的软件包根目录，这个根目录将引用\fIbuild\fP函数中
+的B$startdir/pkg\fP定义。下面是一个典型的方法：
+.RS
+.nf
+
+make DESTDIR=$startdir/pkg install
+
+或者
+
+make prefix=$startdir/pkg/usr install
+
+.fi
+.RE
+注意"/usr"部分应当是"prefix"，而不是"DESTDIR"，
+推荐使用"DESTDIR"，但是不是所有的Makefiles都支持它。
+请仅仅在"DESTDIR"无效时才使用"prefix"。
+
+一旦软件包成功地安装至软件包根目录，\fImakepkg\fP
+会删除一些诸如/usr/doc和/usr/info的目录（按照Arch Linux 
+软件包指引。如果你在其他地方使用，尽管进行修改）。它会
+接着删去库函数和二进制代码的调试信息并产生一份meta信息文件。
+最后，它会所有东西压缩为一个.pkg.tar.gz文件，并保留在
+你运行\fBmakepkg\fP的目录中。
+
+此时，在当前目录中你应当已经有一个命名为：
+软件包名-版本-发布号.pkg.tar.gz之类的软件包文件。搞定！
+
+.SH 安装/升级/删除的脚本
+当使用Pacman安装、删除或者升级某个软件包时，
+Pacman能够储存并执行软件包指定的脚本。这允许软件包在安装之后
+去“配置自身”，同样的，在被删除之前反其道而行之。
+
+每次操作的脚本运行确切时间都有变化:
+.TP
+.B pre_install
+在解压文件之前即运行脚本。
+
+.TP
+.B post_install
+在解压文件之后即运行脚本。
+
+.TP
+.B pre_upgrade
+在解压文件之前即运行脚本。
+
+.TP
+.B post_upgrade
+在解压文件之后即运行脚本。
+
+.TP
+.B pre_remove
+在删除文件之前即运行脚本。
+
+.TP
+.B post_remove
+在删除文件之后即运行脚本。
+
+.RE
+要使用这个功能，仅仅需要创建一个 (比如, pkgname.install)的文件，并放置
+包含PKGBUILD教本的同一目录。然后使用\fIinstall\fP指示：
+.RS
+.nf
+install=pkgname.install
+.fi
+.RE
+
+不需要在\fIsource\fP队列中指定该安装脚本。
+
+.TP
+.TP
+.SH 安装脚本必须遵循下列格式：
+.RS
+.nf
+# arg 1:  the new package version
+pre_install() {
+  #
+  #  do pre-install stuff here
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+post_install() {
+  #
+  #  此处为安装后进行部分
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+pre_upgrade() {
+  #
+  #  此处为安装前进行部分
+  #
+  /bin/true
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+  #
+  #  此处为升级后进行部分
+  #
+  /bin/true
+}
+
+# arg 1:  the old package version
+pre_remove() {
+  #
+  #  此处为删除前进行部分
+  #
+  /bin/true
+}
+
+# arg 1:  the old package version
+post_remove() {
+  #
+  #  此处为删除后进行部分
+  #
+  /bin/true
+}
+
+op=$1
+shift
+$op $*
+.fi
+.RE
+
+这个模版同样可以在你的ABS目录树中找到(/var/abs/install.proto)。
+
+.SH PKGBUILD指示
+.TP
+.B pkgname
+软件包名。当用于软件包名字时，
+必须是一个unix友好的名字。
+
+.TP
+.B pkgver
+该程序作者发布的版本号（比如：2.7.1）。
+
+.TP
+.B pkgrel
+Arch Linux软件包的发布号。
+
+.TP
+.B pkgdesc
+该软件包以及其功能的简要描述，
+
+.TP
+.B force
+用于\fB--sysupgrade\fP时强迫升级软件包，
+即便它是更老的版本。
+
+.TP
+.B url
+软件包中程序相关联的URL地址（可选），
+通常是该项目的网站。
+
+.TP
+.B license
+设置程序许可证类型（如"GPL", "BSD", "NON-FREE"）。(\fB注意\fP: 本
+选项仍然处于开发中，将来也许会有变化。
+
+.TP
+.B install
+指定包括在软件包中的安装脚本。
+该文件必须与PKGBUILD在同一目录中，并由makepkg
+复制进软件包。不需要包含在
+\fIsource\fP队列。（如install=modutils.install）
+
+.TP
+.B source \fI(array)\fP 
+\fIsource\fP行是创建软件包需要的源代码文件队列
+除非源代码文件有完全合乎要求的URL下载地址，
+否则都应当与PKGBUILD在同一目录中。然后如果
+在/var/cache/pacman/src中也不存在源代码文件, 
+wget将下载该文件。
+
+.TP
+.B md5sums \fI(队列)\fP
+如果存在该字段，它应当为\fIsource\fP队列中指定的每个源代码文件
+包含一个MD5 hash（以同样的顺序）。makepkg会在随后的创建过程中
+使用它验证源代码文件的完整性。要方便地产生
+md5sums校验码，首先使用PKGBUILD创建软件包，然后运行
+\fBmakepkg -g >>PKGBILD\fP.  最后编辑PKGBUILD文件，从底部
+移动\fImd5sums\fP行至合适的地方即可。
+
+.TP
+.B groups \fI(array)\fP
+软件包组。This is an array of symbolic names that represent groups of packages，允许
+你通过请求一个目标来安装多个软件包。举例说，
+你可以通过安装kde组来安装所有属于kde组的软件包。
+
+.TP
+.B backup \fI(队列)\fP 
+以空格分界的文件名队列 (without a preceding slash)。该 
+\fIbackup\fP行将被复制进软件包的meta信息文件中以供
+pacman使用。如果从系统中删除该软件包时，
+这将指定所有此处列出的文件都将用备份还原。更多信息
+参见\fIpacman\fP帮助页中的\fB处理配置文件\fP。
+
+.TP
+.B depends \fI(队列)\fP 
+本软件包创建和运行时依赖的软件包队列。列出来
+的软件包应当放在单括号中，并至少包括
+软件包的名字。还可以以\fB软件包名<>版本号\fP格式包括
+要求的版本号，这里的<>是指三个比较符号中的一个：\fB>=\fP
+（大于等于）。\fB<=\fP （小于等于）。或者\fB=\fP（等于）。
+\fIdepends\fP示例可参见上面的PKGBUILD例子。
+
+.TP
+.B makedepends \fI(array)\fP
+本软件包创建时依赖的软件包队列。（也就是说
+非运行时需要的）。列出的软件包应当遵循跟\fIdepends\fP相同的格式。
+
+.TP
+.B conflicts \fI(队列)\fP 
+该列的软件包和本软件包存在冲突。（它们不能
+同时安装（。该指示遵循与\fIdepends\fP同样的格式，
+除了你不能指定版本号，只能是软件包名。
+
+.TP
+.B provides \fI(array)\fP 
+本软件包提供的“virtual provisions”。这允许一个软件包
+提供超过本身软件包名的依赖关系名字。举例说，
+kernel-scsi和kernel-ide软件包可以分别提供'kernel'的依赖关系，这使其他的软
+件包只需要简单的依赖于'kernel'而不是"kernel-scsi或者kernel-ide或者 ..."
+
+.TP
+.B replaces \fI(队列)\fP 
+本软件包将取代的软件包队列，并能够用于处理
+重命名/合并软件包。举个例子，如果kernel软件包重命名为
+kernel-ide，那么接下来的'pacman -Syu'调用将不会选择原名字去升级，因为
+软件包的名字已经变化。\fIreplaces\fP便处理这种情况。
+
+.SH MAKEPKG选项
+.TP
+.B "\-b, \-\-builddeps"
+从源代码创建缺少的依赖关系。当makepkg发现“创建时”或
+“运行时”缺少的依赖关系，它将在根目录$ABSROOT(在你的/etc/makepkg.conf定义)下
+寻找依赖关系的KGBUILD文件。如果找到，它将
+运行另外一份makepkg去创建和安装缺少的依赖关系。
+通过 \fB-b\fP 及 \fB-i\fP 选项实现这个makepkg子调用。
+.TP
+.B "\-c, \-\-clean"
+清除成功创建后留下的文件/目录。
+.TP
+.B "\-C, \-\-cleancache"
+从缓存目录中删除所有的源代码文件以挪出硬盘空间。
+.TP
+.B "\-d, \-\-nodeps"
+不进行任何依赖关系检查。这将让你跳过/忽略任何
+需要的依赖关系。如果没有安装全部的依赖关系，
+该选项非常有可能使创建过程中途而废。
+.TP
+.B "\-f, \-\-force"
+如果\fIpkgname-pkgver-pkgrel.pkg.tar.gz\fP 已经存在于创建目录中，
+\fBmakepkg\fP将不会再去创建一个软件包。你可以通过该 \fB--force\fP 选项
+开关来忽略这种行为重新创建。
+.TP
+.B "\-g, \-\-genmd5"
+下载所有源代码文件 (如果需要的话) 并使用 \fImd5sum\fP 为每个源代码
+文件产生md5 hashes。你可以重定向输出至你的 PKGBUILD，以用于
+源代码校验 (makepkg -g >>PKGBUILD).
+.TP
+.B "\-h, \-\-help"
+输出语法及命令行选项。
+.TP
+.B "\-i, \-\-install"
+成功创建后即安装/升级软件包。
+.TP
+.B "\-j <jobs>"
+创建软件包前设置 MAKEFLAGS="-j<jobs>"。用于跳过
+在/etc/makepkg.conf中的MAKEFLAGS设定。
+.TP
+.B "\-m, \-\-nocolor"
+输出消息中禁止使用颜色。
+.TP
+.B "\-n, \-\-nostrip"
+不剥离二进制代码和库。
+.TP
+.B "\-o, \-\-nobuild"
+仅仅下载和解压文件，并不创建软件包。
+.TP
+.B "\-p <buildscript>"
+读取软件包脚本 \fI<buildscript>\fP 而不是默认的 (\fIPKGBUILD\fP)。
+.TP
+.B "\-r, \-\-rmdeps"
+成功创建以后，删除在依赖关系自动解决 (使用 \fB-b\fP 或者 \fB-s\fP)时
+由makepkg/pacman安装的依赖关系。
+.TP
+.B "\-s, \-\-syncdeps"
+使用pacman安装缺少的依赖关系。当makepkg发现缺少“创建时”
+或“运行时”的依赖关系，它会运行pacman去尝试解决。如果成功，
+pacman会从某个软件包库下载缺少的软件包并
+为你安装它们。
+.TP
+.B "\-w <destdir>"
+将产生的软件包文件写入目录 \fI<destdir>\fP 中而不是
+当前的工作目录。
+
+.SH 配置
+配置选项储存在 \fI/etc/makepkg.conf\fP 中。该文件的解析
+类似一个bash脚本, 因此你可以输出任何你希望的编译标记
+使用。为不同架构进行创建或者
+使用不同的优化时很有用。
+
+\fB注意:\fP 这并不能确保所有软件包的 Makefiles 都将使用
+你输出的参数。有些Makefiles是非常古怪的...
+.SH 同样参见
+\fBpacman\fP 是软件包管理程序，它使用由 makepkg 创建的软件包。
+
+如果你希望为Arch Linux项目贡献软件包软件包，
+请参见Arch Linux文档的创建指南。
+.SH 作者及译者
+.nf
+Judd Vinet <jvinet@zeroflux.org>
+Language-Team: Arch Linux Translation Team <arch@archlinux.org>\n"
+"Chinese Simplified: 甘露/Gan Lu <rhythm_gan@yahoo.com.cn>\n"
+.fi
