@@ -75,9 +75,9 @@ OBJECTS = $(OBJDIR)pacman.o \
 			$(OBJDIR)rpmvercmp.o \
 			$(OBJDIR)i18n.o
 
-PO_LINGUAS = cz de nl pt_BR pt_PT sv
+PO_LINGUAS = cz de es nl pt_BR pt_PT ru sv
 
-MAN_LINGUAS = zh_CN
+MAN_LINGUAS = pl zh_CN
 
 all: libftp.a pacman vercmp convertdb man
 

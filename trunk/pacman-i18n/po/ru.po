@@ -1,0 +1,1599 @@
+# Russian messages for Pacman.
+# Copyright (C) Vladimir Marteev <admin@archlinux.ru>
+# This file is distributed under the same license as the Pacman package.
+# Vladimir Marteev <admin@archlinux.ru>, 2004.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.9.2\n"
+"Report-Msgid-Bugs-To: http://developer.berlios.de/bugs/?group_id=2716\n"
+"POT-Creation-Date: 2004-12-02 16:08+0100\n"
+"PO-Revision-Date: 2004-12-25 12:26+0300\n"
+"Last-Translator: Vladimir Marteev <admin@archlinux.ru>\n"
+"Language-Team: Arch Linux Translation Team <arch-i18n-common@lists.berlios.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: src/convertdb.c:54
+#, c-format
+msgid "converts a pacman 1.x database to a pacman 2.0 format\n"
+msgstr "преобразование базы данных pacman 1.x в формат базы данных pacman 2.0\n"
+
+#: src/convertdb.c:55
+#, c-format
+msgid ""
+"usage: %s <target_dir>\n"
+"\n"
+msgstr ""
+"использование: %s <целевой_каталог>\n"
+"\n"
+
+#: src/convertdb.c:56
+#, c-format
+msgid "convertdb will convert all package data from /var/lib/pacman/pacman.db\n"
+msgstr "convertdb преобразует все данные пакетов из /var/lib/pacman/pacman.db\n"
+
+#: src/convertdb.c:57
+#, c-format
+msgid ""
+"to a 2.0 format and place it in target_dir.\n"
+"\n"
+msgstr ""
+"в формат 2.0 и перенесет в целевой_каталог.\n"
+"\n"
+
+#: src/convertdb.c:78
+#, c-format
+msgid "converting %s\n"
+msgstr "преобразование %s\n"
+
+#: src/db.c:281 db.c:406
+#, c-format
+msgid "error: %s: %s\n"
+msgstr "ошибка: %s: %s\n"
+
+#: src/db.c:433
+#, c-format
+msgid "db_read: error: %s: %s\n"
+msgstr "db_read: ошибка: %s: %s\n"
+
+#: src/db.c:735
+#, c-format
+msgid "%s: exists in \"%s\" (target) and \"%s\" (target)"
+msgstr "%s: существует в \"%s\" (цель) и \"%s\" (цель)"
+
+#: src/db.c:796
+#, c-format
+msgid "%s: %s: exists in filesystem"
+msgstr "%s: %s: существует в файловой системе"
+
+#: src/list.c:305
+#, c-format
+msgid "None\n"
+msgstr "Нет\n"
+
+#: src/md5driver.c:45
+#, c-format
+msgid "%s can't be opened\n"
+msgstr "%s не может быть открыт\n"
+
+#: src/package.c:53 pacman.c:1774
+msgid "could not open package"
+msgstr "невозможно открыть пакет"
+
+#: src/package.c:74
+#, c-format
+msgid "load_pkg: missing package name in %s.\n"
+msgstr "load_pkg: отсутствует наименование пакета в %s\n"
+
+#: src/package.c:79
+#, c-format
+msgid "load_pkg: missing package version in %s.\n"
+msgstr "load_pkg: отсутствует версия пакета в %s\n"
+
+#: src/package.c:115
+#, c-format
+msgid "warning: could not remove tempfile %s\n"
+msgstr "предупреждение: невозможно удалить временный файл %s\n"
+
+#: src/package.c:132
+#, c-format
+msgid "bad package file in %s"
+msgstr "неверный файл пакета в %s"
+
+#: src/package.c:142
+#, c-format
+msgid "load_pkg: missing package info file in %s\n"
+msgstr "load_pkg: отсутствует файл информации о пакете в %s\n"
+
+#: src/package.c:182 package.c:223
+#, c-format
+msgid "%s: syntax error in description file line %d\n"
+msgstr "%s: синтаксическая ошибка в файле описания на строке %d\n"
+
+#: src/package.c:183 package.c:224
+msgid "error"
+msgstr "ошибка"
+
+#: src/package.c:332
+#, c-format
+msgid "Name           : %s\n"
+msgstr "Имя                 : %s\n"
+
+#: src/package.c:333
+#, c-format
+msgid "Version        : %s\n"
+msgstr "Версия              : %s\n"
+
+#: src/package.c:335
+msgid "Groups         :"
+msgstr "Группы              :"
+
+#: src/package.c:337
+#, c-format
+msgid "Packager       : %s\n"
+msgstr "Упаковщик           : %s\n"
+
+#: src/package.c:338
+#, c-format
+msgid "URL            : %s\n"
+msgstr "URL                 : %s\n"
+
+#: src/package.c:339
+#, c-format
+msgid "License        : %s\n"
+msgstr "Лицензия            : %s\n"
+
+#: src/package.c:340
+#, c-format
+msgid "Architecture   : %s\n"
+msgstr "Архитектура         : %s\n"
+
+#: src/package.c:341
+#, c-format
+msgid "Size           : %ld\n"
+msgstr "Размер              : %ld\n"
+
+#: src/package.c:342
+#, c-format
+msgid "Build Date     : %s %s\n"
+msgstr "Дата сборки         : %s %s\n"
+
+#: src/package.c:343
+#, c-format
+msgid "Install Date   : %s %s\n"
+msgstr "Дата установки      : %s %s\n"
+
+#: src/package.c:344
+#, c-format
+msgid "Install Script : %s\n"
+msgstr "Установочный скрипт : %s\n"
+
+#: src/package.c:344
+msgid "Yes"
+msgstr "Да"
+
+#: src/package.c:344
+msgid "No"
+msgstr "Нет"
+
+#: src/package.c:345
+#, c-format
+msgid "Reason:        : "
+msgstr "Причина:            : "
+
+#: src/package.c:347
+#, c-format
+msgid "explicitly installed\n"
+msgstr "явно установленный\n"
+
+#: src/package.c:348
+#, c-format
+msgid "installed as a dependency for another package\n"
+msgstr "установленный как зависимость для другого пакета\n"
+
+#: src/package.c:349
+#, c-format
+msgid "unknown\n"
+msgstr "неизвестно\n"
+
+#: src/package.c:352
+msgid "Provides       :"
+msgstr "Обеспечивает        :"
+
+#: src/package.c:355
+msgid "Depends On     :"
+msgstr "Зависимости         :"
+
+#: src/package.c:358
+msgid "Required By    :"
+msgstr "Необходим для       :"
+
+#: src/package.c:361
+msgid "Conflicts With :"
+msgstr "Конфликтует с       :"
+
+#: src/package.c:363
+#, c-format
+msgid "Description    : "
+msgstr "Описание            : "
+
+#: src/package.c:378
+#, c-format
+msgid "Name              : %s\n"
+msgstr "Имя                  : %s\n"
+
+#: src/package.c:379
+#, c-format
+msgid "Version           : %s\n"
+msgstr "Версия               : %s\n"
+
+#: src/package.c:381
+msgid "Groups            :"
+msgstr "Группы               :"
+
+#: src/package.c:384
+msgid "Provides          :"
+msgstr "Обеспечивает         :"
+
+#: src/package.c:387
+msgid "Depends On        :"
+msgstr "Зависит от           :"
+
+#: src/package.c:390
+msgid "Conflicts With    :"
+msgstr "Конфликтует с        :"
+
+#: src/package.c:393
+msgid "Replaces          :"
+msgstr "Заменяет             :"
+
+#: src/package.c:395
+#, c-format
+msgid "Size (compressed) : %ld\n"
+msgstr "Размер (упакованный) : %ld\n"
+
+#: src/package.c:396
+#, c-format
+msgid "Description       : "
+msgstr "Описание             : "
+
+#: src/package.c:398
+#, c-format
+msgid ""
+"\n"
+"MD5 Sum           : %s\n"
+msgstr ""
+"\n"
+"Сумма MD5                   : %s\n"
+
+#: src/pacman.c:166
+#, c-format
+msgid "error: you cannot perform this operation unless you are root.\n"
+msgstr ""
+"ошибка: вы не можете выполнить это действие, для этого необходимы права "
+"root.\n"
+
+#: src/pacman.c:172
+#, c-format
+msgid "error: unable to lock pacman database.\n"
+msgstr "ошибка: невозможно заблокировать базу данных pacman'а.\n"
+
+#: src/pacman.c:173
+#, c-format
+msgid "       if you're sure pacman is not already running, you\n"
+msgstr "        если вы уверены, что pacman в данный момент не выполняется,\n"
+
+#: src/pacman.c:174
+#, c-format
+msgid "       can remove %s\n"
+msgstr "        то вы можете удалить %s\n"
+
+#: src/pacman.c:196
+msgid "warning: cannot open logfile"
+msgstr "предупреждение: невозможно открыть лог-файл"
+
+#: src/pacman.c:210
+#, c-format
+msgid "Installation Root: %s\n"
+msgstr "Установочный корневой каталог: %s\n"
+
+#: src/pacman.c:212
+#, c-format
+msgid "Top-level DB Path: %s%s\n"
+msgstr "Путь к Top-level DB: %s%s\n"
+
+#: src/pacman.c:214
+msgid "Targets:"
+msgstr "Цели:"
+
+#: src/pacman.c:223
+#, c-format
+msgid "initializing database %s...\n"
+msgstr "инициализация базы данных %s...\n"
+
+#: src/pacman.c:227
+#, c-format
+msgid "error: could not create database.\n"
+msgstr "ошибка: невозможно создать базу данных.\n"
+
+#: src/pacman.c:231
+#, c-format
+msgid "error: could not open database.\n"
+msgstr "ошибка: невозможно открыть базу данных.\n"
+
+#: src/pacman.c:248
+#, c-format
+msgid ""
+"error: no operation specified (use -h for help)\n"
+"\n"
+msgstr ""
+"ошибка: операции не заданы (используйте ключ -h для справки)\n"
+"\n"
+
+#: src/pacman.c:295
+#, c-format
+msgid "conflict: %s\n"
+msgstr "конфликт: %s\n"
+
+#: src/pacman.c:299
+#, c-format
+msgid "requires: %s"
+msgstr "требуеться: %s"
+
+#: src/pacman.c:337
+#, c-format
+msgid "error: no usable package repositories configured.\n"
+msgstr "ошибка: не настроено ни одного репозитория годного к использованию.\n"
+
+#: src/pacman.c:353
+#, c-format
+msgid "removing old packages from cache... "
+msgstr "удаление старых пакетов из кэша..."
+
+#: src/pacman.c:356
+#, c-format
+msgid "error: could not access cache directory\n"
+msgstr "ошибка: нет доступа к каталогу кэша\n"
+
+#: src/pacman.c:427
+#, c-format
+msgid "removing all packages from cache... "
+msgstr "удаление всех пакетов из кэша..."
+
+#: src/pacman.c:429
+#, c-format
+msgid "error: could not remove cache directory: %s\n"
+msgstr "ошибка: невозможно удалить каталог кэша: %s\n"
+
+#: src/pacman.c:435
+#, c-format
+msgid "error: could not create new cache directory: %s\n"
+msgstr "ошибка: невозможно создать новый каталог кэша: %s\n"
+
+#: src/pacman.c:440 pacman.c:1283 pacman.c:1564 pacman.c:1700 pacman.c:2002
+#: src/pacman.c:2037 pacman.c:2305
+#, c-format
+msgid "done.\n"
+msgstr "готово.\n"
+
+#: src/pacman.c:446
+#, c-format
+msgid ":: Synchronizing package databases... \n"
+msgstr ":: Синхронизация базы данных пакетов... \n"
+
+#: src/pacman.c:447
+msgid "synchronizing package lists"
+msgstr "синхронизация списка пакетов"
+
+#: src/pacman.c:459
+#, c-format
+msgid "error: could not open sync database: %s\n"
+msgstr "ошибка: не могу открыть синхронизирующую базу данных: %s\n"
+
+#: src/pacman.c:460
+#, c-format
+msgid "       have you used --refresh yet?\n"
+msgstr "       Вы использовали --refresh все же?\n"
+
+#: src/pacman.c:574 pacman.c:2466 pacman.c:2514 pacman.c:2523
+#, c-format
+msgid "Package \"%s\" was not found.\n"
+msgstr "Пакет \"%s\" не найден.\n"
+
+#: src/pacman.c:605
+#, c-format
+msgid "Repository \"%s\" was not found.\n"
+msgstr "Репозиторий \"%s\" не найден.\n"
+
+#: src/pacman.c:616
+msgid "starting full system upgrade"
+msgstr "начало полного обновления системы"
+
+#: src/pacman.c:628
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (to be replaced by %s-%s)\n"
+msgstr ":: %s-%s: игнорирование обновления пакета (был бы заменен на %s-%s)\n"
+
+#: src/pacman.c:631
+#, c-format
+msgid ":: Replace %s with %s from \"%s\"? [Y/n] "
+msgstr ":: Заменить %s на %s из \"%s\"? [Y/n] "
+
+#: src/pacman.c:694
+#, c-format
+msgid ":: %s: local version (%s) is newer than repo version (%s)\n"
+msgstr ":: %s: локальная версия (%s) более новая, чем в репозитории (%s)\n"
+
+#: src/pacman.c:705
+#, c-format
+msgid ":: %s-%s: ignoring package upgrade (%s)\n"
+msgstr ":: %s-%s: игнорирование обновления пакета (%s)\n"
+
+#: src/pacman.c:729
+#, c-format
+msgid ""
+":: Above packages will be skipped.  To manually upgrade use 'pacman -S "
+"<pkg>'\n"
+msgstr ""
+":: Выше указанные пакеты будут пропущенны. Для ручного обновления "
+"используйте 'pacman -S <pkg>'\n"
+
+#: src/pacman.c:739
+#, c-format
+msgid ""
+"\n"
+":: pacman has detected a newer version of the \"pacman\" package.\n"
+msgstr ""
+"\n"
+":: pacman обнаружил более новую версию пакета \"pacman\".\n"
+
+#: src/pacman.c:740
+#, c-format
+msgid ":: It is recommended that you allow pacman to upgrade itself\n"
+msgstr ":: Рекомендуется, чтобы вы позволили pacman'у обновлять себя\n"
+
+#: src/pacman.c:741
+#, c-format
+msgid ":: first, then you can re-run the operation with the newer version.\n"
+msgstr ""
+":: сначала, после этого вы можете повторно выполнить эту операцию с более "
+"новой версией.\n"
+
+#: src/pacman.c:743
+msgid ":: Upgrade pacman first? [Y/n] "
+msgstr ":: Обновить сначало pacman? [Y/n] "
+
+#: src/pacman.c:812 pacman.c:2098
+#, c-format
+msgid ":: group %s:\n"
+msgstr ":: группа %s:\n"
+
+#: src/pacman.c:814
+msgid "    Install whole content? [Y/n] "
+msgstr "    Установить все содержимое? [Y/n] "
+
+#: src/pacman.c:820
+#, c-format
+msgid ":: Install %s from group %s? [Y/n] "
+msgstr ":: Установить %s из группы %s? [Y/n] "
+
+#: src/pacman.c:827
+#, c-format
+msgid "%s: not found in sync db\n"
+msgstr "%s: не найден в базе данных синхронизации\n"
+
+#: src/pacman.c:831
+#, c-format
+msgid "%s: not present in \"%s\" repository\n"
+msgstr "%s: не присутствует в репозитории \"%s\"\n"
+
+#: src/pacman.c:844
+#, c-format
+msgid ":: %s-%s: local version is newer.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: локальная версия более новая.  Всеравно обновить? [Y/n] "
+
+#: src/pacman.c:853
+#, c-format
+msgid ":: %s-%s: is up to date.  Upgrade anyway? [Y/n] "
+msgstr ":: %s-%s: уже обновлен. Всеравно обновить? [Y/n] "
+
+#: src/pacman.c:896
+#, c-format
+msgid "error: unresolvable dependencies:\n"
+msgstr "ошибка: неразрешенные зависимости:\n"
+
+#: src/pacman.c:899 pacman.c:1586
+#, c-format
+msgid "  %s: requires %s"
+msgstr "  %s: требует %s"
+
+#: src/pacman.c:906
+#, c-format
+msgid " but it is not in the sync db\n"
+msgstr " но это не находится в БД синхронизации\n"
+
+#: src/pacman.c:1001 pacman.c:1608
+#, c-format
+msgid ":: %s conflicts with %s. Remove %s? [Y/n] "
+msgstr ":: %s конфликтует с %s. Удалить %s? [Y/n] "
+
+#: src/pacman.c:1007 pacman.c:1614
+#, c-format
+msgid ""
+"\n"
+"error: package conflicts detected\n"
+msgstr ""
+"\n"
+"ошибка: обнаружен конфликт пакетов\n"
+
+#: src/pacman.c:1012 pacman.c:1619
+#, c-format
+msgid ""
+"\n"
+"error: %s conflicts with %s\n"
+msgstr ""
+"\n"
+"ошибка: %s конфликтует с %s\n"
+
+#: src/pacman.c:1082
+#, c-format
+msgid ""
+"\n"
+"Remove:  "
+msgstr ""
+"\n"
+"Удалить: "
+
+#: src/pacman.c:1104
+#, c-format
+msgid ""
+"\n"
+"Targets: "
+msgstr ""
+"\n"
+"Цели: "
+
+#: src/pacman.c:1107
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Total Package Size:   %.1f MB\n"
+msgstr ""
+"\n"
+"\n"
+"Общий размер пакета(ов):  %.lf МБ\n"
+
+#: src/pacman.c:1117
+#, c-format
+msgid ""
+"\n"
+"Beginning download...\n"
+msgstr ""
+"\n"
+"Начало загрузки...\n"
+
+#: src/pacman.c:1120
+msgid ""
+"\n"
+"Proceed with download? [Y/n] "
+msgstr ""
+"\n"
+"Продолжать загрузку? [Y/n] "
+
+#: src/pacman.c:1128
+#, c-format
+msgid ""
+"\n"
+"Beginning upgrade process...\n"
+msgstr ""
+"\n"
+"Начало процесса обновления...\n"
+
+#: src/pacman.c:1131
+msgid ""
+"\n"
+"Proceed with upgrade? [Y/n] "
+msgstr ""
+"\n"
+"Продолжать обновление? [Y/n] "
+
+#: src/pacman.c:1178
+#, c-format
+msgid " %s-%s%s is already in the cache\n"
+msgstr " %s-%s%s уже находится в кэше\n"
+
+#: src/pacman.c:1200
+#, c-format
+msgid ""
+"\n"
+":: Retrieving packages from %s...\n"
+msgstr ""
+"\n"
+":: Получение пакетов из %s...\n"
+
+#: src/pacman.c:1206
+#, c-format
+msgid "warning: no %s cache exists.  creating..."
+msgstr "предупреждение: кэш %s не существует.  создание..."
+
+#: src/pacman.c:1212
+msgid "warning: couldn't create package cache, using /tmp instead"
+msgstr "предупреждение: невозможно создать кэш пакета, использую /tmp"
+
+#: src/pacman.c:1219
+#, c-format
+msgid "error: failed to retrieve some files from %s\n"
+msgstr "ошибка: неудалось получить некоторые файлы из %s\n"
+
+#: src/pacman.c:1241
+#, c-format
+msgid "checking package integrity... "
+msgstr "проверка целостности пакета... "
+
+#: src/pacman.c:1257
+#, c-format
+msgid "error: can't get md5 checksum for package %s\n"
+msgstr "ошибка: невозможно получить сумму md5 для пакета %s\n"
+
+#: src/pacman.c:1267
+#, c-format
+msgid "error: can't get md5 checksum for archive %s\n"
+msgstr "ошибка: невозможно получить сумму md5 для архива %s\n"
+
+#: src/pacman.c:1276
+#, c-format
+msgid "error: archive %s is corrupted\n"
+msgstr "ошибка: архив %s поврежден\n"
+
+#: src/pacman.c:1300
+msgid "checking dependencies of packages designated for removal...\n"
+msgstr "проверка зависимостей пакетов, определяемых для удаления...\n"
+
+#: src/pacman.c:1307 pacman.c:2152
+#, c-format
+msgid "error: this will break the following dependencies:\n"
+msgstr "ошибка: это нарушит следующие зависимости:\n"
+
+#: src/pacman.c:1310 pacman.c:2155
+#, c-format
+msgid "  %s: is required by %s\n"
+msgstr "  %s: требуется %s\n"
+
+#: src/pacman.c:1329 pacman.c:1747
+#, c-format
+msgid ""
+"\n"
+"upgrade aborted.\n"
+msgstr ""
+"\n"
+"обновление прервано.\n"
+
+#: src/pacman.c:1361
+#, c-format
+msgid "package removal failed.  aborting...\n"
+msgstr "ошибка удаление пакета.  прерывание..\n"
+
+#: src/pacman.c:1504
+#, c-format
+msgid "error: failed to download %s\n"
+msgstr "ошибка: неудалось загрузить %s\n"
+
+#: src/pacman.c:1520
+#, c-format
+msgid "loading package data... "
+msgstr "загрузка данных пакета... "
+
+#: src/pacman.c:1524
+#, c-format
+msgid "reading %s... "
+msgstr "чтение %s... "
+
+#: src/pacman.c:1531
+#, c-format
+msgid ""
+"\n"
+"error: package \"%s\" has more than one hyphen in its version (%s)\n"
+msgstr ""
+"\n"
+"ошибка: пакет \"%s\" имеет больше чем один дефис в его версии (%s)\n"
+
+#: src/pacman.c:1539
+msgid "not installed or lesser version\n"
+msgstr "не установлен или более меньшая версия\n"
+
+#: src/pacman.c:1552
+msgid "replacing older version in target list. "
+msgstr "замена старшей версии в списке целей. "
+
+#: src/pacman.c:1560
+msgid "done\n"
+msgstr "готово\n"
+
+#: src/pacman.c:1575 pacman.c:2136
+msgid "checking dependencies...\n"
+msgstr "проверка зависимостей...\n"
+
+#: src/pacman.c:1583
+#, c-format
+msgid "error: unsatisfied dependencies:\n"
+msgstr "ошибка: неудовлетворенные зависимости:\n"
+
+#: src/pacman.c:1655
+#, c-format
+msgid ""
+"\n"
+"%s aborted.\n"
+msgstr ""
+"\n"
+"%s прервана(о).\n"
+
+#: src/pacman.c:1655 pacman.c:3346
+msgid "upgrade"
+msgstr "обновление"
+
+#: src/pacman.c:1655
+msgid "install"
+msgstr "установка"
+
+#: src/pacman.c:1672
+msgid "sorting by dependencies\n"
+msgstr "сортировка по зависимостям\n"
+
+#: src/pacman.c:1687
+#, c-format
+msgid "checking for file conflicts... "
+msgstr "проверка на конфликты с файлами... "
+
+#: src/pacman.c:1691
+#, c-format
+msgid ""
+"\n"
+"error: the following file conflicts were found:\n"
+msgstr ""
+"\n"
+"ошибка: следующие файловые конфликты были найдены:\n"
+
+#: src/pacman.c:1697
+#, c-format
+msgid ""
+"\n"
+"errors occurred, no packages were upgraded.\n"
+msgstr ""
+"\n"
+"произошли ошибки, никакие пакеты не были обновлены.\n"
+
+#: src/pacman.c:1719
+#, c-format
+msgid "error: %s is already installed. (try --upgrade)\n"
+msgstr "ошибка: %s уже установлен. (попробуйте ключ --upgrade)\n"
+
+#: src/pacman.c:1728
+#, c-format
+msgid "upgrading %s... "
+msgstr "обновление %s... "
+
+#: src/pacman.c:1743
+msgid "removing old package first...\n"
+msgstr "удаление старого пакета сначала...\n"
+
+#: src/pacman.c:1763
+#, c-format
+msgid "installing %s... "
+msgstr "установка %s... "
+
+#: src/pacman.c:1777
+msgid "extracting files...\n"
+msgstr "извлечение файлов...\n"
+
+#: src/pacman.c:1825 pacman.c:1933
+#, c-format
+msgid "could not extract %s: %s"
+msgstr "невозможно извлечь %s: %s"
+
+#: src/pacman.c:1846
+#, c-format
+msgid "checking md5 hashes for %s\n"
+msgstr "проверка хэшей md5 для %s\n"
+
+#: src/pacman.c:1847
+#, c-format
+msgid "  current:  %s\n"
+msgstr "  текущий:  %s\n"
+
+#: src/pacman.c:1848
+#, c-format
+msgid "  new:      %s\n"
+msgstr "  новый:    %s\n"
+
+#: src/pacman.c:1850
+#, c-format
+msgid "  original: %s\n"
+msgstr "  оригинал: %s\n"
+
+#: src/pacman.c:1862 pacman.c:1895
+#, c-format
+msgid "error: could not rename %s: %s"
+msgstr "ошибка: невозможно переименовать %s: %s"
+
+#: src/pacman.c:1865
+#, c-format
+msgid "error: could not copy %s to %s: %s"
+msgstr "ошибка: невозможно скопировать %s в %s: %s"
+
+#: src/pacman.c:1868 pacman.c:1897 pacman.c:2224
+#, c-format
+msgid "warning: %s saved as %s"
+msgstr "предупреждение: %s был сохранен как %s"
+
+#: src/pacman.c:1878 pacman.c:1881 pacman.c:1887
+msgid "  action: installing new file\n"
+msgstr "  действие: установка нового файла\n"
+
+#: src/pacman.c:1885
+msgid "  action: leaving existing file in place\n"
+msgstr "  действие: оставление сузествующего пакета на месте\n"
+
+#: src/pacman.c:1891
+msgid "  action: saving current file and installing new one\n"
+msgstr "  действие: сохранение текущего пакета и установка нового\n"
+
+#: src/pacman.c:1904
+#, c-format
+msgid "error: could not copy %s to %s: %s\n"
+msgstr "ошибка: невозможно скопировать %s в %s: %s\n"
+
+#: src/pacman.c:1919
+#, c-format
+msgid "%s is in NoUpgrade - skipping\n"
+msgstr "%s находится в NoUpgrade - пропускаем\n"
+
+#: src/pacman.c:1921
+#, c-format
+msgid "warning: extracting %s%s as %s"
+msgstr "предупреждение: распаковка %s%s как %s"
+
+#: src/pacman.c:1957
+#, c-format
+msgid "errors occurred while %s %s"
+msgstr "произошли ошибки во время %s %s"
+
+#: src/pacman.c:1958
+msgid "upgrading"
+msgstr "обновления"
+
+#: src/pacman.c:1958
+msgid "installing"
+msgstr "установки"
+
+#: src/pacman.c:1988
+msgid "Updating database..."
+msgstr "Обновление базы данных..."
+
+#: src/pacman.c:1999
+#, c-format
+msgid "error updating database for %s!"
+msgstr "ошибка обновления базы данных для %s!"
+
+#: src/pacman.c:2004
+#, c-format
+msgid "upgraded %s (%s -> %s)"
+msgstr "обновлено %s (%s -> %s)"
+
+#: src/pacman.c:2007
+#, c-format
+msgid "installed %s (%s)"
+msgstr "установленно %s (%s)"
+
+#: src/pacman.c:2065 pacman.c:2319
+#, c-format
+msgid "running \"%s\"\n"
+msgstr "запуск \"%s\"\n"
+
+#: src/pacman.c:2100
+msgid "    Remove whole content? [Y/n] "
+msgstr "    Удалить все содержимое? [Y/n] "
+
+#: src/pacman.c:2107
+#, c-format
+msgid ":: Remove %s from group %s? [Y/n] "
+msgstr ":: Удалить %s из группы %s? [Y/n] "
+
+#: src/pacman.c:2118
+#, c-format
+msgid "error: could not find %s in database\n"
+msgstr "ошибка: невозможно найти %s в базе данных\n"
+
+#: src/pacman.c:2126
+#, c-format
+msgid ":: %s is designated as a HoldPkg.  Remove anyway? [Y/n] "
+msgstr ":: %s определен как HoldPkg. Всеравно удалить? [Y/n] "
+
+#: src/pacman.c:2164
+msgid "finding removable dependencies...\n"
+msgstr "поиск удаляемых зависимостей...\n"
+
+#: src/pacman.c:2170
+msgid ""
+"\n"
+"Targets:"
+msgstr ""
+"\n"
+"Цели:"
+
+#: src/pacman.c:2172
+msgid ""
+"\n"
+"Do you want to remove these packages? [Y/n] "
+msgstr ""
+"\n"
+"Вы хотите удалить эти пакеты? [Y/n] "
+
+#: src/pacman.c:2183
+#, c-format
+msgid "removing %s... "
+msgstr "удаление %s... "
+
+#: src/pacman.c:2206
+#, c-format
+msgid "file %s does not exist\n"
+msgstr "файл %s не существует\n"
+
+#: src/pacman.c:2228 pacman.c:2235
+msgid "cannot remove file"
+msgstr "невозможно удалить файл"
+
+#: src/pacman.c:2306
+#, c-format
+msgid "removed %s (%s)"
+msgstr "удалено %s (%s)"
+
+#: src/pacman.c:2364
+#, c-format
+msgid "Group \"%s\" was not found.\n"
+msgstr "Группа \"%s\" не найдена.\n"
+
+#: src/pacman.c:2381
+#, c-format
+msgid "error: no package file was specified for --file\n"
+msgstr "ошибка: не задан файл пакета для --file\n"
+
+#: src/pacman.c:2386
+#, c-format
+msgid "error: %s is not a package\n"
+msgstr "ошибка: %s не является пакетом\n"
+
+#: src/pacman.c:2409
+#, c-format
+msgid "error: no file was specified for --owns\n"
+msgstr "ошибка: не задан файл для --owns\n"
+
+#: src/pacman.c:2419
+#, c-format
+msgid "%s is owned by %s %s\n"
+msgstr "%s принадлежит %s %s\n"
+
+#: src/pacman.c:2426
+#, c-format
+msgid "No package owns %s\n"
+msgstr "Никакой пакет не обладает %s\n"
+
+#: src/pacman.c:2430
+#, c-format
+msgid "error: %s is not a file.\n"
+msgstr "ошибка: %s не является файлом.\n"
+
+#: src/pacman.c:2490
+#, c-format
+msgid "error calculating md5sum for %s\n"
+msgstr "ошибка вычисления md5sum для %s\n"
+
+#: src/pacman.c:2494
+#, c-format
+msgid "MODIFIED\t%s\n"
+msgstr "ИЗМЕНЕНО\t%s\n"
+
+#: src/pacman.c:2496
+#, c-format
+msgid "NOT MODIFIED\t%s\n"
+msgstr "НЕ ИЗМЕНЕНО\t%s\n"
+
+#: src/pacman.c:2499
+#, c-format
+msgid "MISSING\t\t%s\n"
+msgstr "ОТСУТСТВУЕТ\t\t%s\n"
+
+#: src/pacman.c:2570
+msgid "warning: possible dependency cycle detected\n"
+msgstr "предупреждение: зафиксирован возможный цикл зависимостей\n"
+
+#: src/pacman.c:2646
+#, c-format
+msgid "warning: cannot find package \"%s\" or anything that provides it!\n"
+msgstr ""
+"предупреждение: не иогу найти пакет \"%s\" или что-нибудь, что обеспечивает "
+"его!\n"
+
+#: src/pacman.c:2651
+#, c-format
+msgid "dep is NULL!\n"
+msgstr "dep равен NULL!\n"
+
+#: src/pacman.c:2661
+#, c-format
+msgid "excluding %s -- explicitly installed\n"
+msgstr "исключение %s -- явно установленный\n"
+
+#: src/pacman.c:2747
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\":\n"
+msgstr "ошибка: не могу разрешить зависимости для \"%s\":\n"
+
+#: src/pacman.c:2748
+#, c-format
+msgid "       \"%s\" is not in the package set\n"
+msgstr "       \"%s\" не присутствует в пакете\n"
+
+#: src/pacman.c:2764
+#, c-format
+msgid "resolving %s\n"
+msgstr "определение %s\n"
+
+#: src/pacman.c:2789
+#, c-format
+msgid "%s requires %s, but it is in IgnorePkg.  Install anyway? [Y/n] "
+msgstr "%s требует %s, но это находится в IgnorePkg.  Установить так или иначе? [Y/n] "
+
+#: src/pacman.c:2797
+#, c-format
+msgid "adding %s-%s\n"
+msgstr "добавление %s-%s\n"
+
+#: src/pacman.c:2800
+#, c-format
+msgid "error: cannot resolve dependencies for \"%s\"\n"
+msgstr "ошибка: не могу разрешить зависимости для \"%s\"\n"
+
+#: src/pacman.c:2805
+#, c-format
+msgid "dependency cycle detected: %s\n"
+msgstr "зафиксирован цикл зависимостей: %s\n"
+
+#: src/pacman.c:3055
+#, c-format
+msgid "warning: invalid dependency in %s"
+msgstr "предупреждение: неверная зависимость в %s"
+
+#: src/pacman.c:3122
+#, c-format
+msgid "data error: %s supposedly provides %s, but it was not found in db\n"
+msgstr "ошибка данных: %s возможно обеспечивает %s, но это не было найдено в базе данных\n"
+
+#: src/pacman.c:3282
+msgid "error creating temp directory"
+msgstr "ошибка создания временного каталога"
+
+#: src/pacman.c:3298 pacman.c:3320
+#, c-format
+msgid "warning: could not remove tmpdir %s\n"
+msgstr "предупреждение: невозможно удалить tmpdir %s\n"
+
+#: src/pacman.c:3308
+#, c-format
+msgid "Executing %s script...\n"
+msgstr "Запуск скрипта %s...\n"
+
+#: src/pacman.c:3410
+msgid "bad root path"
+msgstr "неверный путь к корневому каталогу"
+
+#: src/pacman.c:3424
+#, c-format
+msgid ""
+"error: only one operation may be used at a time\n"
+"\n"
+msgstr ""
+"ошибка: только одна операция может быть использована в одно время\n"
+"\n"
+
+#: src/pacman.c:3474
+#, c-format
+msgid "config: new section '%s'\n"
+msgstr "config: новая секция '%s'\n"
+
+#: src/pacman.c:3476
+#, c-format
+msgid "config: line %d: bad section name\n"
+msgstr "config: строка %d: неверное название секции\n"
+
+#: src/pacman.c:3480
+#, c-format
+msgid "config: line %d: '%s' is reserved and cannot be used as a package tree\n"
+msgstr ""
+"config: строка %d: '%s' зарезервированно и не может быть использованно в "
+"дереве пакетов\n"
+
+#: src/pacman.c:3506 pacman.c:3525 pacman.c:3609 pacman.c:3668
+#, c-format
+msgid "config: line %d: syntax error\n"
+msgstr "config: строка %d: синтаксическая ошибка\n"
+
+#: src/pacman.c:3512
+#, c-format
+msgid "config: line %d: all directives must belong to a section\n"
+msgstr "config: строка %d: все директивы должны относиться к секции\n"
+
+#: src/pacman.c:3518
+msgid "config: nopassiveftp\n"
+msgstr "config: nopassiveftp\n"
+
+#: src/pacman.c:3521
+msgid "config: usesyslog\n"
+msgstr "config: usesyslog\n"
+
+#: src/pacman.c:3533
+#, c-format
+msgid "config: including %s\n"
+msgstr "config: including %s\n"
+
+#: src/pacman.c:3542 pacman.c:3547
+#, c-format
+msgid "config: noupgrade: %s\n"
+msgstr "config: noupgrade: %s\n"
+
+#: src/pacman.c:3554 pacman.c:3559
+#, c-format
+msgid "config: ignorepkg: %s\n"
+msgstr "config: ignorepkg: %s\n"
+
+#: src/pacman.c:3566 pacman.c:3571
+#, c-format
+msgid "config: holdpkg: %s\n"
+msgstr "config: holdpkg: %s\n"
+
+#: src/pacman.c:3578
+#, c-format
+msgid "config: dbpath: %s\n"
+msgstr "config: dbpath: %s\n"
+
+#: src/pacman.c:3584
+#, c-format
+msgid "config: log file: %s\n"
+msgstr "config: log-файл: %s\n"
+
+#: src/pacman.c:3588
+#, c-format
+msgid "config: xfercommand: %s\n"
+msgstr "config: xfercommand: %s\n"
+
+#: src/pacman.c:3598 pacman.c:3624 pacman.c:3630
+#, c-format
+msgid "config: line %d: bad server location\n"
+msgstr "config: строка %d: неверное расположение сервера\n"
+
+#: src/pacman.c:3604
+#, c-format
+msgid "config: proxyserver: %s\n"
+msgstr "config: proxyserver: %s\n"
+
+#: src/pacman.c:3607
+#, c-format
+msgid "config: proxyport: %u\n"
+msgstr "config: proxyport: %u\n"
+
+#: src/pacman.c:3661
+#, c-format
+msgid "config: line %d: protocol %s is not supported\n"
+msgstr "config: строка %d: протокол %s не поддерживается\n"
+
+#: src/pacman.c:3665
+#, c-format
+msgid "config: %s: server: %s %s %s\n"
+msgstr "config: %s: сервер: %s %s %s\n"
+
+#: src/pacman.c:3688
+#, c-format
+msgid "usage:  %s {-h --help}\n"
+msgstr "использование: %s {-h --help}\n"
+
+#: src/pacman.c:3689
+#, c-format
+msgid "        %s {-V --version}\n"
+msgstr "        %s {-V --version}\n"
+
+#: src/pacman.c:3690
+#, c-format
+msgid "        %s {-A --add}     [options] <file>\n"
+msgstr "        %s {-A --add}     [опции] <файл>\n"
+
+#: src/pacman.c:3691
+#, c-format
+msgid "        %s {-R --remove}  [options] <package>\n"
+msgstr "        %s {-R --remove}  [опции] <пакет>\n"
+
+#: src/pacman.c:3692
+#, c-format
+msgid "        %s {-U --upgrade} [options] <file>\n"
+msgstr "        %s {-U --upgrade} [опции] <файл>\n"
+
+#: src/pacman.c:3693
+#, c-format
+msgid "        %s {-F --freshen} [options] <file>\n"
+msgstr "        %s {-F --freshen} [опции] <файл>\n"
+
+#: src/pacman.c:3694
+#, c-format
+msgid "        %s {-Q --query}   [options] [package]\n"
+msgstr "        %s {-Q --query}   [опции] [пакет]\n"
+
+#: src/pacman.c:3695
+#, c-format
+msgid "        %s {-S --sync}    [options] [package]\n"
+msgstr "        %s {-S --sync}    [опции] [пакет]\n"
+
+#: src/pacman.c:3696
+#, c-format
+msgid ""
+"\n"
+"use '%s --help' with other options for more syntax\n"
+"\n"
+msgstr ""
+"\n"
+"используйте '%s --help' с другими опциями для более подробной справки\n"
+"\n"
+
+#: src/pacman.c:3699
+#, c-format
+msgid "usage:  %s {-A --add} [options] <file>\n"
+msgstr "использование:  %s {-A --add} [опции] <файл>\n"
+
+#: src/pacman.c:3700 pacman.c:3705 pacman.c:3717 pacman.c:3722 pacman.c:3734
+#, c-format
+msgid "options:\n"
+msgstr "опции:\n"
+
+#: src/pacman.c:3701 pacman.c:3707 pacman.c:3718 pacman.c:3736
+#, c-format
+msgid "  -d, --nodeps        skip dependency checks\n"
+msgstr "  -d, --nodeps        не проверять зависимости пакетов\n"
+
+#: src/pacman.c:3702 pacman.c:3719 pacman.c:3737
+#, c-format
+msgid "  -f, --force         force install, overwrite conflicting files\n"
+msgstr "  -f, --force         перезаписывать конфликтующее файлы\n"
+
+#: src/pacman.c:3704
+#, c-format
+msgid "usage:  %s {-R --remove} [options] <package>\n"
+msgstr "использование:  %s {-R --remove} [опции] <пакет>\n"
+
+#: src/pacman.c:3706
+#, c-format
+msgid "  -c, --cascade       remove packages and all packages that depend on them\n"
+msgstr "  -c, --cascade       удалить пакет и все пакеты, которые зависят от него\n"
+
+#: src/pacman.c:3708
+#, c-format
+msgid "  -k, --dbonly        only remove database entry, do not remove files\n"
+msgstr ""
+"  -k, --dbonly        только удалить запись из базы данных, но не удалять "
+"файлы\n"
+
+#: src/pacman.c:3709
+#, c-format
+msgid "  -n, --nosave        remove configuration files as well\n"
+msgstr "  -n, --nosave        не сохранять старые файлы конфигурации\n"
+
+#: src/pacman.c:3710
+#, c-format
+msgid "  -s, --recursive     remove dependencies also (that won't break packages)\n"
+msgstr "  -s, --recursive     удалять зависимости также (которые не будет нарушать пакеты)\n"
+
+#: src/pacman.c:3713
+#, c-format
+msgid "usage:  %s {-F --freshen} [options] <file>\n"
+msgstr "использование:  %s {-F --freshen} [опции] <файл>\n"
+
+#: src/pacman.c:3715
+#, c-format
+msgid "usage:  %s {-U --upgrade} [options] <file>\n"
+msgstr "использование:  %s {-U --upgrade} [опции] <файл>\n"
+
+#: src/pacman.c:3721
+#, c-format
+msgid "usage:  %s {-Q --query} [options] [package]\n"
+msgstr "использование:  %s {-Q --query} [опции] [пакет]\n"
+
+#: src/pacman.c:3723
+#, c-format
+msgid "  -e, --orphans       list all packages that were explicitly installed\n"
+msgstr "  -e, --orphans       вывести все пакеты, которые были явно установленны\n"
+
+#: src/pacman.c:3724
+#, c-format
+msgid "                      and are not required by any other packages\n"
+msgstr "                      и не требуются никакими другими пакетам\n"
+
+#: src/pacman.c:3725 pacman.c:3738
+#, c-format
+msgid "  -g, --groups        view all members of a package group\n"
+msgstr "  -g, --groups        просмотреть всех членов группы данного пакета\n"
+
+#: src/pacman.c:3726
+#, c-format
+msgid "  -i, --info          view package information (use -ii for more)\n"
+msgstr ""
+"  -i, --info          вывод информации о пакете (используйте -ii для более "
+"подробной информации)\n"
+
+#: src/pacman.c:3727
+#, c-format
+msgid "  -l, --list          list the contents of the queried package\n"
+msgstr "  -l, --list          вывод содержимого запрошенного пакета\n"
+
+#: src/pacman.c:3728
+#, c-format
+msgid "  -o, --owns <file>   query the package that owns <file>\n"
+msgstr "  -o, --owns <файл>   поиск пакета, которому принадлежит <файл>\n"
+
+#: src/pacman.c:3729
+#, c-format
+msgid ""
+"  -p, --file          pacman will query the package file [package] instead "
+"of\n"
+msgstr ""
+"  -p, --file          pacman запросит файл пакета [пакет] вместо того, "
+"чтобы\n"
+
+#: src/pacman.c:3730
+#, c-format
+msgid "                      looking in the database\n"
+msgstr "                      смотреть в базе данных\n"
+
+#: src/pacman.c:3731
+#, c-format
+msgid ""
+"  -s, --search        search locally-installed packages for matching "
+"strings\n"
+msgstr "  -s, --search        искать локально-установленные пакеты соответствующие строкам\n"
+
+#: src/pacman.c:3733
+#, c-format
+msgid "usage:  %s {-S --sync} [options] [package]\n"
+msgstr "использование:  %s {-S --sync} [опции] [пакет]\n"
+
+#: src/pacman.c:3735
+#, c-format
+msgid ""
+"  -c, --clean         remove old packages from cache directory (use -cc for "
+"all)\n"
+msgstr ""
+"  -c, --clean         удаление старых пакетов из каталога кэша (-cc для "
+"всех)\n"
+
+#: src/pacman.c:3739
+#, c-format
+msgid "  -i, --info          view package information\n"
+msgstr "  -i, --info          просмотр информации о пакете\n"
+
+#: src/pacman.c:3740
+#, c-format
+msgid ""
+"  -l, --list          list all packages belonging to the specified "
+"repository\n"
+msgstr "  -l, --list          показать все пакеты, принадлежащие указанному репозиторию\n"
+
+#: src/pacman.c:3741
+#, c-format
+msgid ""
+"  -p, --print-uris    print out download URIs for each package to be "
+"installed\n"
+msgstr "  -p, --print-uris    распечатать URI для каждого пакета, который будет установлен.\n"
+
+#: src/pacman.c:3742
+#, c-format
+msgid "  -s, --search        search remote repositories for matching strings\n"
+msgstr ""
+"  -s, --search        искать удаленные репозитории, которые содержат эти "
+"строчки\n"
+
+#: src/pacman.c:3743
+#, c-format
+msgid "  -u, --sysupgrade    upgrade all packages that are out of date\n"
+msgstr "  -u, --sysupgrade    обновить все устаревшие пакеты\n"
+
+#: src/pacman.c:3744
+#, c-format
+msgid "  -w, --downloadonly  download packages but do not install/upgrade anything\n"
+msgstr ""
+"  -w, --downloadonly  загрузить пакеты, но не устанавливать или обновлять "
+"их\n"
+
+#: src/pacman.c:3745
+#, c-format
+msgid "  -y, --refresh       download fresh package databases from the server\n"
+msgstr "  -y, --refresh       загрузить свежую базу данных пакетов с сервера\n"
+
+#: src/pacman.c:3746
+#, c-format
+msgid "      --ignore <pkg>  ignore a package upgrade (can be used more than once)\n"
+msgstr "      --ignore <пакет>  игнорировать обновление пакета (может использоваться много раз)\n"
+
+#: src/pacman.c:3748
+#, c-format
+msgid "      --config <path> set an alternate configuration file\n"
+msgstr "      --config <путь> использовать другой конфигурационный файл\n"
+
+#: src/pacman.c:3749
+#, c-format
+msgid "      --noconfirm     do not ask for any confirmation\n"
+msgstr "      --noconfirm     не спрашивать какие-либо подтверждения\n"
+
+#: src/pacman.c:3750
+#, c-format
+msgid "  -v, --verbose       be verbose\n"
+msgstr "  -v, --verbose       выводить дополнительную информацию\n"
+
+#: src/pacman.c:3751
+#, c-format
+msgid "  -r, --root <path>   set an alternate installation root\n"
+msgstr ""
+"  -r, --root <путь>   установить иное расположение корневого каталога "
+"установки\n"
+
+#: src/pacman.c:3752
+#, c-format
+msgid "  -b, --dbpath <path> set an alternate database location\n"
+msgstr "  -b, --dbpath <путь> использовать другое место расположения базы данных\n"
+
+#: src/pacman.c:3869
+#, c-format
+msgid "warning: could not remove lock file %s"
+msgstr "предупреждение: невозможно удалить файл блокировки %s"
+
+#: src/pacsync.c:84
+#, c-format
+msgid "failed to get lastupdate time for %s (no big deal)\n"
+msgstr "неудалось получить время lastupdate для %s (no big deal)\n"
+
+#: src/pacsync.c:95
+#, c-format
+msgid "pacsync: new mtime for %s: %s\n"
+msgstr "pacsync: новое значение mtime для %s: %s\n"
+
+#: src/pacsync.c:98
+#, c-format
+msgid "failed to synchronize %s\n"
+msgstr "ошибка синхронизации %s\n"
+
+#: src/pacsync.c:101
+#, c-format
+msgid ":: %s is up to date\n"
+msgstr ":: %s уже в актуальном состоянии\n"
+
+#: src/pacsync.c:108
+#, c-format
+msgid "removing %s (if it exists)\n"
+msgstr "удаление %s (если существует)\n"
+
+#: src/pacsync.c:117
+#, c-format
+msgid "unpacking %s...\n"
+msgstr "распаковка %s...\n"
+
+#: src/pacsync.c:183
+#, c-format
+msgid "connecting to %s:21\n"
+msgstr "подключение к %s:21\n"
+
+#: src/pacsync.c:185 pacsync.c:216 pacsync.c:386
+#, c-format
+msgid "error: cannot connect to %s\n"
+msgstr "ошибка: невозможно подключиться к %s\n"
+
+#: src/pacsync.c:189
+#, c-format
+msgid "error: anonymous login failed\n"
+msgstr "ошибка: неудалось пройти анонимную авторизацию\n"
+
+#: src/pacsync.c:194
+#, c-format
+msgid "error: could not cwd to %s: %s\n"
+msgstr "ошибка: навозможно выполнить cwd в %s: %s\n"
+
+#: src/pacsync.c:200
+#, c-format
+msgid "warning: failed to set passive mode\n"
+msgstr "предупреждение: неудалось установить пассивный режим\n"
+
+#: src/pacsync.c:203
+msgid "FTP passive mode not set\n"
+msgstr "пассивный режим FTP не установлен\n"
+
+#: src/pacsync.c:211 pacsync.c:381
+#, c-format
+msgid "connecting to %s\n"
+msgstr "подключение к %s\n"
+
+#: src/pacsync.c:213 pacsync.c:383
+#, c-format
+msgid "connecting to %s:%u\n"
+msgstr "подключение к %s:%u\n"
+
+#: src/pacsync.c:275
+#, c-format
+msgid "error: could not chdir to %s\n"
+msgstr "ошибка: невозможно сменить каталог в %s\n"
+
+#: src/pacsync.c:279
+#, c-format
+msgid "running command: %s\n"
+msgstr "запуск комманды: %s\n"
+
+#: src/pacsync.c:282
+#, c-format
+msgid "error running XferCommand: fork failed!\n"
+msgstr "ошибка выполнения XferCommand: fork failed!\n"
+
+#: src/pacsync.c:286
+#, c-format
+msgid "XferCommand command returned non-zero status code (%d)\n"
+msgstr "комманда XferCommand возвратила ненулевое значение статуса (%d)\n"
+
+#: src/pacsync.c:331
+#, c-format
+msgid "warning: failed to get filesize for %s\n"
+msgstr "предупреждение: неудалось получить размер файла для %s\n"
+
+#: src/pacsync.c:337
+#, c-format
+msgid "warning: failed to get mtime for %s\n"
+msgstr "предупреждение: неудалость получить mtime для %s\n"
+
+#: src/pacsync.c:342
+#, c-format
+msgid "mtimes are identical, skipping %s\n"
+msgstr "mtime'ы идентичны, пропускаем %s\n"
+
+#: src/pacsync.c:356
+#, c-format
+msgid "warning: failed to resume download -- restarting\n"
+msgstr "предупреждение: ошибка возобновления загрузки -- перезапуск\n"
+
+#: src/pacsync.c:363 pacsync.c:407
+#, c-format
+msgid ""
+"\n"
+"failed downloading %s from %s: %s\n"
+msgstr ""
+"\n"
+"неудалось загрузить %s из %s: %s\n"
+
+#: src/pacsync.c:416
+#, c-format
+msgid "copying %s to %s/%s\n"
+msgstr "копирование %s в %s/%s\n"
+
+#: src/pacsync.c:419
+#, c-format
+msgid "failed copying %s\n"
+msgstr "ошибка копирования %s\n"
+
+#: src/util.c:105
+#, c-format
+msgid "bad tar archive: %s"
+msgstr "неверный tar-архив: %s"
+
+#: src/util.c:113
+#, c-format
+msgid "could not extract %s: %s\n"
+msgstr "невозможно извлеч %s: %s\n"
+
+#: src/util.h:26
+#, c-format
+msgid "malloc failure: could not allocate %d bytes\n"
+msgstr "ошибка malloc: невозможно выделить %d байтов памяти\n"
+
