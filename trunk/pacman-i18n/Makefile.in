@@ -106,7 +106,7 @@ dist: distclean
 libftp.a:
 	(cd libftp; make libftp.a)
 
-install: pacman vercmp convertdb man
+install: pacman vercmp convertdb man installi18n
 	$(INSTALL) -D -m0755 pacman $(DESTDIR)$(BINDIR)/pacman
 	$(INSTALL) -D -m0755 pacman.static $(DESTDIR)$(BINDIR)/pacman.static
 	$(INSTALL) -D -m0755 vercmp $(DESTDIR)$(BINDIR)/vercmp
@@ -118,14 +118,18 @@ install: pacman vercmp convertdb man
 	$(INSTALL) -D -m0644 $(MANSRC)pacman.8 $(DESTDIR)$(MANDIR)/man8/pacman.8
 	$(INSTALL) -D -m0644 $(MANSRC)makepkg.8 $(DESTDIR)$(MANDIR)/man8/makepkg.8
 	
+	$(INSTALL) -D -m0644 etc/pacman.conf $(DESTDIR)/etc/pacman.conf
+	$(INSTALL) -D -m0644 etc/makepkg.conf $(DESTDIR)/etc/makepkg.conf
+
+installi18n: imani18n ipoi18n
+
+imani18n:
 	for i in $(MAN_LINGUAS) ; do \
 	    $(INSTALL) -D -m0644 $(MANSRC)$$i/pacman.8 $(DESTDIR)$(MANDIR)/$$i/man8/pacman.8 ; \
 	    $(INSTALL) -D -m0644 $(MANSRC)$$i/makepkg.8 $(DESTDIR)$(MANDIR)/$$i/man8/makepkg.8 ; \
 	done
-	
-	$(INSTALL) -D -m0644 etc/pacman.conf $(DESTDIR)/etc/pacman.conf
-	$(INSTALL) -D -m0644 etc/makepkg.conf $(DESTDIR)/etc/makepkg.conf
-	
+
+ipoi18n:
 	for i in $(PO_LINGUAS) ; do \
 	    $(INSTALL) -D -m0644 po/$$i.mo $(DESTDIR)$(LOCALEDIR)/$$i/LC_MESSAGES/pacman.mo ; \
 	done
